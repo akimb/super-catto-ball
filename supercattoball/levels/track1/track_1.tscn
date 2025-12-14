@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://qjlvdngd0lqm"]
+
+[ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="1_6ymaq"]
+[ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="1_ote47"]
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="2_gdbm5"]
+[ext_resource type="PackedScene" uid="uid://uy43ie7x374h" path="res://levels/track1/track_1_geometry.tscn" id="3_gpk2m"]
+[ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_6ymaq"]
+[ext_resource type="PackedScene" uid="uid://b47bnqrqbal76" path="res://catto_ball/catto_ball.tscn" id="4_gdbm5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpk2m"]
+sky_energy_multiplier = 0.75
+sky_cover = ExtResource("1_ote47")
+ground_bottom_color = Color(0.45181078, 0.65759736, 1, 1)
+ground_horizon_color = Color(0.7529412, 0.9843137, 0.972549, 1)
+
+[sub_resource type="Sky" id="Sky_6ymaq"]
+sky_material = SubResource("ProceduralSkyMaterial_gpk2m")
+
+[sub_resource type="Environment" id="Environment_6ymaq"]
+background_mode = 2
+sky = SubResource("Sky_6ymaq")
+tonemap_mode = 3
+fog_enabled = true
+fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
+fog_sky_affect = 0.25
+
+[node name="Track 1" instance=ExtResource("2_gdbm5")]
+
+[node name="Catto Spawner" parent="." index="0" instance=ExtResource("1_6ymaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1214874, -2.1983721)
+
+[node name="Track 1 Geometry" parent="." index="1" instance=ExtResource("3_gpk2m")]
+
+[node name="Goalpost" parent="." index="2" instance=ExtResource("4_6ymaq")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 0, 0, 2)
+
+[node name="Catto Ball" parent="." index="3" instance=ExtResource("4_gdbm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.182216, -0.9959943)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4"]
+environment = SubResource("Environment_6ymaq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5"]
+transform = Transform3D(-0.6093662, -0.07649052, 0.7891906, 0.49473146, -0.8144909, 0.30305973, 0.6196075, 0.5751118, 0.5341656, 0, 0, 0)
+light_color = Color(0.89412117, 0.63525987, 0.60935146, 1)
+light_energy = 0.5
+shadow_enabled = true

@@ -1,0 +1,7 @@
+[gd_resource type="PhysicsMaterial" format=3 uid="uid://6dhw7y5cfehj"]
+
+[resource]
+resource_name = "ICE"
+friction = 0.1
+bounce = 1.0
+absorbent = true

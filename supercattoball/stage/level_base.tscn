@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6xkhfcsai6vp"]
+
+[ext_resource type="Script" uid="uid://dphpbo3omahu2" path="res://stage/rotator_controller.gd" id="1_f6oki"]
+
+[node name="Level Base" type="Node3D"]
+script = ExtResource("1_f6oki")

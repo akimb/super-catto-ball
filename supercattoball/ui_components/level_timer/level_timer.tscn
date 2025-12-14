@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjuqnh4p5fmga"]
+
+[ext_resource type="FontFile" uid="uid://bxjmy5nb3tjx8" path="res://ui_components/fonts/E1234.ttf" id="1_c6tut"]
+
+[sub_resource type="Theme" id="Theme_bwit1"]
+RichTextLabel/colors/default_color = Color(1, 0.7137255, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 0.2901961, 0, 1)
+RichTextLabel/constants/outline_size = 10
+RichTextLabel/font_sizes/normal_font_size = 50
+RichTextLabel/fonts/normal_font = ExtResource("1_c6tut")
+
+[node name="LevelTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.5
+offset_top = -199.5
+offset_right = 423.5
+offset_bottom = 199.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bwit1")
+text = "60.00"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

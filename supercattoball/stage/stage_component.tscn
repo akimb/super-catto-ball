@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx5yej240iwry"]
+
+[ext_resource type="Script" uid="uid://c78b25tia1yec" path="res://stage/stage_component.gd" id="1_ihh0d"]
+
+[node name="Stage Component" type="StaticBody3D"]
+script = ExtResource("1_ihh0d")

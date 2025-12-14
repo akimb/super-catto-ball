@@ -1,0 +1,1 @@
+class_name CattoBall extends RigidBody3D

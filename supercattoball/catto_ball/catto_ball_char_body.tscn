@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://mo4qtvo88io3"]
+
+[ext_resource type="Material" uid="uid://ci23js8fnh5s6" path="res://catto_ball/ball_texture.tres" id="1_icnij"]
+[ext_resource type="Script" uid="uid://fi6hftkxvo47" path="res://catto_ball/catto_ball_char_body.gd" id="1_yhjfj"]
+[ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="2_yhjfj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7thnw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i8pc0"]
+material = ExtResource("1_icnij")
+
+[node name="Catto Ball CharBody" type="CharacterBody3D"]
+floor_stop_on_slope = false
+script = ExtResource("1_yhjfj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7thnw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_i8pc0")
+
+[node name="Catto" parent="." instance=ExtResource("2_yhjfj")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.26252994, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5744072, -1.7916647)
+current = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bddirq0ftjydm"]
+
+[ext_resource type="Script" uid="uid://da8l3htrj3te6" path="res://stage/catto_spawner/catto_spawner.gd" id="1_g26qj"]
+[ext_resource type="Texture2D" uid="uid://cf0gdrhycve70" path="res://stage/catto_spawner/debug_texture.png" id="2_55of8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3kw5"]
+albedo_texture = ExtResource("2_55of8")
+
+[node name="Catto Spawner" type="Marker3D"]
+script = ExtResource("1_g26qj")
+
+[node name="Debug Sphere" type="CSGSphere3D" parent="."]
+radius = 0.25
+material = SubResource("StandardMaterial3D_p3kw5")

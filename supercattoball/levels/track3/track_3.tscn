@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://wchm7xrl3pqq"]
+
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_ga0cf"]
+[ext_resource type="PackedScene" uid="uid://c7v7k0og8u41w" path="res://levels/track3/track_3_geometry.tscn" id="2_ga0cf"]
+[ext_resource type="PackedScene" uid="uid://b47bnqrqbal76" path="res://catto_ball/catto_ball.tscn" id="3_nyiji"]
+[ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="4_rvssj"]
+[ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="5_rvssj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3q5r"]
+sky_energy_multiplier = 0.75
+sky_cover = ExtResource("4_rvssj")
+ground_bottom_color = Color(0.45181078, 0.65759736, 1, 1)
+ground_horizon_color = Color(0.7529412, 0.9843137, 0.972549, 1)
+
+[sub_resource type="Sky" id="Sky_gdbm5"]
+sky_material = SubResource("ProceduralSkyMaterial_s3q5r")
+
+[sub_resource type="Environment" id="Environment_iguos"]
+background_mode = 2
+sky = SubResource("Sky_gdbm5")
+tonemap_mode = 3
+fog_enabled = true
+fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
+fog_sky_affect = 0.25
+
+[node name="Track 3" instance=ExtResource("1_ga0cf")]
+
+[node name="Track 3" parent="." index="0" instance=ExtResource("2_ga0cf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Catto Ball" parent="." index="1" instance=ExtResource("3_nyiji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5106344, 1.049592)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = SubResource("Environment_iguos")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Goalpost" parent="." index="4" instance=ExtResource("5_rvssj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -5, -2)
