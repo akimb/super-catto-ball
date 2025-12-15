@@ -24,6 +24,7 @@ fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
 fog_sky_affect = 0.25
 
 [node name="Track 3" instance=ExtResource("1_ga0cf")]
+script = null
 
 [node name="Track 3" parent="." index="0" instance=ExtResource("2_ga0cf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
