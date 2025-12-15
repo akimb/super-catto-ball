@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxbxjt1k404hs"]
+
+[ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="1_2s4tk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_acb3u"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u6ye2"]
+viewport_path = NodePath("SubViewport2")
+
+[node name="Game Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1152, 648)
+
+[node name="Track 1" parent="SubViewport" instance=ExtResource("1_2s4tk")]
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+size = Vector2i(1152, 648)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9688034, 0)
+cull_mask = 1048574
+current = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_acb3u")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_u6ye2")
