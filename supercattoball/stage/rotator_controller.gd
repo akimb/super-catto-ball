@@ -1,14 +1,19 @@
 extends Node3D
 
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
+
 var base_gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 var catto : CattoBall
 
+var mouse_sensitivity = 0.001
+
 func _ready() -> void:
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	catto = get_node("Catto Ball")
 
 func _physics_process(_delta):
 	var input := Input.get_vector("forward", "backward", "right", "left")
+	input = input.rotated(-catto.camera_rig.rotation.y)
 	var tilt := Vector3(input.y, -1.0, -input.x).normalized()
 
 	PhysicsServer3D.area_set_param(
@@ -16,6 +21,14 @@ func _physics_process(_delta):
 		PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR,
 		tilt * base_gravity.length()
 	)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		catto.camera_rig.rotate_y(-event.relative.x * mouse_sensitivity)
+		catto.catto_model.rotate_y(-event.relative.x * mouse_sensitivity)
+
+#func _process(_delta: float) -> void:
+	#world_environment.environment.sky_rotation = catto.camera_rig.rotation
 
 ## Deprecated code
 #@export var max_angle : float = 15.0

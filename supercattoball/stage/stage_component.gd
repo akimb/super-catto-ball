@@ -16,9 +16,9 @@ const SNOW_PHYSICS = preload("uid://cdwmpdm0ynb35")
 func _ready() -> void:
 	
 	match stage_material:
-		STAGE_MATERIAL.SNOW:
-			physics_material_override = ICE_PHYSICS
 		STAGE_MATERIAL.ICE:
+			physics_material_override = ICE_PHYSICS
+		STAGE_MATERIAL.SNOW:
 			physics_material_override = SNOW_PHYSICS
 	
 	for child in get_children():
