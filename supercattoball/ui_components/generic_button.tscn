@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://0o3c0fiuevgs"]
+
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="1_5ni7h"]
+[ext_resource type="Script" uid="uid://byei83hytcoa1" path="res://ui_components/generic_button.gd" id="1_ls5fr"]
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_5ni7h")
+text = "SAMPLE TEXT"
+script = ExtResource("1_ls5fr")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

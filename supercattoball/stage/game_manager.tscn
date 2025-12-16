@@ -3,18 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="1_2s4tk"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_acb3u"]
-viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u6ye2"]
-viewport_path = NodePath("SubViewport2")
 
-[node name="Game Manager" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Game Manager" type="Node3D"]
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -28,10 +20,8 @@ size = Vector2i(1152, 648)
 [node name="Camera3D" type="Camera3D" parent="SubViewport2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9688034, 0)
 cull_mask = 1048574
-current = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,10 +30,110 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_acb3u")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_u6ye2")
+
+[node name="Player UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 97.0
+offset_right = 247.0
+offset_bottom = 137.0
+
+[node name="Label" type="Label" parent="Player UI/Panel"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "LIVES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 40.0
+offset_right = 676.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel2"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "TIMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 40.0
+offset_right = 1126.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel3"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "FISH TREATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 247.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel4"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 526.0
+offset_right = 247.0
+offset_bottom = 566.0
+
+[node name="Label" type="Label" parent="Player UI/Panel5"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 214.0
+offset_bottom = 39.0
+text = "SPEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 577.0
+offset_right = 247.0
+offset_bottom = 617.0
+
+[node name="Label" type="Label" parent="Player UI/Panel6"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 214.0
+offset_bottom = 39.0
+text = "FLOOR #"
+horizontal_alignment = 1
+vertical_alignment = 1

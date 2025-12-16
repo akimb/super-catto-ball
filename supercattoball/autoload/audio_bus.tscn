@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci7dq5h0uavid"]
+
+[ext_resource type="Script" uid="uid://cj516ps5b7kem" path="res://autoload/audio_bus.gd" id="1_fn8mh"]
+[ext_resource type="AudioStream" uid="uid://dpdgdheq37bc5" path="res://sounds/main_menu_theme_placeholder.ogg" id="2_nm6ef"]
+[ext_resource type="AudioStream" uid="uid://p8cqw104xbvx" path="res://sounds/meow_sfx.ogg" id="3_p6asr"]
+[ext_resource type="AudioStream" uid="uid://bn8jfwaic1jhu" path="res://sounds/confirm_sfx.ogg" id="4_e33f3"]
+
+[node name="AudioBus" type="Node"]
+script = ExtResource("1_fn8mh")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="Main Menu Theme" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_nm6ef")
+volume_db = -10.0
+bus = &"Music"
+playback_type = 1
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Meow" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_p6asr")
+volume_db = -5.0
+max_polyphony = 10
+bus = &"SFX"
+playback_type = 1
+
+[node name="Confirm" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_e33f3")
+volume_db = -5.0
+max_polyphony = 10
+bus = &"SFX"
+playback_type = 1

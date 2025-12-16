@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=4 uid="uid://uyijd2p8wg7q"]
+
+[ext_resource type="Script" uid="uid://kjurl24i84oj" path="res://menus/main_menu/turntable.gd" id="1_17tko"]
+[ext_resource type="Texture2D" uid="uid://cqgktp3sfea1r" path="res://menus/floating_stage_floating_stage_ice_texture.png" id="5_evbyv"]
+[ext_resource type="Texture2D" uid="uid://bqgik73dl35e1" path="res://menus/floating_stage_floating_stage_snow_texture.png" id="6_gxkfk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cqie"]
+resource_name = "floating_stage_ice_material"
+cull_mode = 2
+albedo_texture = ExtResource("5_evbyv")
+roughness = 0.20909092
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4w8mk"]
+resource_name = "floating_stage_snow_material"
+albedo_texture = ExtResource("6_gxkfk")
+roughness = 0.3931818
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r37q3"]
+_surfaces = [{
+"aabb": AABB(-1.0648388, -0.125, -1.1196377, 2.1296775, 0.19930393, 2.2392755),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMAAgADAAUAAQAGAAQAAAAGAAEABgAHAAQACAACAAUAAAACAAgACAAFAAkABgAKAAcAAAAKAAYACgALAAcADAAIAAkAAAAIAAwADAAJAA0ACgAOAAsAAAAOAAoADgAPAAsAEAAMAA0AAAAMABAAEAANABEADgASAA8AAAASAA4AEgATAA8AAAAQABQAAAAUABIAFAAQABEAEgAUABMAFAARABMA"),
+"name": "floating_stage_ice_material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 21,
+"vertex_data": PackedByteArray("/38AAP9/AACmxgAAgiMAAP9/AACtDQAAGs///3IYAAD/////cVgAAP9///8AAAAAUfIAAKtcAAD/////jacAAFg5AACCIwAA5DD//3IYAABR8gAAU6MAABrP//+M5wAArQ0AAKtcAAAAAP//cVgAAKbGAAB83AAA/3//////AACtDQAAU6MAAAAA//+NpwAA/38AAFHyAADkMP//jOcAAFg5AAB83AAA")
+}, {
+"aabb": AABB(-1.0648388, 0.07430393, -1.1196377, 2.1296775, 0.05341392, 2.2392755),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABQADAAEABAAGAAIAAAACAAYABAAHAAYABQABAAgAAAAIAAEACQAFAAgABwAKAAYAAAAGAAoABwALAAoACQAIAAwAAAAMAAgADQAJAAwACwAOAAoAAAAKAA4ACwAPAA4ADQAMABAAAAAQAAwAEQANABAADwASAA4AAAAOABIADwATABIAAAAUABAAEQAQABQAAAASABQAEwARABQAEwAUABIA"),
+"name": "floating_stage_snow_material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 21,
+"vertex_data": PackedByteArray("/3////9/AAD/f///AAAAABrP//9yGAAA/38AAAAAAAAazwAAchgAAOQwAAByGAAA/////3FYAAD//wAAcVgAAOQw//9yGAAAAAAAAHFYAAD/////jacAAP//AACNpwAAAAD//3FYAAAAAAAAjacAABrP//+M5wAAGs8AAIznAAAAAP//jacAAOQwAACM5wAA/3//////AAD/fwAA//8AAOQw//+M5wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0mijx"]
+resource_name = "floating_stage_Cylinder"
+_surfaces = [{
+"aabb": AABB(-1.0648388, -0.125, -1.1196377, 2.1296775, 0.19930393, 2.2392755),
+"attribute_data": PackedByteArray("/9/34A3y3Mf/3+/BNv1g1/DN3Mc2/Y7qx8Jg1w3yEfrHwo7q/9////DNEfrMjKTA/39VjMyMVYz/f6TAmJmkwMyMVYyYmVWMzIykwGWmpMCYmVWMZaZVjJiZpMAys6TAZaZVjDKzVYxlpqTA/7+kwDKzVYz/v1WMMrOkwMvMpMD/v1WMy8xVjP+/pMCY2aTAy8xVjJjZVYzLzKTAZeakwJjZVYxl5lWMmNmkwDLzpMBl5lWMMvNVjGXmpMD//6TAMvNVjP//VYwy86TA"),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMAAAAEAAYAAAAHAAUAAAAGAAgAAAAJAAcAAAAIAAoAAAAKAAkACwAMAA0ACwAOAAwADwAQABEADwASABAAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIwAkACUAIwAmACQAJwAoACkAJwAqACgAKwAsAC0AKwAuACwALwAwADEALwAyADAA"),
+"material": SubResource("StandardMaterial3D_5cqie"),
+"name": "floating_stage_ice_material",
+"primitive": 3,
+"uv_scale": Vector4(2, 1.98, 0, 0),
+"vertex_count": 51,
+"vertex_data": PackedByteArray("/38AAP9//z+mxgAAgiP/P/9/AACtDf8/UfIAAKtc/z9YOQAAgiP/P1HyAABTo/8/rQ0AAKtc/z+mxgAAfNz/P60NAABTo/8//38AAFHy/z9YOQAAfNz/P1g5AACCI6Dz/3///wAAoPPkMP//chig8/9/AACtDaDzrQ0AAKtc+9rkMP//chj72gAA//9xWPvaWDkAAIIj+9qtDQAAU6OtwgAA//9xWK3CAAD//42nrcKtDQAAq1ytwlg5AAB83HGrAAD//42ncavkMP//jOdxq60NAABTo3Gr/38AAFHyopjkMP//jOeimP9//////6KYWDkAAHzcopimxgAAfNyimP9//////6KYGs///4znopj/fwAAUfKimFHyAABTo3GrGs///4zncav/////jadxq6bGAAB83HGrUfIAAKtcrcL/////jaetwv////9xWK3CUfIAAFOjrcKmxgAAgiP72v////9xWPvaGs///3IY+9pR8gAAq1z72v9/AACtDaDzGs///3IYoPP/f///AACg86bGAACCI6DzAAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3/nYeH752Hh++dh4fvnYeH7ZFuj82Rbo/NkW6PzZFuj855TzumeU87pnlPO6Z5TzumpR63aqUet2qlHrdqpR63ahysTt4crE7eHKxO3hysTtxM3d1QTN3dUEzd3VBM3d1StWlY4rVpWOK1aVjitWlY4zmlhLM5pYSzOaWEszmlhLKRzmySkc5skpHObJKRzmyTiexge4nsYHuJ7GB7iexge")
+}, {
+"aabb": AABB(-1.0648388, 0.07430393, -1.1196377, 2.1296775, 0.05341392, 2.2392755),
+"attribute_data": PackedByteArray("/5/34P+f78ENstzH8I3cxza9YNfIgmDXNr2O6siCjuoNshH68I0R+v+f/////1WMMvP/f////38y81WMMvNVjGXm/38y8/9/ZeZVjGXmVYyY2f9/Zeb/f5jZVYyY2VWMy8z/f5jZ/3/LzFWMy8xVjP+//3/LzP9//79VjP+/VYwys/9//7//fzKzVYwys1WMZab/fzKz/39lplWMZaZVjJiZ/39lpv9/mJlVjJiZVYzMjP9/mJn/f8yMVYzMjFWM/3//f8yM/3//f1WM"),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMAAAAEAAYAAAAHAAUAAAAGAAgAAAAJAAcAAAAIAAoAAAAKAAkACwAMAA0ACwAOAAwADwAQABEADwASABAAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIwAkACUAIwAmACQAJwAoACkAJwAqACgAKwAsAC0AKwAuACwALwAwADEALwAyADAA"),
+"material": SubResource("StandardMaterial3D_4w8mk"),
+"name": "floating_stage_snow_material",
+"primitive": 3,
+"uv_scale": Vector4(2, 1.98, 0, 0),
+"vertex_count": 51,
+"vertex_data": PackedByteArray("/3////9//7//f///AAD/vxrP//9yGP+/5DD//3IY/7//////cVj/vwAA//9xWP+//////42n/78AAP//jaf/vxrP//+M5/+/5DD//4zn/7//f///////v/9/AAAAADLzGs///3IYMvP/f///AAAy8xrPAAByGDLzGs8AAHIYmNn/////cViY2RrP//9yGJjZ//8AAHFYmNn//wAAcVj/v/////+Np/+//////3FY/7///wAAjaf/v///AACNp2WmGs///4znZab/////jadlphrPAACM52WmGs8AAIzny4z/f//////LjBrP//+M58uM/38AAP//y4z/fwAA///LjOQw//+M58uM/3//////y4zkMAAAjOfLjOQwAACM52WmAAD//42nZabkMP//jOdlpgAAAACNp2WmAAAAAI2n/78AAP//cVj/vwAA//+Np/+/AAAAAHFY/78AAAAAcViY2eQw//9yGJjZAAD//3FYmNnkMAAAchiY2eQwAAByGDLz/3///wAAMvPkMP//chgy8/9/AAAAADLz////f////3////9/////f////3////9/////f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_r37q3")
+
+[node name="Turntable" type="Node3D" node_paths=PackedStringArray("island_meshes")]
+script = ExtResource("1_17tko")
+island_meshes = [NodePath("Main Island/Floating Stage")]
+
+[node name="Main Island" type="Node3D" parent="."]
+
+[node name="Floating Stage" type="MeshInstance3D" parent="Main Island"]
+mesh = SubResource("ArrayMesh_0mijx")
+skeleton = NodePath("")

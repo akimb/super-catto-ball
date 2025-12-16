@@ -1,0 +1,392 @@
+[gd_scene load_steps=32 format=3 uid="uid://dde6piw0cky7b"]
+
+[ext_resource type="Script" uid="uid://ce2qin51jrv7d" path="res://menus/main_menu/main_menu.gd" id="1_ml8bw"]
+[ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="2_oic2i"]
+[ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="3_er5qh"]
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="3_f7ts8"]
+[ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="4_81su3"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="4_er5qh"]
+[ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="4_f7ts8"]
+[ext_resource type="FontFile" uid="uid://b8cv4qnn5detl" path="res://ui_components/fonts/aaaiight-fat.ttf" id="4_t7kvd"]
+[ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="5_oic2i"]
+[ext_resource type="PackedScene" uid="uid://uyijd2p8wg7q" path="res://menus/main_menu/turntable.tscn" id="7_f7ts8"]
+[ext_resource type="PackedScene" uid="uid://c2fjjhk45yuu2" path="res://ui_components/instructions.tscn" id="10_11cdn"]
+[ext_resource type="Material" uid="uid://ci23js8fnh5s6" path="res://catto_ball/ball_texture.tres" id="11_pmi7g"]
+[ext_resource type="Script" uid="uid://gh82tbsjhnsa" path="res://menus/main_menu/funny_cat_rolling.gd" id="12_11cdn"]
+[ext_resource type="Texture2D" uid="uid://o33drad5ocl" path="res://ui_components/input_prompts/keyboard_arrows_up.png" id="12_pg7e5"]
+[ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="12_sk04l"]
+[ext_resource type="Texture2D" uid="uid://duydgngv46ypv" path="res://ui_components/input_prompts/keyboard_arrows_left.png" id="13_po3x5"]
+[ext_resource type="Texture2D" uid="uid://bfsfn5xy6mk1d" path="res://ui_components/input_prompts/keyboard_arrows_down.png" id="14_e54pj"]
+[ext_resource type="PackedScene" uid="uid://dg7c4kbc5o0qq" path="res://stage/goalpost/goalpost.glb" id="15_il6kl"]
+[ext_resource type="Texture2D" uid="uid://wf137nd04xqd" path="res://ui_components/flag_square.png" id="15_oi7a3"]
+[ext_resource type="Texture2D" uid="uid://caxtfljvjbbvt" path="res://ui_components/input_prompts/keyboard_arrows_right.png" id="15_osjhf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jix8l"]
+sky_energy_multiplier = 0.75
+sky_cover = ExtResource("4_f7ts8")
+ground_bottom_color = Color(0.08376535, 0.4482513, 0.9999872, 1)
+ground_horizon_color = Color(0.7529412, 0.9843137, 0.972549, 1)
+
+[sub_resource type="Sky" id="Sky_6ymaq"]
+sky_material = SubResource("ProceduralSkyMaterial_jix8l")
+
+[sub_resource type="Environment" id="Environment_glbon"]
+background_mode = 2
+sky = SubResource("Sky_6ymaq")
+tonemap_mode = 3
+glow_enabled = true
+glow_bloom = 0.25
+fog_enabled = true
+fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
+fog_sun_scatter = 1.0
+fog_sky_affect = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi7a3"]
+transparency = 1
+albedo_texture = ExtResource("5_oic2i")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_f7ts8"]
+material = SubResource("StandardMaterial3D_oi7a3")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_81su3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46666667, 0.5077801), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8woyc"]
+shader = ExtResource("2_oic2i")
+shader_parameter/ending_color = Color(2.377659e-05, 0.4424333, 0.7337581, 1)
+shader_parameter/beginning_color = Color(0.5176757, 0.86474884, 0.99999994, 1)
+shader_parameter/pulse_speed = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7kvd"]
+font = ExtResource("4_81su3")
+font_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11cdn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.49411765, 0.8901961, 1, 0.54509807)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qwplh"]
+frames = 4
+frame_0/texture = ExtResource("12_pg7e5")
+frame_1/texture = ExtResource("13_po3x5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("14_e54pj")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("15_osjhf")
+frame_3/duration = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_11cdn"]
+material = ExtResource("11_pmi7g")
+
+[node name="Main Menu" type="Node3D"]
+script = ExtResource("1_ml8bw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.6791059, 0.051552236, 0.73222774, 0.39357552, -0.81644887, 0.42250395, 0.61960757, 0.5751118, 0.53416556, 0, 0, 0)
+light_color = Color(0.89412117, 0.63525987, 0.60935146, 1)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glbon")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+amount = 512
+lifetime = 5.0
+preprocess = 5.0
+fixed_fps = 30
+mesh = SubResource("QuadMesh_f7ts8")
+emission_shape = 3
+emission_box_extents = Vector3(20, 20, 20)
+gravity = Vector3(0, -1, 0)
+initial_velocity_max = 5.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_81su3")
+
+[node name="Title Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.5
+offset_right = 540.5
+offset_bottom = 278.0
+grow_horizontal = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_er5qh")
+theme_override_fonts/bold_font = ExtResource("4_t7kvd")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[color=#7EE3FF][Super]
+[color=white]Catto Ball"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Title Screen/Label"]
+material = SubResource("ShaderMaterial_8woyc")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 167.5
+offset_top = 264.0
+offset_right = 354.5
+offset_bottom = 288.0
+grow_horizontal = 2
+rotation = -0.22602816
+text = "paws out!"
+label_settings = SubResource("LabelSettings_t7kvd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" parent="Title Screen" instance=ExtResource("4_er5qh")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 193.0
+offset_right = 110.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press start"
+
+[node name="Main Menu Screen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Main Menu Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = 154.0
+offset_right = 298.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Roll" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "ROLL!"
+
+[node name="How to Play" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "HOW 2 PURR"
+
+[node name="Credits" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="Quit" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "ABANDON CATTO :("
+
+[node name="How to Play Screen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="How to Play Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -222.0
+offset_right = 228.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/default_color = Color(0.49411765, 0.8901961, 1, 1)
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+text = "HOW 2 PURR"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="How to Play Screen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -146.0
+offset_right = 20.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" parent="How to Play Screen/HBoxContainer" instance=ExtResource("10_11cdn")]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="How to Play Screen/HBoxContainer"]
+custom_minimum_size = Vector2(279, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_11cdn")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="How to Play Screen/HBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 288.0
+offset_bottom = 79.0
+theme = ExtResource("3_f7ts8")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "use the arrow keys / wasd to roll!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="How to Play Screen/HBoxContainer/Panel2"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("AnimatedTexture_qwplh")
+
+[node name="Panel3" type="Panel" parent="How to Play Screen/HBoxContainer"]
+custom_minimum_size = Vector2(279, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_11cdn")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="How to Play Screen/HBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 54.5
+offset_right = 265.5
+offset_bottom = 79.0
+theme = ExtResource("3_f7ts8")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "get to the goal in time!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="How to Play Screen/HBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 13.5
+offset_top = 8.0
+offset_right = 55.0
+offset_bottom = 49.5
+texture = ExtResource("15_oi7a3")
+expand_mode = 1
+
+[node name="How to Play Back" parent="How to Play Screen" instance=ExtResource("4_er5qh")]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 572.0
+offset_right = 1094.0
+offset_bottom = 627.0
+text = "BACK"
+
+[node name="Title Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 0.095, 1)
+
+[node name="Title Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 0.095, 1)
+
+[node name="Turntable" parent="." instance=ExtResource("7_f7ts8")]
+
+[node name="Ball" type="MeshInstance3D" parent="Turntable"]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0, -0.0712688, 0.6244551)
+mesh = SubResource("SphereMesh_11cdn")
+skeleton = NodePath("")
+script = ExtResource("12_11cdn")
+
+[node name="Sketchfab_Scene" parent="Turntable/Ball" instance=ExtResource("12_sk04l")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2868675, 0)
+
+[node name="How to Play Marker" type="Marker3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5, 0.411, 0)
+
+[node name="How to Play Camera" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5, 0.411, 0)
+
+[node name="Turntable2" parent="." instance=ExtResource("7_f7ts8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7.1054274e-15)
+
+[node name="Ball" type="MeshInstance3D" parent="Turntable2"]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -0.30900002, 0.371, -0.85)
+mesh = SubResource("SphereMesh_11cdn")
+skeleton = NodePath("")
+script = ExtResource("12_11cdn")
+rotation_speed = 300.0
+rotate_around_y = true
+
+[node name="Sketchfab_Scene" parent="Turntable2/Ball" instance=ExtResource("12_sk04l")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2868675, 0)
+
+[node name="Ball2" type="MeshInstance3D" parent="Turntable2"]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -0.309, 0.371, 0)
+mesh = SubResource("SphereMesh_11cdn")
+skeleton = NodePath("")
+script = ExtResource("12_11cdn")
+rotation_speed = 300.0
+
+[node name="Sketchfab_Scene" parent="Turntable2/Ball2" instance=ExtResource("12_sk04l")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2868675, 0)
+
+[node name="Goal" parent="Turntable2" instance=ExtResource("15_il6kl")]
+transform = Transform3D(1.8874475e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.8874475e-08, -0.30900002, 0.186, 0.9248903)
+
+[connection signal="pressed" from="Title Screen/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main Menu Screen/VBoxContainer/Roll" to="." method="_on_roll_pressed"]
+[connection signal="pressed" from="Main Menu Screen/VBoxContainer/How to Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="How to Play Screen/How to Play Back" to="." method="_on_how_to_play_back_pressed"]

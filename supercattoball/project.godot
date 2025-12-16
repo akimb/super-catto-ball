@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="supercattoball"
-run/main_scene="uid://qjlvdngd0lqm"
+run/main_scene="uid://dde6piw0cky7b"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioBus="*res://autoload/audio_bus.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
