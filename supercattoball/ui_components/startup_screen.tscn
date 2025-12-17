@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://605xapkrlth0"]
+
+[ext_resource type="Texture2D" uid="uid://do2vkuymmbp7y" path="res://ui_components/logo.png" id="1_0vnbw"]
+[ext_resource type="Script" uid="uid://com07c3m4v2bv" path="res://ui_components/startup_screen.gd" id="1_v5mbo"]
+[ext_resource type="FontFile" uid="uid://i4a4xkfoxbeh" path="res://ui_components/fonts/pincoyablack.otf" id="3_5ulkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofjh3"]
+font = ExtResource("3_5ulkg")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa5b1"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(0, 0, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5mbo"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(212, 0, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ulkg"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(424, 0, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofjh3"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(636, 0, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0e2n"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(848, 0, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bhvn"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(0, 163, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0f1h"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(212, 163, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xdjg"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(424, 163, 212, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js7fj"]
+atlas = ExtResource("1_0vnbw")
+region = Rect2(636, 163, 212, 163)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fuecs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa5b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5mbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ulkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofjh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0e2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bhvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0f1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xdjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js7fj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Startup Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5mbo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Splash" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Splash"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 308.0
+offset_top = 243.0
+offset_right = 930.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "a_kimb0's games"
+label_settings = SubResource("LabelSettings_ofjh3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo" type="AnimatedSprite2D" parent="Splash"]
+position = Vector2(1273, 304)
+sprite_frames = SubResource("SpriteFrames_fuecs")
+autoplay = "default"
+frame_progress = 0.21562108
+
+[node name="Logo Pos" type="Marker2D" parent="Splash"]
+position = Vector2(222, 304)

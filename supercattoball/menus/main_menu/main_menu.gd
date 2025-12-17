@@ -3,10 +3,12 @@ extends Node3D
 @onready var title_screen: Control = $"Title Screen"
 @onready var main_menu_screen: Control = $"Main Menu Screen"
 @onready var how_to_play_screen: Control = $"How to Play Screen"
+@onready var credits_screen: Control = $"Credits Screen"
 
 @onready var title_camera: Camera3D = $"Title Camera"
 @onready var title_marker: Marker3D = $"Title Marker"
 @onready var how_to_play_marker: Marker3D = $"How to Play Marker"
+@onready var credits_marker: Marker3D = $"Credits Marker"
 
 var screens : Array[Control] = []
 
@@ -29,6 +31,15 @@ func interpolate_cameras(cam_marker : Marker3D, from_ui : Control, to_ui : Contr
 	await pass_camera.finished
 	to_ui.visible = true
 
+
+
+func bring_up_active_screen(desired_screen : Control) -> void:
+	for screen in screens:
+		if screen == desired_screen:
+			screen.show()
+		else:
+			screen.hide()
+
 func _on_play_pressed() -> void:
 	bring_up_active_screen(main_menu_screen)
 
@@ -38,12 +49,15 @@ func _on_roll_pressed() -> void:
 func _on_how_to_play_pressed() -> void:
 	interpolate_cameras(how_to_play_marker, main_menu_screen, how_to_play_screen)
 
-func bring_up_active_screen(desired_screen : Control) -> void:
-	for screen in screens:
-		if screen == desired_screen:
-			screen.show()
-		else:
-			screen.hide()
-
 func _on_how_to_play_back_pressed() -> void:
 	interpolate_cameras(title_marker, how_to_play_screen, main_menu_screen)
+
+func _on_credits_pressed() -> void:
+	interpolate_cameras(credits_marker, main_menu_screen, credits_screen)
+
+func _on_credits_back_pressed() -> void:
+	interpolate_cameras(title_marker, credits_screen, main_menu_screen)
+
+func _on_quit_pressed() -> void:
+	await get_tree().create_timer(0.5).timeout
+	get_tree().quit()

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci7dq5h0uavid"]
+[gd_scene load_steps=8 format=3 uid="uid://ci7dq5h0uavid"]
 
 [ext_resource type="Script" uid="uid://cj516ps5b7kem" path="res://autoload/audio_bus.gd" id="1_fn8mh"]
 [ext_resource type="AudioStream" uid="uid://dpdgdheq37bc5" path="res://sounds/main_menu_theme_placeholder.ogg" id="2_nm6ef"]
 [ext_resource type="AudioStream" uid="uid://p8cqw104xbvx" path="res://sounds/meow_sfx.ogg" id="3_p6asr"]
 [ext_resource type="AudioStream" uid="uid://bn8jfwaic1jhu" path="res://sounds/confirm_sfx.ogg" id="4_e33f3"]
+[ext_resource type="AudioStream" uid="uid://d3b2a54cfxyjd" path="res://sounds/button_hover_sfx.ogg" id="5_10w4p"]
+[ext_resource type="AudioStream" uid="uid://x2an7bbfpcqo" path="res://sounds/startup_sfx.ogg" id="6_sq0to"]
+[ext_resource type="AudioStream" uid="uid://d1t8ap14rsra" path="res://sounds/whoosh_sfx.ogg" id="7_60cb1"]
 
 [node name="AudioBus" type="Node"]
 script = ExtResource("1_fn8mh")
@@ -27,6 +30,27 @@ playback_type = 1
 
 [node name="Confirm" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("4_e33f3")
+volume_db = -5.0
+max_polyphony = 10
+bus = &"SFX"
+playback_type = 1
+
+[node name="Button Hover" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_10w4p")
+volume_db = -5.0
+max_polyphony = 10
+bus = &"SFX"
+playback_type = 1
+
+[node name="Startup" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_sq0to")
+volume_db = -5.0
+max_polyphony = 10
+bus = &"SFX"
+playback_type = 1
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_60cb1")
 volume_db = -5.0
 max_polyphony = 10
 bus = &"SFX"

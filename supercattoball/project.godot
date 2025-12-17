@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="supercattoball"
-run/main_scene="uid://dde6piw0cky7b"
+run/main_scene="uid://605xapkrlth0"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

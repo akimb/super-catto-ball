@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dde6piw0cky7b"]
+[gd_scene load_steps=34 format=3 uid="uid://dde6piw0cky7b"]
 
 [ext_resource type="Script" uid="uid://ce2qin51jrv7d" path="res://menus/main_menu/main_menu.gd" id="1_ml8bw"]
 [ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="2_oic2i"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dg7c4kbc5o0qq" path="res://stage/goalpost/goalpost.glb" id="15_il6kl"]
 [ext_resource type="Texture2D" uid="uid://wf137nd04xqd" path="res://ui_components/flag_square.png" id="15_oi7a3"]
 [ext_resource type="Texture2D" uid="uid://caxtfljvjbbvt" path="res://ui_components/input_prompts/keyboard_arrows_right.png" id="15_osjhf"]
+[ext_resource type="PackedScene" uid="uid://dielis5ckcm3k" path="res://menus/main_menu/sleeping_cat.glb" id="21_ie4am"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jix8l"]
 sky_energy_multiplier = 0.75
@@ -97,6 +98,22 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("15_osjhf")
 frame_3/duration = 1.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie4am"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
 [sub_resource type="SphereMesh" id="SphereMesh_11cdn"]
 material = ExtResource("11_pmi7g")
 
@@ -130,6 +147,7 @@ scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_81su3")
 
 [node name="Title Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -336,6 +354,68 @@ offset_right = 1094.0
 offset_bottom = 627.0
 text = "BACK"
 
+[node name="Credits Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Think Bubble" type="Panel" parent="Credits Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -563.0
+offset_top = -309.0
+offset_right = 565.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ie4am")
+
+[node name="Credits" type="RichTextLabel" parent="Credits Screen/Think Bubble"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_right = 124.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/default_color = Color(0.49411765, 0.8901961, 1, 1)
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+text = "CREDITS"
+fit_content = true
+
+[node name="Creditors" type="RichTextLabel" parent="Credits Screen/Think Bubble"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 76.0
+offset_right = 1081.0
+offset_bottom = 213.0
+theme = ExtResource("3_f7ts8")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "programming: [color=thistle]a_kimb0[/color]
+art: [color=lightsalmon]KITSUNEMAESTRO[/color]
+music: [color=darkgoldenrod]pmya[/color]
+"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Credits Back" parent="Credits Screen" instance=ExtResource("4_er5qh")]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 572.0
+offset_right = 1094.0
+offset_bottom = 627.0
+text = "BACK"
+
 [node name="Title Marker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 0.095, 1)
 
@@ -386,7 +466,22 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2868675, 0)
 [node name="Goal" parent="Turntable2" instance=ExtResource("15_il6kl")]
 transform = Transform3D(1.8874475e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.8874475e-08, -0.30900002, 0.186, 0.9248903)
 
+[node name="Turntable3" parent="." instance=ExtResource("7_f7ts8")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7, 0, 0)
+
+[node name="sleeping_cat" parent="." instance=ExtResource("21_ie4am")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -6.54763, 0.4398857, 0)
+
+[node name="Credits Marker" type="Marker3D" parent="."]
+transform = Transform3D(-4.3711392e-08, -0.25881904, 0.9659258, 1.7763566e-15, 0.96592593, 0.258819, -1.0000001, 1.1313342e-08, -4.222196e-08, -6, 0.5558461, 0)
+
+[node name="Credits Camera" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, -0.25881904, 0.9659259, 2.6054011e-15, 0.9659258, 0.25881907, -1, 1.1313342e-08, -4.2221963e-08, -6, 0.5558461, 0)
+
 [connection signal="pressed" from="Title Screen/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Roll" to="." method="_on_roll_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/How to Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Main Menu Screen/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Main Menu Screen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="How to Play Screen/How to Play Back" to="." method="_on_how_to_play_back_pressed"]
+[connection signal="pressed" from="Credits Screen/Credits Back" to="." method="_on_credits_back_pressed"]
