@@ -24,7 +24,7 @@ func _physics_process(_delta):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		catto.camera_rig.rotate_y(-event.relative.x * mouse_sensitivity)
+		catto.camera_pivot.rotate_y(-event.relative.x * mouse_sensitivity)
 		catto.catto_model.rotate_y(-event.relative.x * mouse_sensitivity)
 
 #func _process(_delta: float) -> void:

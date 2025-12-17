@@ -2,6 +2,7 @@ class_name CattoBall extends RigidBody3D
 
 @onready var camera_rig: Node3D = $CameraYaw/CameraRig
 @onready var catto_model: Node3D = $Catto
+@onready var camera_pivot: Node3D = $CameraYaw/CameraRig/CameraPivot
 
 #
 #var rotation_amount := 1.0

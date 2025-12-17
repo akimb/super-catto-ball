@@ -1,44 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxbxjt1k404hs"]
+[gd_scene load_steps=7 format=3 uid="uid://cxbxjt1k404hs"]
 
 [ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="1_2s4tk"]
+[ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="1_acb3u"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_acb3u"]
+[sub_resource type="GDScript" id="GDScript_acb3u"]
+script/source = "extends Control
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u6ye2"]
+@onready var skybox_camera_3d: Camera3D = $SkyboxViewport/SkyboxCamera3D
+@onready var game_viewport: SubViewport = $GameViewport
+@onready var track_1: Node3D = $\"GameViewport/Track 1\"
 
-[node name="Game Manager" type="Node3D"]
+func _input(event: InputEvent) -> void:
+	game_viewport.push_input(event)
 
-[node name="SubViewport" type="SubViewport" parent="."]
+
+func _process(delta: float) -> void:
+	if get_tree().get_nodes_in_group(\"CattoBall\").front():
+		skybox_camera_3d.global_transform = get_tree().get_nodes_in_group(\"CattoBall\").front().camera_pivot.transform
+"
+
+[sub_resource type="World3D" id="World3D_u6ye2"]
+environment = ExtResource("1_acb3u")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o8aby"]
+viewport_path = NodePath("SkyboxViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nst35"]
+viewport_path = NodePath("GameViewport")
+
+[node name="Game Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_acb3u")
+
+[node name="SkyboxViewport" type="SubViewport" parent="."]
+world_3d = SubResource("World3D_u6ye2")
+use_hdr_2d = true
+size = Vector2i(1152, 648)
+
+[node name="SkyboxCamera3D" type="Camera3D" parent="SkyboxViewport"]
+environment = ExtResource("1_acb3u")
+
+[node name="GameViewport" type="SubViewport" parent="."]
 transparent_bg = true
+msaa_3d = 3
+use_debanding = true
+use_occlusion_culling = true
+anisotropic_filtering_level = 4
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
 
-[node name="Track 1" parent="SubViewport" instance=ExtResource("1_2s4tk")]
-
-[node name="SubViewport2" type="SubViewport" parent="."]
-size = Vector2i(1152, 648)
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9688034, 0)
-cull_mask = 1048574
+[node name="Track 1" parent="GameViewport" instance=ExtResource("1_2s4tk")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_acb3u")
+texture = SubResource("ViewportTexture_o8aby")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_u6ye2")
+texture = SubResource("ViewportTexture_nst35")
 
 [node name="Player UI" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[global_group]
+
+CattoBall=""
+
 [input]
 
 forward={
@@ -65,6 +69,7 @@ left={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 
