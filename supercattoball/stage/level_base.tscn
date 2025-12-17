@@ -1,6 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6xkhfcsai6vp"]
+[gd_scene load_steps=11 format=3 uid="uid://b6xkhfcsai6vp"]
 
 [ext_resource type="Script" uid="uid://dphpbo3omahu2" path="res://stage/rotator_controller.gd" id="1_f6oki"]
+[ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="2_gs1bs"]
+[ext_resource type="PackedScene" uid="uid://c0ekri5lcxyye" path="res://stage/death_floor/death_floor.tscn" id="3_0sk4r"]
+[ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="4_tpaq6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwp6j"]
+sky_energy_multiplier = 0.75
+sky_cover = ExtResource("2_gs1bs")
+ground_bottom_color = Color(0.45181078, 0.65759736, 1, 1)
+ground_horizon_color = Color(0.7529412, 0.9843137, 0.972549, 1)
+
+[sub_resource type="Sky" id="Sky_n2ge3"]
+sky_material = SubResource("ProceduralSkyMaterial_qwp6j")
+
+[sub_resource type="Environment" id="Environment_shgm0"]
+background_mode = 2
+sky = SubResource("Sky_n2ge3")
+tonemap_mode = 3
+glow_enabled = true
+glow_bloom = 0.25
+fog_enabled = true
+fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
+fog_sun_scatter = 1.0
+fog_sky_affect = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er5qh"]
+transparency = 1
+albedo_texture = ExtResource("4_tpaq6")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_dshvv"]
+material = SubResource("StandardMaterial3D_er5qh")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_oqgmh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46666667, 0.5077801), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Level Base" type="Node3D"]
 script = ExtResource("1_f6oki")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.6093662, -0.07649052, 0.7891906, 0.49473146, -0.8144909, 0.30305973, 0.6196075, 0.5751118, 0.5341656, 0, 0, 0)
+light_color = Color(0.89412117, 0.63525987, 0.60935146, 1)
+light_energy = 0.25
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_shgm0")
+
+[node name="DeathFloor" parent="." instance=ExtResource("3_0sk4r")]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+amount = 512
+lifetime = 5.0
+preprocess = 5.0
+fixed_fps = 30
+mesh = SubResource("QuadMesh_dshvv")
+emission_shape = 3
+emission_box_extents = Vector3(20, 20, 20)
+gravity = Vector3(0, -1, 0)
+initial_velocity_max = 5.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_oqgmh")
