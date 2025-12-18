@@ -17,7 +17,7 @@ material = ExtResource("3_xtgf7")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_835n4"]
 
-[node name="Catto Ball" type="RigidBody3D"]
+[node name="Catto Ball" type="RigidBody3D" groups=["CattoBall"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -47,4 +47,5 @@ script = ExtResource("4_6tnqt")
 script = ExtResource("5_nr1fk")
 
 [node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraRig/CameraPivot"]
+physics_interpolation_mode = 2
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5744072, -1.7916647)

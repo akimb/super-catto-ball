@@ -1,4 +1,5 @@
-extends Button
+class_name GenericButton extends Button
+
 
 func _on_pressed() -> void:
 	AudioBus.confirm.play()

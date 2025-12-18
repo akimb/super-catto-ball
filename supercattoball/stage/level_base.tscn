@@ -4,16 +4,10 @@
 [ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="2_gs1bs"]
 [ext_resource type="PackedScene" uid="uid://c0ekri5lcxyye" path="res://stage/death_floor/death_floor.tscn" id="3_0sk4r"]
 
-[node name="Level Base" type="Node3D"]
+[node name="Level Base" type="Node3D" groups=["level_group"]]
 script = ExtResource("1_f6oki")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.6093662, -0.07649052, 0.7891906, 0.49473146, -0.8144909, 0.30305973, 0.6196075, 0.5751118, 0.5341656, 0, 0, 0)
-light_color = Color(0.89412117, 0.63525987, 0.60935146, 1)
-light_energy = 0.25
-shadow_enabled = true
+[node name="DeathFloor" parent="." instance=ExtResource("3_0sk4r")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_gs1bs")
-
-[node name="DeathFloor" parent="." instance=ExtResource("3_0sk4r")]

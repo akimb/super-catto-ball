@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dde6piw0cky7b"]
+[gd_scene load_steps=35 format=3 uid="uid://dde6piw0cky7b"]
 
 [ext_resource type="Script" uid="uid://ce2qin51jrv7d" path="res://menus/main_menu/main_menu.gd" id="1_ml8bw"]
 [ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="2_oic2i"]
@@ -17,9 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="12_sk04l"]
 [ext_resource type="Texture2D" uid="uid://duydgngv46ypv" path="res://ui_components/input_prompts/keyboard_arrows_left.png" id="13_po3x5"]
 [ext_resource type="Texture2D" uid="uid://bfsfn5xy6mk1d" path="res://ui_components/input_prompts/keyboard_arrows_down.png" id="14_e54pj"]
+[ext_resource type="Texture2D" uid="uid://wf137nd04xqd" path="res://ui_components/icons/flag_square.png" id="15_ie4am"]
 [ext_resource type="PackedScene" uid="uid://dg7c4kbc5o0qq" path="res://stage/goalpost/goalpost.glb" id="15_il6kl"]
-[ext_resource type="Texture2D" uid="uid://wf137nd04xqd" path="res://ui_components/flag_square.png" id="15_oi7a3"]
 [ext_resource type="Texture2D" uid="uid://caxtfljvjbbvt" path="res://ui_components/input_prompts/keyboard_arrows_right.png" id="15_osjhf"]
+[ext_resource type="PackedScene" uid="uid://bgge51qfbf83c" path="res://menus/settings_menu/settings_menu.tscn" id="16_pg7e5"]
 [ext_resource type="PackedScene" uid="uid://dielis5ckcm3k" path="res://menus/main_menu/sleeping_cat.glb" id="21_ie4am"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jix8l"]
@@ -42,28 +43,28 @@ fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
 fog_sun_scatter = 1.0
 fog_sky_affect = 0.25
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi7a3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er5qh"]
 transparency = 1
+shading_mode = 0
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
 albedo_texture = ExtResource("5_oic2i")
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_f7ts8"]
-material = SubResource("StandardMaterial3D_oi7a3")
+[sub_resource type="QuadMesh" id="QuadMesh_ie4am"]
+material = SubResource("StandardMaterial3D_er5qh")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="Curve" id="Curve_81su3"]
+[sub_resource type="Curve" id="Curve_pg7e5"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46666667, 0.5077801), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8woyc"]
 shader = ExtResource("2_oic2i")
-shader_parameter/ending_color = Color(2.377659e-05, 0.4424333, 0.7337581, 1)
-shader_parameter/beginning_color = Color(0.5176757, 0.86474884, 0.99999994, 1)
+shader_parameter/ending_color = Color(1, 0.74509805, 0.019607844, 1)
+shader_parameter/beginning_color = Color(1, 0.42745098, 0.019607844, 1)
 shader_parameter/pulse_speed = 5.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_t7kvd"]
@@ -135,7 +136,7 @@ amount = 512
 lifetime = 5.0
 preprocess = 5.0
 fixed_fps = 30
-mesh = SubResource("QuadMesh_f7ts8")
+mesh = SubResource("QuadMesh_ie4am")
 emission_shape = 3
 emission_box_extents = Vector3(20, 20, 20)
 gravity = Vector3(0, -1, 0)
@@ -144,7 +145,7 @@ angular_velocity_min = -5.0
 angular_velocity_max = 5.0
 scale_amount_min = 0.5
 scale_amount_max = 1.2
-scale_amount_curve = SubResource("Curve_81su3")
+scale_amount_curve = SubResource("Curve_pg7e5")
 
 [node name="Title Screen" type="Control" parent="."]
 visible = false
@@ -234,19 +235,23 @@ grow_vertical = 2
 
 [node name="Roll" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
 layout_mode = 2
-text = "ROLL!"
+text = "roll!!!!"
 
 [node name="How to Play" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
 layout_mode = 2
-text = "HOW 2 PURR"
+text = "how 2 purr"
+
+[node name="Settings" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "settings"
 
 [node name="Credits" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
 layout_mode = 2
-text = "CREDITS"
+text = "credits"
 
 [node name="Quit" parent="Main Menu Screen/VBoxContainer" instance=ExtResource("4_er5qh")]
 layout_mode = 2
-text = "ABANDON CATTO :("
+text = "abandon catto :("
 
 [node name="Label" type="RichTextLabel" parent="Main Menu Screen"]
 layout_mode = 1
@@ -269,6 +274,16 @@ text = "[color=#7EE3FF][Super]
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="Main Menu Screen"]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 591.0
+offset_right = 1132.0
+offset_bottom = 631.0
+theme = ExtResource("3_f7ts8")
+text = "buy me a cofy <3"
+underline = 1
 
 [node name="How to Play Screen" type="Control" parent="."]
 visible = false
@@ -365,7 +380,7 @@ offset_left = 13.5
 offset_top = 8.0
 offset_right = 55.0
 offset_bottom = 49.5
-texture = ExtResource("15_oi7a3")
+texture = ExtResource("15_ie4am")
 expand_mode = 1
 
 [node name="How to Play Back" parent="How to Play Screen" instance=ExtResource("4_er5qh")]
@@ -376,7 +391,10 @@ offset_right = 1094.0
 offset_bottom = 627.0
 text = "BACK"
 
+[node name="Settings Screen" parent="." instance=ExtResource("16_pg7e5")]
+
 [node name="Credits Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -418,14 +436,31 @@ fit_content = true
 layout_mode = 0
 offset_left = 40.0
 offset_top = 76.0
-offset_right = 1081.0
-offset_bottom = 213.0
+offset_right = 438.0
+offset_bottom = 217.0
 theme = ExtResource("3_f7ts8")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "programming: [color=thistle]a_kimb0[/color]
 art: [color=lightsalmon]KITSUNEMAESTRO[/color]
 music: [color=darkgoldenrod]pmya[/color]
+"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Special Thanks" type="RichTextLabel" parent="Credits Screen/Think Bubble"]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 42.0
+offset_right = 1119.0
+offset_bottom = 230.0
+theme = ExtResource("3_f7ts8")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[color=red]special thanks:[/color]
+[color=tan]pacorp
+TranquilMarmot
+Unconscious
 "
 fit_content = true
 vertical_alignment = 1
@@ -503,7 +538,11 @@ transform = Transform3D(-4.371139e-08, -0.25881904, 0.9659259, 2.6054011e-15, 0.
 [connection signal="pressed" from="Title Screen/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Roll" to="." method="_on_roll_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/How to Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Main Menu Screen/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="How to Play Screen/How to Play Back" to="." method="_on_how_to_play_back_pressed"]
+[connection signal="pressed" from="Settings Screen/Settings Back" to="." method="_on_settings_back_pressed"]
 [connection signal="pressed" from="Credits Screen/Credits Back" to="." method="_on_credits_back_pressed"]
+
+[editable path="Settings Screen"]

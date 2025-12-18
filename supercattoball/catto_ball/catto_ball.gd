@@ -4,6 +4,11 @@ class_name CattoBall extends RigidBody3D
 @onready var catto_model: Node3D = $Catto
 @onready var camera_pivot: Node3D = $CameraYaw/CameraRig/CameraPivot
 
+func _ready() -> void:
+	pass
+
+func _physics_process(_delta: float) -> void:
+	GameManager.update_speed.emit(linear_velocity.length())
 #
 #var rotation_amount := 1.0
 #
