@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	var input := Input.get_vector("forward", "backward", "right", "left")
-	input = input.rotated(-catto.camera_rig.rotation.y)
+	input = input.rotated(-catto.camera_pivot.rotation.y)
 	var tilt := Vector3(input.y, -1.0, -input.x).normalized()
 
 	PhysicsServer3D.area_set_param(
