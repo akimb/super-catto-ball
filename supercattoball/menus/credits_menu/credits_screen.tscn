@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ybeiqg05e17"]
+
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="1_eu30x"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="2_lpbbw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie4am"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
+[node name="Credits Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Think Bubble" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -563.0
+offset_top = -309.0
+offset_right = 565.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ie4am")
+
+[node name="Credits" type="RichTextLabel" parent="Think Bubble"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_right = 124.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme = ExtResource("1_eu30x")
+theme_override_colors/default_color = Color(0.49411765, 0.8901961, 1, 1)
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+text = "CREDITS"
+fit_content = true
+
+[node name="Creditors" type="RichTextLabel" parent="Think Bubble"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 76.0
+offset_right = 438.0
+offset_bottom = 217.0
+theme = ExtResource("1_eu30x")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "programming: [color=thistle]a_kimb0[/color]
+art: [color=lightsalmon]KITSUNEMAESTRO[/color]
+music: [color=darkgoldenrod]pmya[/color]
+"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Special Thanks" type="RichTextLabel" parent="Think Bubble"]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 42.0
+offset_right = 1119.0
+offset_bottom = 230.0
+theme = ExtResource("1_eu30x")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[color=red]special thanks:[/color]
+[color=tan]pacorp
+TranquilMarmot
+Unconscious
+"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Credits Back" parent="." instance=ExtResource("2_lpbbw")]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 572.0
+offset_right = 1094.0
+offset_bottom = 627.0
+text = "back"

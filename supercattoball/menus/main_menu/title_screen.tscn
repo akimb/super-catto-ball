@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://byc2bjwivb702"]
+
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="1_675yr"]
+[ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="2_mjvws"]
+[ext_resource type="FontFile" uid="uid://b8cv4qnn5detl" path="res://ui_components/fonts/aaaiight-fat.ttf" id="3_k1wxc"]
+[ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="4_m25ix"]
+[ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="5_peyf5"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="6_wkr7r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8woyc"]
+shader = ExtResource("4_m25ix")
+shader_parameter/ending_color = Color(1, 0.74509805, 0.019607844, 1)
+shader_parameter/beginning_color = Color(1, 0.42745098, 0.019607844, 1)
+shader_parameter/pulse_speed = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7kvd"]
+font = ExtResource("5_peyf5")
+font_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.5
+offset_right = 540.5
+offset_bottom = 278.0
+grow_horizontal = 2
+theme = ExtResource("1_675yr")
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_mjvws")
+theme_override_fonts/bold_font = ExtResource("3_k1wxc")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[color=#7EE3FF][Super]
+[color=white]Catto Ball"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Label"]
+material = SubResource("ShaderMaterial_8woyc")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 167.5
+offset_top = 264.0
+offset_right = 354.5
+offset_bottom = 288.0
+grow_horizontal = 2
+rotation = -0.22602816
+text = "paws out!"
+label_settings = SubResource("LabelSettings_t7kvd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" parent="." instance=ExtResource("6_wkr7r")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 193.0
+offset_right = 110.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press start"

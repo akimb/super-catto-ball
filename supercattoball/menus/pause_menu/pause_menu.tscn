@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6thunhmqskwb"]
+
+[ext_resource type="Script" uid="uid://b5dnh1470e7df" path="res://menus/pause_menu/pause_menu.gd" id="1_4s7ec"]
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="1_qd56w"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="2_4s7ec"]
+[ext_resource type="Texture2D" uid="uid://y0fpm72pqy4" path="res://ui_components/icons/forward.png" id="3_l3nas"]
+
+[node name="Pause Menu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4s7ec")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.6627451, 0.79607844, 0.22745098)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -174.0
+offset_right = 100.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qd56w")
+text = "PAWS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.5
+offset_top = 75.0
+offset_right = 275.5
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Resume" parent="HBoxContainer" instance=ExtResource("2_4s7ec")]
+layout_mode = 2
+text = "resume!"
+icon = ExtResource("3_l3nas")
+
+[node name="Settings" parent="HBoxContainer" instance=ExtResource("2_4s7ec")]
+layout_mode = 2
+text = "settings!"
+
+[node name="Main Menu" parent="HBoxContainer" instance=ExtResource("2_4s7ec")]
+layout_mode = 2
+text = "exit to main menu!"
+
+[connection signal="pressed" from="HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

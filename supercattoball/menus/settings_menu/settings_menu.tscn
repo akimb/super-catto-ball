@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgge51qfbf83c"]
+
+[ext_resource type="Script" uid="uid://cui07ctdq6w10" path="res://menus/settings_menu/settings_menu.gd" id="1_r2f7a"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="1_twvox"]
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="2_i06k8"]
+[ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="3_vfbxb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i06k8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2f7a"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.883302, 0.93268067, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(1.2513996e-06, 0.60986006, 0.7740514, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfbxb"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.97637147, 0.73737913, 3.85046e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.99140304, 0.21132195, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2dyb"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.7607843, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.4440959, 0.39231715, 0.013647956, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ef3v"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6873903, 0.5152177, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.59847295, 0.11147349, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[node name="Settings Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2f7a")
+
+[node name="Speed Units" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 62.0
+offset_top = 490.0
+offset_right = 374.0
+offset_bottom = 554.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i06k8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Speed Units"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Speed Units/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Speed Units:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Metric2Imperial" parent="Speed Units/HBoxContainer" instance=ExtResource("1_twvox")]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r2f7a")
+toggle_mode = true
+text = "Metric"
+
+[node name="Settings Back" parent="." instance=ExtResource("1_twvox")]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 554.0
+offset_right = 1118.0
+offset_bottom = 609.0
+text = "back"
+
+[node name="Save" parent="." instance=ExtResource("1_twvox")]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 554.0
+offset_right = 938.0
+offset_bottom = 609.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfbxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r2dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ef3v")
+text = "save preferences"
+
+[connection signal="toggled" from="Speed Units/HBoxContainer/Metric2Imperial" to="." method="_on_button_toggled"]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://cluywpfqvy2am"]
+
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="1_jqtv3"]
+[ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="2_fkwox"]
+[ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="3_iwhht"]
+[ext_resource type="FontFile" uid="uid://b8cv4qnn5detl" path="res://ui_components/fonts/aaaiight-fat.ttf" id="4_61ule"]
+
+[node name="Main Menu Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = 154.0
+offset_right = 298.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Roll" parent="VBoxContainer" instance=ExtResource("1_jqtv3")]
+layout_mode = 2
+text = "ROLL!"
+
+[node name="How to Play" parent="VBoxContainer" instance=ExtResource("1_jqtv3")]
+layout_mode = 2
+text = "HOW 2 PURR"
+
+[node name="Credits" parent="VBoxContainer" instance=ExtResource("1_jqtv3")]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="Quit" parent="VBoxContainer" instance=ExtResource("1_jqtv3")]
+layout_mode = 2
+text = "ABANDON CATTO :("
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -540.5
+offset_right = 540.5
+offset_bottom = 278.0
+grow_horizontal = 2
+theme = ExtResource("2_fkwox")
+theme_override_colors/font_outline_color = Color(0.22745098, 0.49803922, 0.8862745, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_iwhht")
+theme_override_fonts/bold_font = ExtResource("4_61ule")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[color=#7EE3FF][Super]
+[color=white]Catto Ball"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 591.0
+offset_right = 1132.0
+offset_bottom = 631.0
+theme = ExtResource("2_fkwox")
+text = "buy me a cofy <3"
+underline = 1
