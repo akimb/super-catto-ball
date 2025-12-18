@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wf137nd04xqd"
-path="res://.godot/imported/flag_square.png-53a236c375ffe0e747aeb55b86d6fda0.ctex"
+path="res://.godot/imported/flag_square.png-50e28fc6a9209ea983a7ba3d6bbee057.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui_components/flag_square.png"
-dest_files=["res://.godot/imported/flag_square.png-53a236c375ffe0e747aeb55b86d6fda0.ctex"]
+source_file="res://ui_components/icons/flag_square.png"
+dest_files=["res://.godot/imported/flag_square.png-50e28fc6a9209ea983a7ba3d6bbee057.ctex"]
 
 [params]
 
