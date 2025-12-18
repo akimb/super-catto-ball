@@ -30,3 +30,7 @@ func _ready() -> void:
 	fade_splash.kill()
 	
 	get_tree().change_scene_to_packed(MAIN_MENU)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_anything_pressed():
+		get_tree().change_scene_to_packed(MAIN_MENU)
