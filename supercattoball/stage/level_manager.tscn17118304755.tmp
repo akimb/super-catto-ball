@@ -1,34 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxbxjt1k404hs"]
+[gd_scene load_steps=11 format=3 uid="uid://cxbxjt1k404hs"]
 
-[ext_resource type="Script" uid="uid://cnxdfcnxr5gol" path="res://stage/level_manager.gd" id="1_o2b8k"]
+[ext_resource type="Script" uid="uid://cnxdfcnxr5gol" path="res://stage/level_manager.tres.gd" id="1_o2b8k"]
 [ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="2_s0oyp"]
-[ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="2_ubsjo"]
 [ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="3_1x5vr"]
 [ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="4_s0oyp"]
-[ext_resource type="PackedScene" uid="uid://jf1cikcytfk8" path="res://menus/game_ui_menu/player_ui.tscn" id="5_1x5vr"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwp6j"]
-sky_energy_multiplier = 0.75
-sky_cover = ExtResource("2_ubsjo")
-ground_bottom_color = Color(0.45181078, 0.65759736, 1, 1)
-ground_horizon_color = Color(0.7529412, 0.9843137, 0.972549, 1)
-
-[sub_resource type="Sky" id="Sky_n2ge3"]
-sky_material = SubResource("ProceduralSkyMaterial_qwp6j")
-
-[sub_resource type="Environment" id="Environment_cdx15"]
-background_mode = 2
-sky = SubResource("Sky_n2ge3")
-tonemap_mode = 3
-glow_enabled = true
-glow_bloom = 0.25
-fog_enabled = true
-fog_light_color = Color(0, 0.51423955, 0.9312342, 1)
-fog_sun_scatter = 1.0
-fog_sky_affect = 0.25
 
 [sub_resource type="World3D" id="World3D_u6ye2"]
-environment = SubResource("Environment_cdx15")
+environment = ExtResource("2_s0oyp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0oyp"]
 transparency = 1
@@ -61,6 +39,7 @@ script = ExtResource("1_o2b8k")
 
 [node name="SkyboxViewport" type="SubViewport" parent="."]
 world_3d = SubResource("World3D_u6ye2")
+canvas_cull_mask = 4294967294
 size = Vector2i(1152, 648)
 
 [node name="SkyboxCamera3D" type="Camera3D" parent="SkyboxViewport"]
@@ -112,5 +91,103 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_nst35")
 
-[node name="Player UI" parent="." instance=ExtResource("5_1x5vr")]
+[node name="Player UI" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 97.0
+offset_right = 247.0
+offset_bottom = 137.0
+
+[node name="Label" type="Label" parent="Player UI/Panel"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "LIVES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 40.0
+offset_right = 676.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel2"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "TIMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 40.0
+offset_right = 1126.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel3"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "FISH TREATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 247.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Player UI/Panel4"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 39.0
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 526.0
+offset_right = 247.0
+offset_bottom = 566.0
+
+[node name="Label" type="Label" parent="Player UI/Panel5"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 214.0
+offset_bottom = 39.0
+text = "SPEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Player UI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 577.0
+offset_right = 247.0
+offset_bottom = 617.0
+
+[node name="Label" type="Label" parent="Player UI/Panel6"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 214.0
+offset_bottom = 39.0
+text = "FLOOR #"
+horizontal_alignment = 1
+vertical_alignment = 1

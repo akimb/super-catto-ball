@@ -5,12 +5,15 @@ class_name Level extends Node3D
 
 var base_gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 var catto : CattoBall
+const catto_ball_player : PackedScene = preload("res://catto_ball/catto_ball.tscn")
 
 var mouse_sensitivity = 0.001
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	catto = get_node("Catto Ball")
+	catto = catto_ball_player.instantiate()
+	add_child(catto)
+	catto.global_transform = player_spawner.global_transform
 
 func _physics_process(_delta):
 	var input := Input.get_vector("forward", "backward", "right", "left")
