@@ -4,6 +4,7 @@ extends Node3D
 @onready var main_menu_screen: Control = $"Main Menu Screen"
 @onready var how_to_play_screen: Control = $"How to Play Screen"
 @onready var credits_screen: Control = $"Credits Screen"
+@onready var settings_screen: Control = $"Settings Screen"
 
 @onready var title_camera: Camera3D = $"Title Camera"
 @onready var title_marker: Marker3D = $"Title Marker"
@@ -12,7 +13,7 @@ extends Node3D
 
 var screens : Array[Control] = []
 
-const START_GAME : PackedScene = preload("res://levels/track1/track_1.tscn")
+const START_GAME : PackedScene = preload("res://stage/level_manager.tscn")
 
 func _ready() -> void:
 	for child in get_children():
@@ -31,8 +32,6 @@ func interpolate_cameras(cam_marker : Marker3D, from_ui : Control, to_ui : Contr
 	await pass_camera.finished
 	to_ui.visible = true
 
-
-
 func bring_up_active_screen(desired_screen : Control) -> void:
 	for screen in screens:
 		if screen == desired_screen:
@@ -44,13 +43,19 @@ func _on_play_pressed() -> void:
 	bring_up_active_screen(main_menu_screen)
 
 func _on_roll_pressed() -> void:
-	get_tree().change_scene_to_packed(START_GAME)
+	GameManager.load_level_manager()
 
 func _on_how_to_play_pressed() -> void:
 	interpolate_cameras(how_to_play_marker, main_menu_screen, how_to_play_screen)
 
 func _on_how_to_play_back_pressed() -> void:
 	interpolate_cameras(title_marker, how_to_play_screen, main_menu_screen)
+
+func _on_settings_pressed() -> void:
+	bring_up_active_screen(settings_screen)
+
+func _on_settings_back_pressed() -> void:
+	bring_up_active_screen(main_menu_screen)
 
 func _on_credits_pressed() -> void:
 	interpolate_cameras(credits_marker, main_menu_screen, credits_screen)
