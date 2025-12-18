@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://42ad8wakayrj"]
+
+[ext_resource type="FontFile" uid="uid://caummho7q548g" path="res://ui_components/fonts/Kimberley Bl.otf" id="1_s32y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3xih"]
+content_margin_left = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edaxa"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[resource]
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.5686275)
+Label/constants/outline_size = 5
+Label/constants/shadow_offset_x = 5
+Label/constants/shadow_offset_y = 5
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_s32y3")
+Label/styles/normal = SubResource("StyleBoxEmpty_i3xih")
+Panel/styles/panel = SubResource("StyleBoxEmpty_edaxa")
