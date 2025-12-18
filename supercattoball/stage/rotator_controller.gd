@@ -1,5 +1,6 @@
-extends Node3D
+class_name Level extends Node3D
 
+@export var player_spawner : Marker3D
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 var base_gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector")

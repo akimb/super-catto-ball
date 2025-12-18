@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioBus="*res://autoload/audio_bus.tscn"
+GameManager="*res://levels/manager/game_manager.gd"
 
 [display]
 

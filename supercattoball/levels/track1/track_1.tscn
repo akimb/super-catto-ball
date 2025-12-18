@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_6ymaq"]
 [ext_resource type="PackedScene" uid="uid://b47bnqrqbal76" path="res://catto_ball/catto_ball.tscn" id="4_gdbm5"]
 
-[node name="Track 1" instance=ExtResource("2_gdbm5")]
+[node name="Track 1" node_paths=PackedStringArray("player_spawner") instance=ExtResource("2_gdbm5")]
+player_spawner = NodePath("Catto Spawner")
 
 [node name="Catto Spawner" parent="." index="0" instance=ExtResource("1_6ymaq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1214874, -2.1983721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2.198)
 
 [node name="Track 1 Geometry" parent="." index="1" instance=ExtResource("3_gpk2m")]
 
