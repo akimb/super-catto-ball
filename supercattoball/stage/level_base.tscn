@@ -1,27 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6xkhfcsai6vp"]
+[gd_scene load_steps=4 format=3 uid="uid://b6xkhfcsai6vp"]
 
 [ext_resource type="Script" uid="uid://dphpbo3omahu2" path="res://stage/rotator_controller.gd" id="1_f6oki"]
 [ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="2_gs1bs"]
 [ext_resource type="PackedScene" uid="uid://c0ekri5lcxyye" path="res://stage/death_floor/death_floor.tscn" id="3_0sk4r"]
-[ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="4_tpaq6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er5qh"]
-transparency = 1
-albedo_texture = ExtResource("4_tpaq6")
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_dshvv"]
-material = SubResource("StandardMaterial3D_er5qh")
-size = Vector2(0.5, 0.5)
-
-[sub_resource type="Curve" id="Curve_oqgmh"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46666667, 0.5077801), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [node name="Level Base" type="Node3D"]
 script = ExtResource("1_f6oki")
@@ -36,20 +17,3 @@ shadow_enabled = true
 environment = ExtResource("2_gs1bs")
 
 [node name="DeathFloor" parent="." instance=ExtResource("3_0sk4r")]
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-cast_shadow = 0
-amount = 512
-lifetime = 5.0
-preprocess = 5.0
-fixed_fps = 30
-mesh = SubResource("QuadMesh_dshvv")
-emission_shape = 3
-emission_box_extents = Vector3(20, 20, 20)
-gravity = Vector3(0, -1, 0)
-initial_velocity_max = 5.0
-angular_velocity_min = -5.0
-angular_velocity_max = 5.0
-scale_amount_min = 0.5
-scale_amount_max = 1.2
-scale_amount_curve = SubResource("Curve_oqgmh")

@@ -19,3 +19,6 @@ transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 0, 0
 
 [node name="Catto Ball" parent="." index="3" groups=["CattoBall"] instance=ExtResource("4_gdbm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.182216, -0.9959943)
+
+[node name="CPUParticles3D" parent="." index="7"]
+visible = false

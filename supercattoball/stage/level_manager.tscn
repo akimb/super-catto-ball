@@ -1,27 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxbxjt1k404hs"]
+[gd_scene load_steps=11 format=3 uid="uid://cxbxjt1k404hs"]
 
-[ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="1_2s4tk"]
-[ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="1_acb3u"]
-
-[sub_resource type="GDScript" id="GDScript_acb3u"]
-script/source = "extends Control
-
-@onready var skybox_camera_3d: Camera3D = $SkyboxViewport/SkyboxCamera3D
-@onready var game_viewport: SubViewport = $GameViewport
-@onready var track_1: Node3D = $\"GameViewport/Track 1\"
-
-[node name="Level Manager" type="Node3D"]
-func _input(event: InputEvent) -> void:
-	game_viewport.push_input(event)
-
-
-func _process(delta: float) -> void:
-	if get_tree().get_nodes_in_group(\"CattoBall\").front():
-		skybox_camera_3d.global_transform = get_tree().get_nodes_in_group(\"CattoBall\").front().camera_pivot.transform
-"
+[ext_resource type="Script" uid="uid://cnxdfcnxr5gol" path="res://stage/level_manager.tres.gd" id="1_o2b8k"]
+[ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="2_s0oyp"]
+[ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="3_1x5vr"]
+[ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="4_s0oyp"]
 
 [sub_resource type="World3D" id="World3D_u6ye2"]
-environment = ExtResource("1_acb3u")
+environment = ExtResource("2_s0oyp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er5qh"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
+albedo_texture = ExtResource("4_s0oyp")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1x5vr"]
+material = SubResource("StandardMaterial3D_er5qh")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_ubsjo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46666667, 0.5077801), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o8aby"]
 viewport_path = NodePath("SkyboxViewport")
@@ -29,30 +32,42 @@ viewport_path = NodePath("SkyboxViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_nst35"]
 viewport_path = NodePath("GameViewport")
 
-[node name="Game Manager" type="Control"]
+[node name="Level Manager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = SubResource("GDScript_acb3u")
+script = ExtResource("1_o2b8k")
 
 [node name="SkyboxViewport" type="SubViewport" parent="."]
 world_3d = SubResource("World3D_u6ye2")
-use_hdr_2d = true
+canvas_cull_mask = 4294967294
 size = Vector2i(1152, 648)
 
 [node name="SkyboxCamera3D" type="Camera3D" parent="SkyboxViewport"]
-environment = ExtResource("1_acb3u")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6150723, 0)
+environment = ExtResource("2_s0oyp")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="SkyboxViewport"]
+cast_shadow = 0
+amount = 512
+lifetime = 5.0
+preprocess = 5.0
+fixed_fps = 30
+mesh = SubResource("QuadMesh_1x5vr")
+emission_shape = 3
+emission_box_extents = Vector3(20, 20, 20)
+gravity = Vector3(0, -1, 0)
+initial_velocity_max = 5.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_ubsjo")
 
 [node name="GameViewport" type="SubViewport" parent="."]
 transparent_bg = true
-msaa_3d = 3
-use_debanding = true
-use_occlusion_culling = true
-anisotropic_filtering_level = 4
-audio_listener_enable_2d = true
-audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
 
-[node name="Track 1" parent="GameViewport" instance=ExtResource("1_2s4tk")]
+[node name="Track 1" parent="GameViewport" instance=ExtResource("3_1x5vr")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
