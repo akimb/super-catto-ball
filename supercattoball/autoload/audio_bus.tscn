@@ -16,6 +16,7 @@ script = ExtResource("1_fn8mh")
 
 [node name="Main Menu Theme" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("2_sq0to")
+volume_db = -5.0
 bus = &"Music"
 playback_type = 1
 

@@ -17,6 +17,8 @@ func _ready() -> void:
 	GameManager.update_speed.connect(_display_speed)
 	GameManager.update_floor.connect(_display_floor)
 	GameManager.update_lives.connect(_display_lives)
+	GameManager.update_scores.connect(_display_score)
+	score_count.text = str(GameManager.total_score)
 
 func _change_distance_units(imperial_toggle : bool) -> void:
 	imperial = imperial_toggle
@@ -35,3 +37,6 @@ func _display_floor(floor_num : int) -> void:
 func _display_lives() -> void:
 	if lives.get_child_count() > 0:
 		lives.get_child(0).queue_free()
+
+func _display_score() -> void:
+	score_count.text = str(GameManager.total_score)

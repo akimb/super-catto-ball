@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctvp27lffg6ix"]
+
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_par1d"]
+[ext_resource type="Script" uid="uid://c78b25tia1yec" path="res://stage/stage_component.gd" id="2_gvnui"]
+[ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="3_gvnui"]
+[ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_ru5c5"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ru5c5"]
+data = PackedVector3Array(-25, 0.5, 25, 25, 0.5, 25, -25, -0.5, 25, 25, 0.5, 25, 25, -0.5, 25, -25, -0.5, 25, 25, 0.5, -25, -25, 0.5, -25, 25, -0.5, -25, -25, 0.5, -25, -25, -0.5, -25, 25, -0.5, -25, 25, 0.5, 25, 25, 0.5, -25, 25, -0.5, 25, 25, 0.5, -25, 25, -0.5, -25, 25, -0.5, 25, -25, 0.5, -25, -25, 0.5, 25, -25, -0.5, -25, -25, 0.5, 25, -25, -0.5, 25, -25, -0.5, -25, 25, 0.5, 25, -25, 0.5, 25, 25, 0.5, -25, -25, 0.5, 25, -25, 0.5, -25, 25, 0.5, -25, -25, -0.5, 25, 25, -0.5, 25, -25, -0.5, -25, 25, -0.5, 25, 25, -0.5, -25, -25, -0.5, -25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llxjr"]
+albedo_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_652lt"]
+material = SubResource("StandardMaterial3D_llxjr")
+size = Vector3(50, 1, 50)
+
+[node name="Level Base" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_par1d")]
+player_spawner = NodePath("Catto Spawner")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+script = ExtResource("2_gvnui")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_ru5c5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" index="1"]
+mesh = SubResource("BoxMesh_652lt")
+skeleton = NodePath("../..")
+
+[node name="DeathFloor" parent="." index="2" node_paths=PackedStringArray("catto_spawner")]
+catto_spawner = NodePath("../Catto Spawner")
+
+[node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_gvnui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.246968, 0)
+
+[node name="Fish Pickup" parent="." index="5" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.419888, 0.5, -6.6100054)
+
+[node name="Fish Pickup2" parent="." index="6" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2366, 0.5, -6.7036943)
+
+[node name="Fish Pickup3" parent="." index="7" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6023855, 0.5, -6.282279)
+
+[node name="Fish Pickup4" parent="." index="8" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9222465, 0.50000024, -5.2770157)
+
+[node name="Fish Pickup5" parent="." index="9" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0500984, 0.50000024, -4.7234683)
+
+[node name="Fish Pickup6" parent="." index="10" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.318413, 0.5, -4.4650106)
+
+[node name="Fish Pickup7" parent="." index="11" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5399656, 0.5, -5.1385193)
+
+[node name="Fish Pickup8" parent="." index="12" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.062855, 0.50000024, -5.865807)
+
+[node name="Fish Pickup9" parent="." index="13" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.800827, 0.50000024, -3.282589)

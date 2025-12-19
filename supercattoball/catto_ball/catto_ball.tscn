@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b47bnqrqbal76"]
+[gd_scene load_steps=12 format=3 uid="uid://b47bnqrqbal76"]
 
 [ext_resource type="Script" uid="uid://dnbaxjdjgdo1y" path="res://catto_ball/catto_ball.gd" id="1_2pr5t"]
 [ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="2_2pr5t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c3gigxpsu5ocl" path="res://catto_ball/camera_rig.gd" id="4_6tnqt"]
 [ext_resource type="Script" uid="uid://2l7g5out26mh" path="res://catto_ball/camera_yaw.gd" id="4_835n4"]
 [ext_resource type="Script" uid="uid://cx15oox132ddf" path="res://catto_ball/camera_pivot.gd" id="5_nr1fk"]
+[ext_resource type="Texture2D" uid="uid://cf0gdrhycve70" path="res://stage/catto_spawner/debug_texture.png" id="7_yxdcm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h55qy"]
 friction = 0.0
@@ -16,6 +17,9 @@ absorbent = true
 material = ExtResource("3_xtgf7")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_835n4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aowiq"]
+albedo_texture = ExtResource("7_yxdcm")
 
 [node name="Catto Ball" type="RigidBody3D" groups=["catto_ball"]]
 axis_lock_angular_x = true
@@ -49,3 +53,11 @@ script = ExtResource("5_nr1fk")
 [node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraRig/CameraPivot"]
 physics_interpolation_mode = 2
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5744072, -1.7916647)
+
+[node name="Pickup Location" type="Marker3D" parent="CameraYaw/CameraRig/CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5061917, 2.5989714, -4.9352293)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CameraYaw/CameraRig/CameraPivot/Camera3D/Pickup Location"]
+visible = false
+radius = 0.1
+material = SubResource("StandardMaterial3D_aowiq")
