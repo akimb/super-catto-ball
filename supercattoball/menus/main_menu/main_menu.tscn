@@ -211,7 +211,6 @@ grow_vertical = 2
 text = "start!"
 
 [node name="Main Menu Screen" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -276,6 +275,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="Main Menu Screen"]
+visible = false
 layout_mode = 0
 offset_left = 927.0
 offset_top = 591.0
@@ -395,6 +395,7 @@ text = "BACK"
 visible = false
 
 [node name="Credits Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -412,7 +413,7 @@ anchor_bottom = 0.5
 offset_left = -563.0
 offset_top = -309.0
 offset_right = 565.0
-offset_bottom = -67.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ie4am")
@@ -441,7 +442,7 @@ offset_bottom = 234.0
 theme = ExtResource("3_f7ts8")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "programming: [color=thistle]a_kimb0[/color]
+text = "programming: [color=thistle]a_kimb0, pacorp[/color]
 art: [color=lightsalmon]KITSUNEMAESTRO[/color]
 music: [color=darkgoldenrod]PMYA[/color]
 voice acting: [color=lightblue]Angel M."
@@ -458,9 +459,9 @@ theme = ExtResource("3_f7ts8")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "[color=red]special thanks:[/color]
-[color=tan]pacorp
-TranquilMarmot
+[color=tan]TranquilMarmot
 Unconscious
+Xury46
 "
 fit_content = true
 vertical_alignment = 1
