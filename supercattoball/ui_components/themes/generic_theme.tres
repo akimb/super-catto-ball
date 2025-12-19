@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ts0ohvhgtgm3"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ts0ohvhgtgm3"]
 
 [ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="1_ekjwh"]
 [ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="2_d0akn"]
@@ -55,6 +55,9 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0akn"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ao6s1"]
+content_margin_left = 5.0
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_focus_color = Color(1, 1, 1, 1)
@@ -83,3 +86,4 @@ RichTextLabel/colors/default_color = Color(0.32941177, 0.91764706, 1, 1)
 RichTextLabel/constants/outline_size = 5
 RichTextLabel/font_sizes/normal_font_size = 75
 RichTextLabel/fonts/normal_font = ExtResource("1_ekjwh")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_ao6s1")
