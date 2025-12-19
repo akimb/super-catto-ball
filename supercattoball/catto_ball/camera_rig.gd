@@ -16,8 +16,3 @@ func _process(delta):
 	#rotation.z = lerp_angle(rotation.z, target_roll, tilt_speed * delta)
 	global_rotation.x = lerp_angle(global_rotation.x, target_pitch, tilt_speed * delta)
 	global_rotation.z = lerp_angle(global_rotation.z, target_roll, tilt_speed * delta)
-	
-
-#func _input(event):
-	#if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		#owner.rotate_y(-event.relative.x * mouse_sensitivity)
