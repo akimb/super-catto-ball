@@ -60,7 +60,6 @@ playback_type = 1
 
 [node name="Fish!" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_60cb1")
-volume_db = -5.0
 max_polyphony = 10
 bus = &"SFX"
 playback_type = 1
