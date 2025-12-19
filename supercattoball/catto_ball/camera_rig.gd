@@ -4,11 +4,15 @@ extends Node3D
 @export var max_angle := 12.0
 @export var tilt_speed := 6.0
 
+@onready var catto_mesh: Node3D = $"../../Catto"
+
 var mouse_sensitivity = 0.002
 
 func _process(delta):
 	var dir := Input.get_vector("forward", "backward", "right", "left")
-
+	
+	var adjusted := catto_mesh.global_basis * Vector3(dir.x, 0.0, dir.y).normalized()
+	dir = Vector2(adjusted.x, adjusted.z) * 10.0
 	var target_pitch := deg_to_rad(dir.x * max_angle * visual_multiplier)
 	var target_roll  := deg_to_rad(dir.y * max_angle * visual_multiplier)
 	
