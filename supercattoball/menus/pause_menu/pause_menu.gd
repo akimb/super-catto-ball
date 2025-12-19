@@ -23,4 +23,5 @@ func _on_main_menu_pressed() -> void:
 func unpause() -> void:
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 	queue_free()

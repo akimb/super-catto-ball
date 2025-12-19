@@ -30,6 +30,7 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().root.has_node("LevelManager"):
 		if not get_tree().paused:
+			AudioServer.set_bus_effect_enabled(1, 0, true)
 			var p := PAUSE_MENU.instantiate()
 			get_tree().root.add_child(p)
 			get_tree().paused = true
