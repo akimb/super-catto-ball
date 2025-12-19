@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctnqwij6i0jux"]
+
+[ext_resource type="Theme" uid="uid://42ad8wakayrj" path="res://ui_components/themes/player_ui.tres" id="1_dfj17"]
+[ext_resource type="Script" uid="uid://ci16p8l8nwwe" path="res://menus/level_ready_screen/level_ready_buffer_screen.gd" id="2_1b7xn"]
+
+[node name="Level Ready Buffer Screen" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dfj17")
+script = ExtResource("2_1b7xn")
+
+[node name="Ready" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = -31.0
+offset_right = 93.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Ready?"
+
+[node name="Go" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -43.0
+offset_right = 54.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.5058824, 0.20784314, 1)
+theme_override_font_sizes/font_size = 70
+text = "GO!"
