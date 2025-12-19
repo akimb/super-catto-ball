@@ -9,3 +9,4 @@ extends Node
 @onready var button_hover: AudioStreamPlayer = $"SFX/Button Hover"
 @onready var startup: AudioStreamPlayer = $SFX/Startup
 @onready var whoosh: AudioStreamPlayer = $SFX/Whoosh
+@onready var fish: AudioStreamPlayer = $"SFX/Fish!"
