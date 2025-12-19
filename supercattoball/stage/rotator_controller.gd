@@ -17,6 +17,10 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	var input := Input.get_vector("forward", "backward", "right", "left")
+	#var forward := -catto.camera_pivot.global_transform.basis.z
+	#var right := catto.camera_pivot.global_transform.basis.x
+#
+	#var gravity_dir := (forward * input.x + right * input.y - Vector3.UP).normalized()
 	input = input.rotated(-catto.camera_pivot.rotation.y)
 	var tilt := Vector3(input.y, -1.0, -input.x).normalized()
 
@@ -25,6 +29,11 @@ func _physics_process(_delta):
 		PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR,
 		tilt * base_gravity.length()
 	)
+	#PhysicsServer3D.area_set_param(
+		#get_world_3d().space,
+		#PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR,
+		#gravity_dir * base_gravity.length()
+	#)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
