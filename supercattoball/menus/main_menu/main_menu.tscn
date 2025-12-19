@@ -392,9 +392,9 @@ offset_bottom = 627.0
 text = "BACK"
 
 [node name="Settings Screen" parent="." instance=ExtResource("16_pg7e5")]
+visible = false
 
 [node name="Credits Screen" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -434,17 +434,17 @@ fit_content = true
 
 [node name="Creditors" type="RichTextLabel" parent="Credits Screen/Think Bubble"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 76.0
-offset_right = 438.0
-offset_bottom = 217.0
+offset_left = 23.0
+offset_top = 46.0
+offset_right = 421.0
+offset_bottom = 234.0
 theme = ExtResource("3_f7ts8")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "programming: [color=thistle]a_kimb0[/color]
 art: [color=lightsalmon]KITSUNEMAESTRO[/color]
-music: [color=darkgoldenrod]pmya[/color]
-"
+music: [color=darkgoldenrod]PMYA[/color]
+voice acting: [color=lightblue]Angel M."
 fit_content = true
 vertical_alignment = 1
 
