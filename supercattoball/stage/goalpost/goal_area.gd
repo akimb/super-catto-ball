@@ -11,6 +11,7 @@ func _on_body_entered(body: Node3D) -> void:
 		# prepare the next level
 		GameManager.current_level += 1
 		GameManager.change_level.emit(GameManager.current_level)
+		
 		# move to next level scene
 		# unload current level
 

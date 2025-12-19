@@ -7,6 +7,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_fish
 @warning_ignore("unused_signal") signal update_speed
 @warning_ignore("unused_signal") signal update_floor
+@warning_ignore("unused_signal") signal update_continues
 #endregion
 
 #region Game Settings
@@ -16,6 +17,7 @@ extends Node
 var total_score : int = 0
 var total_fish : int = 0
 var total_lives : int = 3
+var total_continues : int = 5
 
 var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
 var current_level : int = 0
@@ -38,3 +40,11 @@ func _input(_event: InputEvent) -> void:
 
 func load_level_manager() -> void:
 	get_tree().change_scene_to_packed(LEVEL_MANAGER)
+
+func reset_all_gameplay_data() -> void:
+	total_fish = 0
+	total_score = 0
+	total_lives = 3
+	current_level = 0
+	total_continues = 5
+	
