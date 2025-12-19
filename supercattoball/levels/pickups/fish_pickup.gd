@@ -15,13 +15,14 @@ func _process(delta: float) -> void:
 	fish_mesh.global_position.y = starting_mesh_pos_y + sin(Time.get_ticks_msec() / 1000.0 * bob_speed) * bob_amplitude
 	fish_mesh.rotation_degrees.y += rotation_speed * delta
 
-func _on_body_entered(body: CattoBall) -> void:
-	if body:
+func _on_body_entered(body: Node3D) -> void:
+	if body is CattoBall:
+		AudioBus.fish.play()
 		rotation_speed *= 2.0
 		GameManager.total_score += score_contribution
+		GameManager.total_fish += 1
 		GameManager.update_scores.emit()
 		var fish_tween := get_tree().create_tween()
 		fish_tween.tween_property(fish_mesh, "global_position", body.pickup_location.global_position, 0.5)
 		await fish_tween.finished
 		queue_free()
-		#fish_mesh.global_position.slerp(body.pickup_location.global_position, 0.5)
