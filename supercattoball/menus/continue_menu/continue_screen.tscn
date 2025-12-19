@@ -1,0 +1,155 @@
+[gd_scene load_steps=15 format=3 uid="uid://cux87rx18tshn"]
+
+[ext_resource type="Script" uid="uid://dncpc6hoisgkv" path="res://menus/continue_menu/continue_screen.gd" id="1_k12i1"]
+[ext_resource type="Theme" uid="uid://42ad8wakayrj" path="res://ui_components/themes/player_ui.tres" id="1_xrv2n"]
+[ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="2_vffcg"]
+[ext_resource type="FontFile" uid="uid://caummho7q548g" path="res://ui_components/fonts/Kimberley Bl.otf" id="3_ngjjl"]
+[ext_resource type="PackedScene" uid="uid://uyijd2p8wg7q" path="res://menus/main_menu/turntable.tscn" id="4_vffcg"]
+[ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="5_ngjjl"]
+[ext_resource type="Material" uid="uid://ci23js8fnh5s6" path="res://catto_ball/ball_texture.tres" id="6_gxcap"]
+[ext_resource type="Script" uid="uid://gh82tbsjhnsa" path="res://menus/main_menu/funny_cat_rolling.gd" id="7_k12i1"]
+[ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="8_6v125"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nuy0v"]
+material = ExtResource("6_gxcap")
+
+[sub_resource type="Gradient" id="Gradient_gxcap"]
+offsets = PackedFloat32Array(0.59166664, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k12i1"]
+gradient = SubResource("Gradient_gxcap")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6v125"]
+render_priority = 1
+transparency = 1
+cull_mode = 1
+depth_draw_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0.5921569, 1)
+albedo_texture = SubResource("GradientTexture2D_k12i1")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuy0v"]
+material = SubResource("StandardMaterial3D_6v125")
+top_radius = 0.1
+bottom_radius = 0.2
+rings = 0
+cap_top = false
+cap_bottom = false
+
+[node name="Continue Screen" type="Node3D"]
+script = ExtResource("1_k12i1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xrv2n")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47843137)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 43.0
+offset_right = 79.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.972549, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.77254903, 0, 0.5686275)
+theme_override_colors/font_outline_color = Color(1, 0.77254903, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "CONTINUE?"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 161.0
+offset_top = 129.0
+offset_right = 520.0
+offset_bottom = 215.0
+grow_horizontal = 2
+text = "continue(s) : "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -53.0
+offset_right = 227.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 199
+
+[node name="Yes" parent="Control/HBoxContainer" instance=ExtResource("2_vffcg")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.49411765, 0.8745098, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.49411765, 0.8745098, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84705883, 0.99215686, 1)
+theme_override_fonts/font = ExtResource("3_ngjjl")
+theme_override_font_sizes/font_size = 70
+text = "YES"
+flat = true
+
+[node name="No" parent="Control/HBoxContainer" instance=ExtResource("2_vffcg")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.49411765, 0.8745098, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0.49411765, 0.8745098, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84705883, 0.99215686, 1)
+theme_override_fonts/font = ExtResource("3_ngjjl")
+theme_override_font_sizes/font_size = 70
+text = "NO"
+flat = true
+
+[node name="Turntable" parent="." instance=ExtResource("4_vffcg")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_ngjjl")
+
+[node name="Ball" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.0712688, -0.17069831)
+mesh = SubResource("SphereMesh_nuy0v")
+skeleton = NodePath("")
+script = ExtResource("7_k12i1")
+
+[node name="Sketchfab_Scene" parent="Ball" instance=ExtResource("8_6v125")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2868675, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6862755, 0.7273417, 0, -0.7273417, 0.6862755, 0, 0.08312392, -0.47691005)
+mesh = SubResource("CylinderMesh_nuy0v")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.19043204, 0.9817004, 0, -0.9817004, 0.19043204, 0, 0, 0)
+light_color = Color(0.8475619, 0.83764905, 0, 1)
+
+[connection signal="pressed" from="Control/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/No" to="." method="_on_no_pressed"]
