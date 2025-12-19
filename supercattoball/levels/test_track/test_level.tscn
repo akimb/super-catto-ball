@@ -34,29 +34,119 @@ catto_spawner = NodePath("../Catto Spawner")
 [node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_gvnui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.246968, 0)
 
-[node name="Fish Pickup" parent="." index="5" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.419888, 0.5, -6.6100054)
+[node name="Fish Pickup2" parent="." index="5" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 1.2243738)
 
-[node name="Fish Pickup2" parent="." index="6" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2366, 0.5, -6.7036943)
+[node name="Fish Pickup3" parent="." index="6" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 2.410065)
 
-[node name="Fish Pickup3" parent="." index="7" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6023855, 0.5, -6.282279)
+[node name="Fish Pickup4" parent="." index="7" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 3.6344388)
 
-[node name="Fish Pickup4" parent="." index="8" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9222465, 0.50000024, -5.2770157)
+[node name="Fish Pickup5" parent="." index="8" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 4.7412024)
 
-[node name="Fish Pickup5" parent="." index="9" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0500984, 0.50000024, -4.7234683)
+[node name="Fish Pickup6" parent="." index="9" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 5.965576)
 
-[node name="Fish Pickup6" parent="." index="10" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.318413, 0.5, -4.4650106)
+[node name="Fish Pickup7" parent="." index="10" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 7.1543684)
 
-[node name="Fish Pickup7" parent="." index="11" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5399656, 0.5, -5.1385193)
+[node name="Fish Pickup8" parent="." index="11" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 8.378742)
 
-[node name="Fish Pickup8" parent="." index="12" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.062855, 0.50000024, -5.865807)
+[node name="Fish Pickup9" parent="." index="12" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 9.646598)
 
-[node name="Fish Pickup9" parent="." index="13" instance=ExtResource("4_ru5c5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.800827, 0.50000024, -3.282589)
+[node name="Fish Pickup10" parent="." index="13" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 10.870972)
+
+[node name="Fish Pickup11" parent="." index="14" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 12.079198)
+
+[node name="Fish Pickup12" parent="." index="15" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 13.303572)
+
+[node name="Fish Pickup13" parent="." index="16" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 14.744529)
+
+[node name="Fish Pickup14" parent="." index="17" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50631934, 15.968903)
+
+[node name="Fish Pickup16" parent="." index="18" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 1.2243738)
+
+[node name="Fish Pickup17" parent="." index="19" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 2.410065)
+
+[node name="Fish Pickup18" parent="." index="20" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 3.6344388)
+
+[node name="Fish Pickup19" parent="." index="21" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 4.7412024)
+
+[node name="Fish Pickup20" parent="." index="22" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 5.965576)
+
+[node name="Fish Pickup21" parent="." index="23" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 7.1543684)
+
+[node name="Fish Pickup22" parent="." index="24" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 8.378742)
+
+[node name="Fish Pickup23" parent="." index="25" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 9.646598)
+
+[node name="Fish Pickup24" parent="." index="26" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 10.870972)
+
+[node name="Fish Pickup25" parent="." index="27" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 12.079198)
+
+[node name="Fish Pickup26" parent="." index="28" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 13.303572)
+
+[node name="Fish Pickup27" parent="." index="29" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 14.744529)
+
+[node name="Fish Pickup28" parent="." index="30" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5721111, 0.50631934, 15.968903)
+
+[node name="Fish Pickup30" parent="." index="31" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 1.2243738)
+
+[node name="Fish Pickup31" parent="." index="32" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 2.410065)
+
+[node name="Fish Pickup32" parent="." index="33" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 3.6344388)
+
+[node name="Fish Pickup33" parent="." index="34" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 4.7412024)
+
+[node name="Fish Pickup34" parent="." index="35" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 5.965576)
+
+[node name="Fish Pickup35" parent="." index="36" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 7.1543684)
+
+[node name="Fish Pickup36" parent="." index="37" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 8.378742)
+
+[node name="Fish Pickup37" parent="." index="38" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 9.646598)
+
+[node name="Fish Pickup38" parent="." index="39" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 10.870972)
+
+[node name="Fish Pickup39" parent="." index="40" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 12.079198)
+
+[node name="Fish Pickup40" parent="." index="41" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 13.303572)
+
+[node name="Fish Pickup41" parent="." index="42" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 14.744529)
+
+[node name="Fish Pickup42" parent="." index="43" instance=ExtResource("4_ru5c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67481184, 0.50631934, 15.968903)

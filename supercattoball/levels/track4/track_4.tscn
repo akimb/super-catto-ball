@@ -14,7 +14,7 @@ catto_spawner = NodePath("../Catto Spawner")
 [node name="Track 4 Geometry" parent="." index="3" instance=ExtResource("2_4ge1e")]
 
 [node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_mj6mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1594001, 3.5389812, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.498454, 3.5389812, 0)
 
 [node name="Goalpost" parent="." index="5" instance=ExtResource("4_i3von")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.133757, -0.5734615, -0.55575204)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.569, -2.269, 0)
