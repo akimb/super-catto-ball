@@ -9,3 +9,5 @@ extends Node
 @onready var button_hover: AudioStreamPlayer = $"SFX/Button Hover"
 @onready var startup: AudioStreamPlayer = $SFX/Startup
 @onready var whoosh: AudioStreamPlayer = $SFX/Whoosh
+
+const MUFFLER = preload("uid://c4wftqmioq425")
