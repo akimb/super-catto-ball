@@ -55,7 +55,7 @@ script = ExtResource("5_nr1fk")
 
 [node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraRig/CameraPivot"]
 physics_interpolation_mode = 2
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5744072, -1.7916647)
+transform = Transform3D(-1, -2.262668e-08, 8.444392e-08, 0, 0.9659258, 0.25881904, -8.742278e-08, 0.25881904, -0.9659258, 0, 0.9203577, -1.7916647)
 
 [node name="Pickup Location" type="Marker3D" parent="CameraYaw/CameraRig/CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5061917, 2.5989714, -4.9352293)
