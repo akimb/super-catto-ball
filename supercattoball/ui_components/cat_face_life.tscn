@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvsyc38cp3kdi"]
+
+[ext_resource type="Texture2D" uid="uid://c0la71f6l66iw" path="res://ui_components/icons/cat_face.png" id="1_vlidi"]
+
+[node name="Cat Face" type="TextureRect"]
+custom_minimum_size = Vector2(70, 50)
+texture = ExtResource("1_vlidi")
+expand_mode = 1

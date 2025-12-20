@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ts0ohvhgtgm3"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://ts0ohvhgtgm3"]
 
 [ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="1_ekjwh"]
 [ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="2_d0akn"]
@@ -53,6 +53,27 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 20
 
+[sub_resource type="Gradient" id="Gradient_ekjwh"]
+colors = PackedColorArray(1, 0, 0.7529412, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d0akn"]
+gradient = SubResource("Gradient_ekjwh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ao6s1"]
+texture = SubResource("GradientTexture1D_d0akn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tngd6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 1, 1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0akn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ao6s1"]
@@ -72,6 +93,8 @@ Button/styles/focus = SubResource("StyleBoxEmpty_ekjwh")
 Button/styles/hover = SubResource("StyleBoxFlat_d0akn")
 Button/styles/normal = SubResource("StyleBoxFlat_ao6s1")
 Button/styles/pressed = SubResource("StyleBoxFlat_mcnja")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_ao6s1")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_tngd6")
 Label/colors/font_color = Color(0, 0.41568628, 1, 1)
 Label/font_sizes/font_size = 75
 Label/fonts/font = ExtResource("2_d0akn")

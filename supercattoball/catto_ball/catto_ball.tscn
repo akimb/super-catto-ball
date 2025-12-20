@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b47bnqrqbal76"]
+[gd_scene load_steps=13 format=3 uid="uid://b47bnqrqbal76"]
 
 [ext_resource type="Script" uid="uid://dnbaxjdjgdo1y" path="res://catto_ball/catto_ball.gd" id="1_2pr5t"]
 [ext_resource type="PackedScene" uid="uid://c66n16d6cb6px" path="res://catto_ball/cat_-_ps1_low_poly_rigged.glb" id="2_2pr5t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://2l7g5out26mh" path="res://catto_ball/camera_yaw.gd" id="4_835n4"]
 [ext_resource type="Script" uid="uid://cx15oox132ddf" path="res://catto_ball/camera_pivot.gd" id="5_nr1fk"]
 [ext_resource type="Texture2D" uid="uid://cf0gdrhycve70" path="res://stage/catto_spawner/debug_texture.png" id="7_yxdcm"]
+[ext_resource type="PackedScene" uid="uid://ba6kna7olfqme" path="res://catto_ball/cat_model.glb" id="8_aowiq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h55qy"]
 friction = 0.0
@@ -40,6 +41,7 @@ shape = SubResource("SphereShape3D_835n4")
 
 [node name="Catto" parent="." instance=ExtResource("2_2pr5t")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.26252994, 0)
+visible = false
 
 [node name="CameraYaw" type="Node3D" parent="."]
 script = ExtResource("4_835n4")
@@ -61,3 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5061917, 2.5989714, -4.9352
 visible = false
 radius = 0.1
 material = SubResource("StandardMaterial3D_aowiq")
+
+[node name="cat_model" parent="." instance=ExtResource("8_aowiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3313363, 0.07294093)

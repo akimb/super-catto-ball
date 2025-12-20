@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jf1cikcytfk8"]
 
 [ext_resource type="Script" uid="uid://61vymha36l0s" path="res://menus/game_ui_menu/player_ui.gd" id="1_mjwf8"]
-[ext_resource type="Texture2D" uid="uid://c0la71f6l66iw" path="res://ui_components/icons/cat_face.png" id="2_g1gwy"]
+[ext_resource type="PackedScene" uid="uid://dvsyc38cp3kdi" path="res://ui_components/cat_face_life.tscn" id="2_g1gwy"]
 [ext_resource type="Theme" uid="uid://42ad8wakayrj" path="res://ui_components/themes/player_ui.tres" id="3_g1gwy"]
 
 [node name="Player UI" type="Control"]
@@ -21,23 +21,14 @@ offset_top = 147.0
 offset_right = 248.0
 offset_bottom = 197.0
 
-[node name="Cat Face" type="TextureRect" parent="Lives"]
-custom_minimum_size = Vector2(70, 50)
+[node name="Cat Face" parent="Lives" instance=ExtResource("2_g1gwy")]
 layout_mode = 2
-texture = ExtResource("2_g1gwy")
-expand_mode = 1
 
-[node name="Cat Face2" type="TextureRect" parent="Lives"]
-custom_minimum_size = Vector2(70, 50)
+[node name="Cat Face2" parent="Lives" instance=ExtResource("2_g1gwy")]
 layout_mode = 2
-texture = ExtResource("2_g1gwy")
-expand_mode = 1
 
-[node name="Cat Face3" type="TextureRect" parent="Lives"]
-custom_minimum_size = Vector2(70, 50)
+[node name="Cat Face3" parent="Lives" instance=ExtResource("2_g1gwy")]
 layout_mode = 2
-texture = ExtResource("2_g1gwy")
-expand_mode = 1
 
 [node name="Timer" type="Label" parent="."]
 layout_mode = 0

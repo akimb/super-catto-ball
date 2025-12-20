@@ -16,6 +16,7 @@ var screens : Array[Control] = []
 const START_GAME : PackedScene = preload("res://stage/level_manager.tscn")
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	for child in get_children():
 		if child is Control:
 			screens.append(child)

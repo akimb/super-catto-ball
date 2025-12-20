@@ -22,6 +22,7 @@ func _on_body_entered(body: Node3D) -> void:
 		GameManager.total_score += score_contribution
 		GameManager.total_fish += 1
 		GameManager.update_scores.emit()
+		GameManager.update_fish.emit()
 		var fish_tween := get_tree().create_tween()
 		fish_tween.tween_property(fish_mesh, "global_position", body.pickup_location.global_position, 0.5)
 		await fish_tween.finished

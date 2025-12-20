@@ -6,12 +6,14 @@ extends Control
 const transparent : Color = Color("ffffff00")
 
 func _ready() -> void:
+	print("level buffer instantiation")
 	set_anchors_preset(PRESET_FULL_RECT)
 	play_buffer()
 
 func play_buffer() -> void:
 	var level := get_tree().root.get_node("LevelManager")
 	if level:
+		await get_tree().process_frame
 		get_tree().get_first_node_in_group("level_group").set_physics_process(false)
 		level.set_process_input(false)
 

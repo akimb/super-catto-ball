@@ -89,16 +89,18 @@ offset_right = 374.0
 offset_bottom = 554.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i06k8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Speed Units"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
+[node name="VBoxContainer" type="VBoxContainer" parent="Speed Units"]
+layout_mode = 0
+offset_top = -420.0
+offset_right = 307.0
+offset_bottom = -365.0
 
-[node name="Label" type="Label" parent="Speed Units/HBoxContainer"]
+[node name="Unit Conversion" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Unit Conversion"]
+custom_minimum_size = Vector2(194, 47)
 layout_mode = 2
 theme = ExtResource("2_i06k8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -107,16 +109,167 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_vfbxb")
 theme_override_font_sizes/font_size = 40
 text = "Speed Units:"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Metric2Imperial" parent="Speed Units/HBoxContainer" instance=ExtResource("1_twvox")]
+[node name="Metric2Imperial" parent="Speed Units/VBoxContainer/Unit Conversion" instance=ExtResource("1_twvox")]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_styles/pressed = SubResource("StyleBoxFlat_r2f7a")
 toggle_mode = true
 text = "Metric"
+
+[node name="Forward" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Forward"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Forward:"
+vertical_alignment = 1
+
+[node name="Button" parent="Speed Units/VBoxContainer/Forward" instance=ExtResource("1_twvox")]
+layout_mode = 2
+text = "W"
+
+[node name="Backward" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Backward"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Backward:"
+vertical_alignment = 1
+
+[node name="Button" parent="Speed Units/VBoxContainer/Backward" instance=ExtResource("1_twvox")]
+layout_mode = 2
+text = "S"
+
+[node name="Left" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Left"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Left:"
+vertical_alignment = 1
+
+[node name="Button" parent="Speed Units/VBoxContainer/Left" instance=ExtResource("1_twvox")]
+layout_mode = 2
+text = "A"
+
+[node name="Right" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Right"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Right:"
+vertical_alignment = 1
+
+[node name="Button" parent="Speed Units/VBoxContainer/Right" instance=ExtResource("1_twvox")]
+layout_mode = 2
+text = "D"
+
+[node name="Mouse Sensitivity" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 354
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Mouse Sensitivity"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Mouse Sensitivity:"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Speed Units/VBoxContainer/Mouse Sensitivity"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFX" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "SFX:"
+vertical_alignment = 1
+
+[node name="SFX Volume Slider" type="HSlider" parent="Speed Units/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Music" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Speed Units/VBoxContainer/Music"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_vfbxb")
+theme_override_font_sizes/font_size = 40
+text = "Music:"
+vertical_alignment = 1
+
+[node name="Music Volume Slider" type="HSlider" parent="Speed Units/VBoxContainer/Music"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("2_i06k8")
+max_value = 1.0
+step = 0.1
+value = 0.5
 
 [node name="Settings Back" parent="." instance=ExtResource("1_twvox")]
 layout_mode = 0
@@ -137,4 +290,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_r2dyb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ef3v")
 text = "save preferences"
 
-[connection signal="toggled" from="Speed Units/HBoxContainer/Metric2Imperial" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Speed Units/VBoxContainer/Unit Conversion/Metric2Imperial" to="." method="_on_metric_2_imperial_toggled"]
+[connection signal="value_changed" from="Speed Units/VBoxContainer/SFX/SFX Volume Slider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="Speed Units/VBoxContainer/Music/Music Volume Slider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

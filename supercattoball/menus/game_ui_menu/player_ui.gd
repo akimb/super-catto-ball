@@ -8,35 +8,50 @@ extends Control
 
 @onready var lives: HBoxContainer = $Lives
 
-var imperial : bool = false
+var use_imperial : bool = false
+var last_speed := 0.0
 
 const metric_to_imperial_conversion : float = 2.23694
+const cat_life : PackedScene = preload("uid://dvsyc38cp3kdi")
 
 func _ready() -> void:
-	GameManager.distance_unit_toggle.connect(_change_distance_units)
+	_change_distance_units()
 	GameManager.update_speed.connect(_display_speed)
 	GameManager.update_floor.connect(_display_floor)
 	GameManager.update_lives.connect(_display_lives)
 	GameManager.update_scores.connect(_display_score)
+	GameManager.update_fish.connect(_display_fish)
 	score_count.text = str(GameManager.total_score)
 
-func _change_distance_units(imperial_toggle : bool) -> void:
-	imperial = imperial_toggle
+func _change_distance_units() -> void:
+	use_imperial = GameManager.toggle_metric_or_imperial
 
 func _display_speed(units : float) -> void:
 	speed.text = "SPEED: "
-	if imperial: 
+	if use_imperial: 
 		var imperial_units := metric_to_imperial_conversion * units
-		speed.text += str("%.f" % imperial_units) + " mph"
+		speed.text += str("%.1f" % imperial_units) + " mph"
 	else:
-		speed.text += str("%.f" % units) + " mps"
+		speed.text += str("%.1f" % units) + " m/s"
 
 func _display_floor(floor_num : int) -> void:
 	floor_number.text = "FLOOR  " + str(floor_num + 1)
 
 func _display_lives() -> void:
-	if lives.get_child_count() > 0:
-		lives.get_child(0).queue_free()
+	for life in lives.get_children():
+		life.queue_free()
+	
+	for i in GameManager.total_lives:
+		var life_icon := cat_life.instantiate()
+		lives.add_child(life_icon)
 
 func _display_score() -> void:
 	score_count.text = str(GameManager.total_score)
+
+func _display_fish() -> void:
+	fish_count.text = str(GameManager.total_fish) + "/100"
+	if GameManager.total_fish == 100:
+		GameManager.total_fish = 0
+		AudioBus.extra_life.play()
+		GameManager.total_lives += 1
+		GameManager.update_lives.emit()

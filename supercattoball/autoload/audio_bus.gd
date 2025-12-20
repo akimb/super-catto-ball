@@ -10,3 +10,4 @@ extends Node
 @onready var startup: AudioStreamPlayer = $SFX/Startup
 @onready var whoosh: AudioStreamPlayer = $SFX/Whoosh
 @onready var fish: AudioStreamPlayer = $"SFX/Fish!"
+@onready var extra_life: AudioStreamPlayer = $"SFX/Extra Life"

@@ -211,6 +211,7 @@ grow_vertical = 2
 text = "start!"
 
 [node name="Main Menu Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -392,7 +393,6 @@ offset_bottom = 627.0
 text = "BACK"
 
 [node name="Settings Screen" parent="." instance=ExtResource("16_pg7e5")]
-visible = false
 
 [node name="Credits Screen" type="Control" parent="."]
 visible = false
@@ -445,7 +445,7 @@ bbcode_enabled = true
 text = "programming: [color=thistle]a_kimb0, pacorp[/color]
 art: [color=lightsalmon]KITSUNEMAESTRO[/color]
 music: [color=darkgoldenrod]PMYA[/color]
-voice acting: [color=lightblue]Angel M."
+voice acting: [color=#C54B8C]Angel M."
 fit_content = true
 vertical_alignment = 1
 

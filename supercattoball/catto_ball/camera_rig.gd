@@ -12,7 +12,7 @@ func _process(delta):
 	var dir := Input.get_vector("forward", "backward", "right", "left")
 	
 	var adjusted := catto_mesh.global_basis * Vector3(dir.x, 0.0, dir.y).normalized()
-	dir = Vector2(adjusted.x, adjusted.z) * 10.0
+	dir = Vector2(adjusted.x, adjusted.z)
 	var target_pitch := deg_to_rad(dir.x * max_angle * visual_multiplier)
 	var target_roll  := deg_to_rad(dir.y * max_angle * visual_multiplier)
 	

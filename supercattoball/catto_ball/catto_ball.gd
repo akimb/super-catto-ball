@@ -1,7 +1,8 @@
 class_name CattoBall extends RigidBody3D
 
 @onready var camera_rig: Node3D = $CameraYaw/CameraRig
-@onready var catto_model: Node3D = $Catto
+#@onready var catto_model: Node3D = $Catto
+@onready var catto_model: Node3D = $cat_model
 @onready var camera_pivot: Node3D = $CameraYaw/CameraRig/CameraPivot
 @onready var pickup_location: Marker3D = $"CameraYaw/CameraRig/CameraPivot/Camera3D/Pickup Location"
 
