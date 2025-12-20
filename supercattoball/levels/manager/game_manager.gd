@@ -18,14 +18,14 @@ extends Node
 var total_score : int = 0
 var total_fish : int = 0
 var total_lives : int = 3
-var total_continues : int = 2 # set to 4 and add 1 to the ui
+var total_continues : int = 5 # set to 4 and add 1 to the ui
 
 var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
 var current_level : int = 0
 var toggle_metric_or_imperial : bool = false
 
-var sfx_db : float = 0.0
-var music_db : float = 0.0
+var sfx_db : float = 0.5
+var music_db : float = 0.5
 
 const PAUSE_MENU : PackedScene = preload("res://menus/pause_menu/pause_menu.tscn")
 const LEVEL_MANAGER : PackedScene = preload("res://stage/level_manager.tscn")

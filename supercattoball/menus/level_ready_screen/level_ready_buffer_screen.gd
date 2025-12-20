@@ -11,11 +11,20 @@ func _ready() -> void:
 	play_buffer()
 
 func play_buffer() -> void:
-	var level := get_tree().root.get_node("LevelManager")
-	if level:
-		await get_tree().process_frame
-		get_tree().get_first_node_in_group("level_group").set_physics_process(false)
-		level.set_process_input(false)
+	var level : LevelManager = get_parent() # grab the level manager
+	
+	await level.ready
+	var level_group = level.game_viewport.get_child(0)
+	#var level_group: Node = null
+	#while not level_group:
+		#level_group = get_tree().get_first_node_in_group("level_group")
+		#await get_tree().process_frame
+		
+	level_group.set_physics_process(false)
+	level.set_process_input(false)
+	#if level:
+		#get_tree().get_first_node_in_group("level_group").set_physics_process(false)
+		#level.set_process_input(false)
 
 	ready_label.show()
 	go_label.show()
@@ -37,8 +46,7 @@ func play_buffer() -> void:
 	await get_tree().create_timer(0.8).timeout
 	go_label.hide()
 
-	if level:
-		get_tree().get_first_node_in_group("level_group").set_physics_process(true)
-		level.set_process_input(true)
+	level_group.set_physics_process(true)
+	level.set_process_input(true)
 
 	queue_free()

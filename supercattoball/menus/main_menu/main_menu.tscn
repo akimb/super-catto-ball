@@ -393,9 +393,9 @@ offset_bottom = 627.0
 text = "BACK"
 
 [node name="Settings Screen" parent="." instance=ExtResource("16_pg7e5")]
+visible = false
 
 [node name="Credits Screen" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -461,7 +461,7 @@ bbcode_enabled = true
 text = "[color=red]special thanks:[/color]
 [color=tan]TranquilMarmot
 Unconscious
-Xury46
+[color=#0000FF]Xury46
 "
 fit_content = true
 vertical_alignment = 1

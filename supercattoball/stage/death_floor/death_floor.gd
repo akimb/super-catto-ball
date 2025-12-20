@@ -13,6 +13,7 @@ func _on_body_entered(body: CattoBall) -> void:
 	
 	if body:
 		#GameManager.trigger_death.emit()
+		AudioBus.howl.play()
 		body.global_transform = catto_spawner.global_transform
 		## TODO set process false until after countdown is reinvoked
 		body.linear_velocity = Vector3.ZERO
@@ -24,6 +25,6 @@ func _on_body_entered(body: CattoBall) -> void:
 			
 		elif GameManager.total_lives <= 0 and GameManager.total_continues <= 0:
 			GameManager.reset_all_gameplay_data()
-			get_tree().change_scene_to_packed(main_menu)
+			get_tree().change_scene_to_packed.call_deferred(main_menu)
 		else:
 			GameManager.update_lives.emit()

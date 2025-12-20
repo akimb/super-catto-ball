@@ -19,6 +19,7 @@ func _on_main_menu_pressed() -> void:
 	unpause()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://menus/main_menu/main_menu.tscn")
+	GameManager.reset_all_gameplay_data()
 
 func unpause() -> void:
 	get_tree().paused = false
