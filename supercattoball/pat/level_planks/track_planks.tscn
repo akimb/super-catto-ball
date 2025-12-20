@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhl0s8t0faxlf"]
+
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_s2yyg"]
+[ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="2_8ap8e"]
+[ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="3_m7r48"]
+[ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_38byk"]
+
+[sub_resource type="Gradient" id="Gradient_hqvrx"]
+colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_us0hb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bae5e"]
+noise = SubResource("FastNoiseLite_us0hb")
+color_ramp = SubResource("Gradient_hqvrx")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00epp"]
+albedo_texture = SubResource("NoiseTexture2D_bae5e")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[node name="Track 1" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_s2yyg")]
+player_spawner = NodePath("Start/Catto Spawner")
+
+[node name="DirectionalLight3D" parent="." index="0"]
+transform = Transform3D(0.5942505, -0.74962384, 0.2914287, 0.6256274, 0.658545, 0.4182213, -0.50542736, -0.06620237, 0.86032593, 0, 0, 0)
+
+[node name="DeathFloor" parent="." index="1" node_paths=PackedStringArray("catto_spawner")]
+catto_spawner = NodePath("../Start/Catto Spawner")
+
+[node name="Start" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Start" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, -0.5, 5.75)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(8.5, 1, 11.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Start" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0.5, 15.25)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 9.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Start" index="2"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.125, 1.5, 18.728724)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 8)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Start" index="3"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.8726864, 2.5, 7)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 14)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Start" index="4"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11.122686, 2.5, 6)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(4, 1, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Start" index="5"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.372686, 2.5, 2.75)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(1.5, 1, 5.5)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Start" index="6"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.372686, 2.5, 0.25)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 0.5)
+
+[node name="Catto Spawner" parent="Start" index="7" instance=ExtResource("2_8ap8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4, 2.302)
+
+[node name="Pivot" type="Node3D" parent="." index="4"]
+transform = Transform3D(-1, 0, -8.940696e-08, 2.3140224e-08, 0.96592593, -0.25881907, 8.63605e-08, -0.25881907, -0.96592593, 9, 1, 9.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pivot" index="0"]
+transform = Transform3D(1, 0, 4.902745e-13, 0, 1.0000012, 8.940697e-08, 7.1054274e-15, -8.940697e-08, 1.0000012, 1.25, -0.50000095, 2.0000129)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 4)
+
+[node name="Pivot2" type="Node3D" parent="." index="5"]
+transform = Transform3D(1.300719e-07, -0.25881907, -0.96592593, 2.3140226e-08, 0.9659259, -0.25881904, 0.99999994, 1.1313339e-08, 1.3162892e-07, 12.625, 2, 16.478724)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pivot2" index="0"]
+transform = Transform3D(1, 0, 4.902745e-13, 0, 1.0000012, 8.940697e-08, 7.1054274e-15, -8.940697e-08, 1.0000012, 1.25, -0.50000095, 2.0000129)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 4)
+
+[node name="Pivot3" type="Node3D" parent="." index="6"]
+transform = Transform3D(1, -2.262669e-08, 4.9630344e-09, 2.3140226e-08, 0.9659259, -0.25881904, 1.0622685e-09, 0.25881904, 0.9659259, 18.122686, 3, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pivot3" index="0"]
+transform = Transform3D(1, 0, 4.902745e-13, 0, 1.0000012, 8.940697e-08, 7.1054274e-15, -8.940697e-08, 1.0000012, 1.25, -0.50000095, 2.0000129)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(2.5, 1, 4)
+
+[node name="End" type="Node3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -21.5, 120)
+
+[node name="Pickups" type="Node3D" parent="." index="8"]
+
+[node name="Fish Pickup" parent="Pickups" index="0" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0.45743334, 7.4751177)
+
+[node name="Fish Pickup2" parent="Pickups" index="1" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 1.0000002, 10.475118)
+
+[node name="Fish Pickup3" parent="Pickups" index="2" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 1.0000002, 17.475117)
+
+[node name="Fish Pickup4" parent="Pickups" index="3" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.5, 2, 17.475117)
+
+[node name="Fish Pickup5" parent="Pickups" index="4" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.5, 3.5, 4.9751167)
+
+[node name="Fish Pickup6" parent="Pickups" index="5" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.5, 3.5, 1.4751167)
+
+[node name="Fish Pickup7" parent="Pickups" index="6" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.5, 3.5, 0.47511673)
+
+[node name="Fish Pickup8" parent="Pickups" index="7" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.5, 3.5, -0.5248833)
+
+[node name="Fish Pickup9" parent="Pickups" index="8" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 3.5, -0.7448087)
+
+[node name="Fish Pickup10" parent="Pickups" index="9" instance=ExtResource("4_38byk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 3.5, 4.7551913)
+
+[node name="Goalpost" parent="." index="9" instance=ExtResource("3_m7r48")]
+transform = Transform3D(1, 0, -1.7682974e-07, 0, 1, 0, 1.7682974e-07, 0, 1, 19.385563, 3.0008001, 3)
