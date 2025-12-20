@@ -15,6 +15,9 @@ func _ready() -> void:
 	catto_ball = catto_ball_player.instantiate()
 	add_child(catto_ball)
 	catto_ball.global_transform = player_spawner.global_transform
+	
+	if get_tree().current_scene != self:
+		set_physics_process(false)
 
 func _physics_process(_delta):
 	var input := Input.get_vector("forward", "backward", "right", "left")
