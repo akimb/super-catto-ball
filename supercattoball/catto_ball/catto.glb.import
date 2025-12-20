@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxrn4iiwv8ung"
-path="res://.godot/imported/cat_model.glb-d9bfd3d1673ec93ffabf157f0bb303a1.scn"
+uid="uid://cot2thiyn3h1l"
+path="res://.godot/imported/catto.glb-d4e13d454c3b241c346fe88ef10f71cd.scn"
 
 [deps]
 
-source_file="res://catto_ball/cat_model.glb"
-dest_files=["res://.godot/imported/cat_model.glb-d9bfd3d1673ec93ffabf157f0bb303a1.scn"]
+source_file="res://catto_ball/catto.glb"
+dest_files=["res://.godot/imported/catto.glb-d4e13d454c3b241c346fe88ef10f71cd.scn"]
 
 [params]
 

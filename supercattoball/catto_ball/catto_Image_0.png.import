@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj7i23m4q4cjk"
-path.s3tc="res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.s3tc.ctex"
+uid="uid://cajqqg4153twr"
+path.s3tc="res://.godot/imported/catto_Image_0.png-c6d381932cfa438116b1dc3a73c53183.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "213a15301eb2e70a5dd1547d014b19cd"
+"md5": "dc53e1998df7013e9598873cfb0b427d"
 }
 
 [deps]
 
-source_file="res://catto_ball/cat_model_cat_eye_iris_texture.png"
-dest_files=["res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.s3tc.ctex"]
+source_file="res://catto_ball/catto_Image_0.png"
+dest_files=["res://.godot/imported/catto_Image_0.png-c6d381932cfa438116b1dc3a73c53183.s3tc.ctex"]
 
 [params]
 
