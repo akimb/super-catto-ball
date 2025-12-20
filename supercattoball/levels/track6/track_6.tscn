@@ -12,9 +12,10 @@ player_spawner = NodePath("Catto Spawner")
 catto_spawner = NodePath("../Catto Spawner")
 
 [node name="Track 6 Geometry" parent="." index="3" instance=ExtResource("2_jj55d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_yvxjv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0.009170532)
 
 [node name="Goalpost" parent="." index="5" instance=ExtResource("4_j67a8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, -17.74939, -55)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -48, -17.74939, 60)
