@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmvjcjmqqux8y"]
+
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_sv1gb"]
+[ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="2_qxs2c"]
+[ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="3_7hb62"]
+[ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_akynp"]
+
+[sub_resource type="Gradient" id="Gradient_hqvrx"]
+colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_us0hb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bae5e"]
+noise = SubResource("FastNoiseLite_us0hb")
+color_ramp = SubResource("Gradient_hqvrx")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00epp"]
+albedo_texture = SubResource("NoiseTexture2D_bae5e")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[node name="Track 1" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_sv1gb")]
+player_spawner = NodePath("Start/Catto Spawner")
+
+[node name="DirectionalLight3D" parent="." index="0"]
+transform = Transform3D(0.5942505, -0.74962384, 0.2914287, 0.6256274, 0.658545, 0.4182213, -0.50542736, -0.06620237, 0.86032593, 0, 0, 0)
+
+[node name="DeathFloor" parent="." index="1" node_paths=PackedStringArray("catto_spawner")]
+catto_spawner = NodePath("../Start/Catto Spawner")
+
+[node name="Start" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Start" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 2.5)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="Catto Spawner" parent="Start" index="1" instance=ExtResource("2_qxs2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, 2.302)
+
+[node name="Pivot" type="Node3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 11.5, 0, 4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pivot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, 0.5, -0.50000083, 27.000038)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(14, 1, 54)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Pivot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.8660303, 0.5000024, 0, -0.5000024, 0.8660303, 0.5, 0.98507607, 47.928986)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(8, 1, 6)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pivot" index="2"]
+transform = Transform3D(1, 0, 0, 0, -0.08715592, 0.99619615, 0, -0.99619615, -0.08715592, 0, 15.258371, 78.04457)
+use_collision = true
+radius = 7.5
+height = 0.84375
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pivot/CSGCylinder3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, -0.046871185, -2.0980835e-05)
+operation = 2
+radius = 7.0
+height = 12.03125
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Pivot" index="3"]
+transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, 1.0000026, 0, -1.0000026, -2.9802322e-08, 0, 15.690575, 89.316956)
+use_collision = true
+radius = 7.5
+height = 0.84375
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pivot/CSGCylinder3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 2.9802322e-08, 0, -2.9802322e-08, 0.99999994, 0, -0.046875, -2.0980835e-05)
+operation = 2
+radius = 7.0
+height = 12.03125
+sides = 16
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Pivot" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.08715576, 0.9961976, 0, -0.9961976, 0.08715576, 0, 15.734549, 99.140335)
+use_collision = true
+radius = 7.5
+height = 0.84375
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pivot/CSGCylinder3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, -0.046871185, -2.0980835e-05)
+operation = 2
+radius = 7.0
+height = 12.03125
+sides = 16
+
+[node name="End" type="Node3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -21.5, 120)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="End" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 16.5)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(5, 1, 33)
+
+[node name="Goalpost" parent="End" index="1" instance=ExtResource("3_7hb62")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 0, 0.0008010864, 29.744812)
+
+[node name="Pickups" type="Node3D" parent="." index="6"]
+
+[node name="Fish Pickup" parent="Pickups" index="0" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.9311553, 7.4751177)
+
+[node name="Fish Pickup2" parent="Pickups" index="1" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.7350029, 10.475118)
+
+[node name="Fish Pickup3" parent="Pickups" index="2" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.8067994, 14.475118)
+
+[node name="Fish Pickup4" parent="Pickups" index="3" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -4.012571, 18.975117)
+
+[node name="Fish Pickup5" parent="Pickups" index="4" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -5.0843678, 22.975117)
+
+[node name="Fish Pickup6" parent="Pickups" index="5" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -6.5580883, 28.475117)
+
+[node name="Fish Pickup7" parent="Pickups" index="6" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -8.031809, 33.975117)
+
+[node name="Fish Pickup8" parent="Pickups" index="7" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -9.6395035, 39.975117)
+
+[node name="Fish Pickup9" parent="Pickups" index="8" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -8.1395035, 82.97511)
+
+[node name="Fish Pickup14" parent="Pickups" index="9" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -9.1395035, 93.97511)
+
+[node name="Fish Pickup15" parent="Pickups" index="10" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -11.1395035, 103.97511)
+
+[node name="Fish Pickup10" parent="Pickups" index="11" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -21.5, 139.47511)
+
+[node name="Fish Pickup11" parent="Pickups" index="12" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -21.5, 142.47511)
+
+[node name="Fish Pickup12" parent="Pickups" index="13" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -21.5, 145.97511)
+
+[node name="Fish Pickup13" parent="Pickups" index="14" instance=ExtResource("4_akynp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -21.5, 148.97511)
