@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxbxjt1k404hs"]
+[gd_scene load_steps=15 format=3 uid="uid://cxbxjt1k404hs"]
 
 [ext_resource type="Script" uid="uid://cnxdfcnxr5gol" path="res://stage/level_manager.gd" id="1_o2b8k"]
 [ext_resource type="Environment" uid="uid://blr33yt3yy80j" path="res://stage/env_level_base.tres" id="2_s0oyp"]
 [ext_resource type="Texture2D" uid="uid://cs5xudij67frc" path="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr" id="2_ubsjo"]
-[ext_resource type="PackedScene" uid="uid://qjlvdngd0lqm" path="res://levels/track1/track_1.tscn" id="3_1x5vr"]
 [ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="4_s0oyp"]
 [ext_resource type="PackedScene" uid="uid://jf1cikcytfk8" path="res://menus/game_ui_menu/player_ui.tscn" id="5_1x5vr"]
 
@@ -91,8 +90,6 @@ scale_amount_curve = SubResource("Curve_ubsjo")
 [node name="GameViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(1152, 648)
-
-[node name="Track 1" parent="GameViewport" instance=ExtResource("3_1x5vr")]
 
 [node name="Skybox" type="TextureRect" parent="."]
 layout_mode = 1

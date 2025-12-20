@@ -4,7 +4,7 @@ extends Node3D
 @export var max_angle := 12.0
 @export var tilt_speed := 6.0
 
-@onready var catto_mesh: Node3D = $"../../Catto"
+@onready var catto_mesh: Node3D = $"../../catto"
 
 var mouse_sensitivity = 0.002
 

@@ -8,9 +8,6 @@ class_name CattoBall extends RigidBody3D
 @onready var pickup_location: Marker3D = $"CameraYaw/CameraRig/CameraPivot/Camera3D/Pickup Location"
 
 
-func _ready() -> void:
-	pass
-
 func _physics_process(_delta: float) -> void:
 	GameManager.update_speed.emit(linear_velocity.length())
 #
