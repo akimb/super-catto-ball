@@ -44,7 +44,7 @@ func _ready() -> void:
 
 func play_buffer() -> void:
 	var level : LevelManager = get_parent()
-	get_tree().get_first_node_in_group("level_group").set_physics_process(false)
+	#get_tree().get_first_node_in_group("level_group").set_physics_process(false)
 	#get_tree().get_first_node_in_group("level_group").process_mode = Node.PROCESS_MODE_DISABLED
 	level.set_process_input(false)
 	#var level : LevelManager = get_parent() # grab the level manager

@@ -14,7 +14,7 @@ const main_menu : PackedScene = preload("res://menus/main_menu/main_menu.tscn")
 func _ready() -> void:
 	GameManager.change_level.connect(_on_level_change)
 	GameManager.update_floor.emit(GameManager.current_level)
-	#GameManager.trigger_death.connect(_trigger_death)
+	GameManager.trigger_death.connect(_trigger_death_recountdown)
 	
 	_do_level_change.call_deferred(GameManager.current_level)
 	#await get_tree().process_frame
@@ -55,9 +55,8 @@ func _do_level_change(level_index : int) -> void:
 		PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR,
 		ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 		)
+		invoke_buffer()
 		
-		var buffer_screen = ready_buffer_screen.instantiate()
-		add_child(buffer_screen)
 		GameManager.update_floor.emit(level_index)
 	
 	elif GameManager.total_continues < 0:
@@ -66,25 +65,13 @@ func _do_level_change(level_index : int) -> void:
 	
 	catto = get_tree().get_first_node_in_group("catto_ball")
 	catto_spawner = get_tree().get_first_node_in_group("level_group").player_spawner
-	
-	
 
+func invoke_buffer() -> void:
+	var buffer_screen = ready_buffer_screen.instantiate()
+	add_child(buffer_screen)
 
 func _on_stage_timer_timeout() -> void:
 	pass # Replace with function body.
 
-func _trigger_death() -> void:
-	catto.global_transform = catto_spawner.global_transform
-	## TODO set process false until after countdown is reinvoked
-	catto.linear_velocity = Vector3.ZERO
-	GameManager.total_lives -= 1
-	
-	if GameManager.total_lives <= 0 and GameManager.total_continues > 0:
-		GameManager.update_continues.emit()
-		get_tree().change_scene_to_packed.call_deferred(continue_screen)
-		
-	elif GameManager.total_lives <= 0 and GameManager.total_continues <= 0:
-		GameManager.reset_all_gameplay_data()
-		get_tree().change_scene_to_packed(main_menu)
-	else:
-		GameManager.update_lives.emit()
+func _trigger_death_recountdown() -> void:
+	invoke_buffer()
