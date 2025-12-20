@@ -120,6 +120,7 @@ toggle_mode = true
 text = "Metric"
 
 [node name="Forward" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 450
 
@@ -140,6 +141,7 @@ layout_mode = 2
 text = "W"
 
 [node name="Backward" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 450
 
@@ -160,6 +162,7 @@ layout_mode = 2
 text = "S"
 
 [node name="Left" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 450
 
@@ -180,6 +183,7 @@ layout_mode = 2
 text = "A"
 
 [node name="Right" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 450
 
@@ -200,6 +204,7 @@ layout_mode = 2
 text = "D"
 
 [node name="Mouse Sensitivity" type="HBoxContainer" parent="Speed Units/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 354
 
