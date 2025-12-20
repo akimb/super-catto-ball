@@ -1,0 +1,173 @@
+[gd_scene load_steps=13 format=3 uid="uid://bmdgxcunggd68"]
+
+[ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_nlf6y"]
+[ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="2_mygps"]
+[ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="3_hvxlq"]
+[ext_resource type="PackedScene" uid="uid://dqarce3snwyek" path="res://pat/level_expand/platform.tscn" id="4_si74f"]
+[ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="5_11u47"]
+
+[sub_resource type="Gradient" id="Gradient_hqvrx"]
+colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_us0hb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bae5e"]
+noise = SubResource("FastNoiseLite_us0hb")
+color_ramp = SubResource("Gradient_hqvrx")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00epp"]
+albedo_texture = SubResource("NoiseTexture2D_bae5e")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="Animation" id="Animation_x6ps7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3DB1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3, 0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3DB0:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody3DA1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pyno5"]
+resource_name = "loop"
+length = 6.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3DB1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(4, 0, 4), Vector3(7, 0, 7), Vector3(7, 0, 7), Vector3(4, 0, 4), Vector3(4, 0, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3DB0:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 4), Vector3(0, 0, 7), Vector3(0, 0, 7), Vector3(0, 0, 4), Vector3(0, 0, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody3DA1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(4, 0, 0), Vector3(7, 0, 0), Vector3(7, 0, 0), Vector3(4, 0, 0), Vector3(4, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0rln"]
+_data = {
+&"RESET": SubResource("Animation_x6ps7"),
+&"loop": SubResource("Animation_pyno5")
+}
+
+[node name="Track 1" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_nlf6y")]
+player_spawner = NodePath("Catto Spawner")
+
+[node name="Catto Spawner" parent="." index="0" instance=ExtResource("2_mygps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2.698)
+
+[node name="Goalpost" parent="." index="1" instance=ExtResource("3_hvxlq")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 7.5, 0.00080001354, 14.74482)
+
+[node name="DirectionalLight3D" parent="." index="2"]
+transform = Transform3D(0.5942505, -0.74962384, 0.2914287, 0.6256274, 0.658545, 0.4182213, -0.50542736, -0.06620237, 0.86032593, 0, 0, 0)
+
+[node name="DeathFloor" parent="." index="3" node_paths=PackedStringArray("catto_spawner")]
+catto_spawner = NodePath("../Catto Spawner")
+
+[node name="Node3D" type="Node3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 2.5)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="Node3D2" type="Node3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 2.5)
+material_override = SubResource("StandardMaterial3D_00epp")
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="AnimatableBody3DA0" parent="." index="7" instance=ExtResource("4_si74f")]
+
+[node name="AnimatableBody3DA1" parent="." index="8" instance=ExtResource("4_si74f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="AnimatableBody3DB0" parent="." index="9" instance=ExtResource("4_si74f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="AnimatableBody3DB1" parent="." index="10" instance=ExtResource("4_si74f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="Pickups" type="Node3D" parent="." index="11"]
+
+[node name="Fish Pickup" parent="Pickups" index="0" instance=ExtResource("5_11u47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, 1.75)
+
+[node name="Fish Pickup2" parent="Pickups" index="1" instance=ExtResource("5_11u47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.156, 1.75)
+
+[node name="Fish Pickup5" parent="Pickups" index="2" instance=ExtResource("5_11u47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, 9.25)
+
+[node name="Fish Pickup6" parent="Pickups" index="3" instance=ExtResource("5_11u47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.156, 9.25)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="12"]
+libraries = {
+&"": SubResource("AnimationLibrary_s0rln")
+}
+autoplay = "loop"
