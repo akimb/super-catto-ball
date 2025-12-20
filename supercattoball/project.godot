@@ -26,10 +26,6 @@ GameManager="*res://levels/manager/game_manager.gd"
 
 window/stretch/mode="canvas_items"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
-
 [global_group]
 
 catto_ball=""
