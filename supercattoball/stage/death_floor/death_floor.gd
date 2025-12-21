@@ -13,7 +13,6 @@ func _on_body_entered(body: CattoBall) -> void:
 	
 	if body:
 		GameManager.trigger_death.emit()
-		AudioBus.howl.play()
 		body.global_transform = catto_spawner.global_transform
 		body.linear_velocity = Vector3.ZERO
 		GameManager.total_lives -= 1

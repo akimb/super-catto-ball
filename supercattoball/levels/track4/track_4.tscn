@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_i3von"]
 
 [node name="Track 4" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_wwdku")]
+total_time_for_stage = 30.0
 player_spawner = NodePath("Catto Spawner")
 
 [node name="DeathFloor" parent="." index="1" node_paths=PackedStringArray("catto_spawner")]
@@ -14,7 +15,7 @@ catto_spawner = NodePath("../Catto Spawner")
 [node name="Track 4 Geometry" parent="." index="3" instance=ExtResource("2_4ge1e")]
 
 [node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_mj6mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0206175, 3.5389812, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1645136, 3.5389812, 0)
 
 [node name="Goalpost" parent="." index="5" instance=ExtResource("4_i3von")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3671246, -1.7940584, 0)
