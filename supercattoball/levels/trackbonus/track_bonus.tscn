@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs0yecqcgs85v"]
+[gd_scene load_steps=7 format=3 uid="uid://bs0yecqcgs85v"]
 
 [ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_0l5do"]
 [ext_resource type="PackedScene" uid="uid://bgey4fitk1kc0" path="res://levels/trackbonus/track_bonus_geometry.tscn" id="2_v36rv"]
 [ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="3_o83q5"]
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_v36rv"]
 [ext_resource type="PackedScene" uid="uid://dq6l5mj81gs87" path="res://background_environment/background_area_bonus.tscn" id="5_o83q5"]
+[ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="6_now6k"]
 
 [node name="Track Bonus" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_0l5do")]
 player_spawner = NodePath("Catto Spawner")
@@ -16,10 +17,200 @@ catto_spawner = NodePath("../Catto Spawner")
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 0, 0, 0)
 
 [node name="Catto Spawner" parent="." index="4" instance=ExtResource("3_o83q5")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 4, -10)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 4, -12)
 
 [node name="Goalpost" parent="." index="5" instance=ExtResource("4_v36rv")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 14)
 
 [node name="Background Area Bonus" parent="." index="6" instance=ExtResource("5_o83q5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="." index="7"]
+
+[node name="Fish Pickup" parent="Node3D" index="0" instance=ExtResource("6_now6k")]
+
+[node name="Fish Pickup53" parent="Node3D" index="1" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Fish Pickup52" parent="Node3D" index="2" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Fish Pickup51" parent="Node3D" index="3" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Fish Pickup50" parent="Node3D" index="4" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Fish Pickup54" parent="Node3D" index="5" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -1.7320508, 0, -1)
+
+[node name="Fish Pickup55" parent="Node3D" index="6" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 1.7320508, 0, 1)
+
+[node name="Fish Pickup56" parent="Node3D" index="7" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -1, 0, 1.7320508)
+
+[node name="Fish Pickup57" parent="Node3D" index="8" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 1, 0, -1.7320508)
+
+[node name="Fish Pickup58" parent="Node3D" index="9" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.5, -1, 0, -1.7320508)
+
+[node name="Fish Pickup59" parent="Node3D" index="10" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.5, 1, 0, 1.7320508)
+
+[node name="Fish Pickup60" parent="Node3D" index="11" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.5, -1.7320508, 0, 1)
+
+[node name="Fish Pickup61" parent="Node3D" index="12" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.5, 1.7320508, 0, -1)
+
+[node name="Fish Pickup29" parent="Node3D" index="13" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Fish Pickup28" parent="Node3D" index="14" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Fish Pickup5" parent="Node3D" index="15" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Fish Pickup4" parent="Node3D" index="16" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Fish Pickup2" parent="Node3D" index="17" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Fish Pickup26" parent="Node3D" index="18" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Fish Pickup27" parent="Node3D" index="19" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Fish Pickup30" parent="Node3D" index="20" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -7.7274065, 0, -2.0705523)
+
+[node name="Fish Pickup31" parent="Node3D" index="21" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 7.7274065, 0, 2.0705523)
+
+[node name="Fish Pickup32" parent="Node3D" index="22" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 2.0705523, 0, -7.7274065)
+
+[node name="Fish Pickup33" parent="Node3D" index="23" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -2.0705523, 0, 7.7274065)
+
+[node name="Fish Pickup34" parent="Node3D" index="24" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, -6.928203, 0, -4)
+
+[node name="Fish Pickup35" parent="Node3D" index="25" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, 6.928203, 0, 4)
+
+[node name="Fish Pickup36" parent="Node3D" index="26" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, 4, 0, -6.928203)
+
+[node name="Fish Pickup37" parent="Node3D" index="27" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, -4, 0, 6.928203)
+
+[node name="Fish Pickup38" parent="Node3D" index="28" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, -5.6568537, 0, -5.656854)
+
+[node name="Fish Pickup39" parent="Node3D" index="29" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, 5.6568537, 0, 5.656854)
+
+[node name="Fish Pickup40" parent="Node3D" index="30" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, 5.656854, 0, -5.6568537)
+
+[node name="Fish Pickup41" parent="Node3D" index="31" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, -5.656854, 0, 5.6568537)
+
+[node name="Fish Pickup42" parent="Node3D" index="32" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, -3.9999993, 0, -6.9282026)
+
+[node name="Fish Pickup43" parent="Node3D" index="33" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, 3.9999993, 0, 6.9282026)
+
+[node name="Fish Pickup44" parent="Node3D" index="34" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, 6.9282026, 0, -3.9999993)
+
+[node name="Fish Pickup45" parent="Node3D" index="35" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, -6.9282026, 0, 3.9999993)
+
+[node name="Fish Pickup46" parent="Node3D" index="36" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, -2.0705519, 0, -7.7274055)
+
+[node name="Fish Pickup47" parent="Node3D" index="37" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, 2.0705519, 0, 7.7274055)
+
+[node name="Fish Pickup48" parent="Node3D" index="38" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, 7.7274055, 0, -2.0705519)
+
+[node name="Fish Pickup49" parent="Node3D" index="39" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, -7.7274055, 0, 2.0705519)
+
+[node name="Fish Pickup3" parent="Node3D" index="40" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Fish Pickup6" parent="Node3D" index="41" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -4.829629, 0, -1.2940953)
+
+[node name="Fish Pickup7" parent="Node3D" index="42" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 4.829629, 0, 1.2940953)
+
+[node name="Fish Pickup8" parent="Node3D" index="43" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 1.2940953, 0, -4.829629)
+
+[node name="Fish Pickup9" parent="Node3D" index="44" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -1.2940953, 0, 4.829629)
+
+[node name="Fish Pickup10" parent="Node3D" index="45" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, -4.330127, 0, -2.5)
+
+[node name="Fish Pickup11" parent="Node3D" index="46" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, 4.330127, 0, 2.5)
+
+[node name="Fish Pickup12" parent="Node3D" index="47" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, 2.5, 0, -4.330127)
+
+[node name="Fish Pickup13" parent="Node3D" index="48" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.86602545, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, 0.86602545, -2.5, 0, 4.330127)
+
+[node name="Fish Pickup14" parent="Node3D" index="49" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, -3.535534, 0, -3.535534)
+
+[node name="Fish Pickup15" parent="Node3D" index="50" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, 3.535534, 0, 3.535534)
+
+[node name="Fish Pickup16" parent="Node3D" index="51" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, 3.535534, 0, -3.535534)
+
+[node name="Fish Pickup17" parent="Node3D" index="52" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, -3.535534, 0, 3.535534)
+
+[node name="Fish Pickup18" parent="Node3D" index="53" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, -2.5, 0, -4.330127)
+
+[node name="Fish Pickup19" parent="Node3D" index="54" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, 2.5, 0, 4.330127)
+
+[node name="Fish Pickup20" parent="Node3D" index="55" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, 4.330127, 0, -2.5)
+
+[node name="Fish Pickup21" parent="Node3D" index="56" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, -4.330127, 0, 2.5)
+
+[node name="Fish Pickup22" parent="Node3D" index="57" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, -1.2940952, 0, -4.829629)
+
+[node name="Fish Pickup23" parent="Node3D" index="58" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, 1.2940952, 0, 4.829629)
+
+[node name="Fish Pickup24" parent="Node3D" index="59" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, 4.829629, 0, -1.2940952)
+
+[node name="Fish Pickup25" parent="Node3D" index="60" instance=ExtResource("6_now6k")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, -4.829629, 0, 1.2940952)
+
+[node name="Fish Pickup62" parent="Node3D" index="61" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="Fish Pickup63" parent="Node3D" index="62" instance=ExtResource("6_now6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)

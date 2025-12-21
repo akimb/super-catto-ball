@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://biirm2m85n67q"]
+[gd_scene load_steps=21 format=4 uid="uid://biirm2m85n67q"]
 
 [ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_n7tpk"]
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="2_2x4wd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://6dhw7y5cfehj" path="res://stage/friction_materials/ice_physics.tres" id="4_44xel"]
 [ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_241md"]
 [ext_resource type="Script" uid="uid://c78b25tia1yec" path="res://stage/stage_component.gd" id="5_00hxv"]
+[ext_resource type="PackedScene" uid="uid://32e4jg7aq7wy" path="res://background_environment/background_area_2.tscn" id="8_44xel"]
 
 [sub_resource type="Gradient" id="Gradient_hqvrx"]
 colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
@@ -260,3 +261,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_s0rln")
 }
 autoplay = "loop"
+
+[node name="Background Area 2" parent="." index="9" instance=ExtResource("8_44xel")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 8, 0, 9)

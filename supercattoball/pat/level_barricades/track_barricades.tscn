@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bwtlnxmg6ytxw"]
+[gd_scene load_steps=19 format=4 uid="uid://bwtlnxmg6ytxw"]
 
 [ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_hg80f"]
 [ext_resource type="Material" uid="uid://coii5prc1rul5" path="res://pat/icerink_material.tres" id="2_4gnq8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c78b25tia1yec" path="res://stage/stage_component.gd" id="3_e6gcm"]
 [ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_4gnq8"]
 [ext_resource type="Material" uid="uid://pqrefgj8rcyd" path="res://pat/barrier_material.tres" id="4_mq4ei"]
+[ext_resource type="PackedScene" uid="uid://32e4jg7aq7wy" path="res://background_environment/background_area_2.tscn" id="8_e6gcm"]
 
 [sub_resource type="Gradient" id="Gradient_hqvrx"]
 colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
@@ -232,3 +233,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 1, 21.975117)
 
 [node name="Fish Pickup3" parent="Pickups" index="20" instance=ExtResource("4_4gnq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 30.975117)
+
+[node name="Background Area 2" parent="." index="7" instance=ExtResource("8_e6gcm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 0, 27)

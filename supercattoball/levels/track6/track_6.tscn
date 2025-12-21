@@ -1,16 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://37f5jq1bb45a"]
+[gd_scene load_steps=15 format=3 uid="uid://37f5jq1bb45a"]
 
 [ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_ij1do"]
 [ext_resource type="PackedScene" uid="uid://dp5aucb75nt5p" path="res://levels/track6/track_6_geometry.tscn" id="2_jj55d"]
 [ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="3_yvxjv"]
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_j67a8"]
 [ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="5_jj55d"]
+[ext_resource type="PackedScene" uid="uid://cgw8onexflrkg" path="res://background_environment/floating_island_1.glb" id="7_ealgb"]
+[ext_resource type="PackedScene" uid="uid://lm2pd641e0s6" path="res://background_environment/floating_island_2.glb" id="8_u2bbu"]
+[ext_resource type="PackedScene" uid="uid://ch8mth1mionqo" path="res://background_environment/floating_island_3.glb" id="9_kmunb"]
+[ext_resource type="PackedScene" uid="uid://bnx7uyq0mty2x" path="res://background_environment/iceberg_1.glb" id="10_8exhg"]
+[ext_resource type="PackedScene" uid="uid://fkltuj2ydtjt" path="res://background_environment/iceberg_2.glb" id="11_e4hxm"]
+[ext_resource type="PackedScene" uid="uid://dw6ieyiq1u1ee" path="res://background_environment/iceberg_3.glb" id="12_g3kqo"]
+[ext_resource type="PackedScene" uid="uid://c85cxbnb2d37p" path="res://background_environment/floating_island_4.glb" id="13_2rr75"]
+[ext_resource type="PackedScene" uid="uid://cbletdqt1eih3" path="res://background_environment/igloo.glb" id="14_dcbi0"]
+[ext_resource type="PackedScene" uid="uid://cjfp6jkuab0fc" path="res://background_environment/iceberg_4.glb" id="15_8gs4q"]
 
 [node name="Track 6" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_ij1do")]
 total_time_for_stage = 45.0
 player_spawner = NodePath("Catto Spawner")
 
 [node name="DeathFloor" parent="." index="1" node_paths=PackedStringArray("catto_spawner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 catto_spawner = NodePath("../Catto Spawner")
 
 [node name="Track 6 Geometry" parent="." index="3" instance=ExtResource("2_jj55d")]
@@ -82,19 +92,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 10.249491, 28)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 10.249294, 26)
 
 [node name="Fish Pickup20" parent="Node3D" index="19" instance=ExtResource("5_jj55d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 5.249405, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, 5.249405, -3)
 
 [node name="Fish Pickup21" parent="Node3D" index="20" instance=ExtResource("5_jj55d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 5.249407, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5, 5.249407, -5.5)
 
 [node name="Fish Pickup22" parent="Node3D" index="21" instance=ExtResource("5_jj55d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 5.249403, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5, 5.249403, -7)
 
 [node name="Fish Pickup23" parent="Node3D" index="22" instance=ExtResource("5_jj55d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 5.249405, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 5.249405, -9)
 
 [node name="Fish Pickup24" parent="Node3D" index="23" instance=ExtResource("5_jj55d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 5.249405, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5, 5.249405, -10)
 
 [node name="Fish Pickup25" parent="Node3D" index="24" instance=ExtResource("5_jj55d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 5.249405, -10.5)
@@ -166,3 +176,71 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5, -0.057922363, 15)
 
 [node name="Fish Pickup43" parent="Node3D/Node3D" index="10" instance=ExtResource("5_jj55d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 1.7113051, 12)
+
+[node name="Background Area 2" type="Node3D" parent="." index="7"]
+
+[node name="floating_island_12" parent="Background Area 2" index="0" instance=ExtResource("7_ealgb")]
+transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 16.86988, -4.617422, -26.720474)
+
+[node name="floating_island_22" parent="Background Area 2" index="1" instance=ExtResource("8_u2bbu")]
+transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 24.036802, -9.536743e-07, -22.610092)
+
+[node name="floating_island_32" parent="Background Area 2" index="2" instance=ExtResource("9_kmunb")]
+transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 22.084196, -1.1859004, -26.141224)
+
+[node name="iceberg_12" parent="Background Area 2" index="3" instance=ExtResource("10_8exhg")]
+transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 16.521206, -1.881547, -29.83363)
+
+[node name="iceberg_22" parent="Background Area 2" index="4" instance=ExtResource("11_e4hxm")]
+transform = Transform3D(0.7280121, 0.53472096, -0.42903608, 0, 0.62581456, 0.7799719, 0.68556434, -0.567829, 0.4556006, 22.281967, -1.1920929e-06, -20.230751)
+
+[node name="iceberg_32" parent="Background Area 2" index="5" instance=ExtResource("12_g3kqo")]
+transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 26.76957, 1.868597, -22.94265)
+
+[node name="floating_island_42" parent="Background Area 2" index="6" instance=ExtResource("13_2rr75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.00653, 0, 65.086914)
+
+[node name="iceberg_23" parent="Background Area 2" index="7" instance=ExtResource("11_e4hxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.925186, 2.813549, 65.549736)
+
+[node name="buildings" parent="Background Area 2" index="8" instance=ExtResource("14_dcbi0")]
+transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, -83.23111, 2.1983352, 66.485214)
+
+[node name="floating_island_13" parent="Background Area 2" index="9" instance=ExtResource("7_ealgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.21016, 16.38326, -25.43783)
+
+[node name="floating_island_16" parent="Background Area 2" index="10" instance=ExtResource("7_ealgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.21016, 21.38326, -25.43783)
+
+[node name="floating_island_15" parent="Background Area 2" index="11" instance=ExtResource("7_ealgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.21016, 10.383261, -25.43783)
+
+[node name="floating_island_14" parent="Background Area 2" index="12" instance=ExtResource("7_ealgb")]
+transform = Transform3D(0.2372282, 0, 0.97145396, 0, 1, 0, -0.97145396, 0, 0.2372282, 14.986214, 7.338331, 61.776676)
+
+[node name="iceberg_13" parent="Background Area 2" index="13" instance=ExtResource("10_8exhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.917439, 9.615935, 64.132126)
+
+[node name="iceberg_14" parent="Background Area 2" index="14" instance=ExtResource("10_8exhg")]
+transform = Transform3D(0.3840053, 0, 0.9233309, 0, 1, 0, -0.9233309, 0, 0.3840053, 17.334011, 9.615935, 59.63056)
+
+[node name="iceberg_42" parent="Background Area 2" index="15" instance=ExtResource("15_8gs4q")]
+transform = Transform3D(0.4095409, 0, -0.91229177, 0, 1, 0, 0.91229177, 0, 0.4095409, 18.428566, 10.302578, 62.662838)
+
+[node name="iceberg_15" parent="Background Area 2" index="16" instance=ExtResource("10_8exhg")]
+transform = Transform3D(0.8660254, -0.5, 0, -2.1855694e-08, -3.7855173e-08, -1, 0.5, 0.8660254, -4.371139e-08, -55.61913, 10.164297, -21.45807)
+
+[node name="iceberg_16" parent="Background Area 2" index="17" instance=ExtResource("10_8exhg")]
+transform = Transform3D(5.9604645e-08, 0.9213957, -0.3886255, 4.371139e-08, -0.38862544, -0.9213958, -0.99999994, 3.7932107e-08, -6.343937e-08, -51.43605, 15.769401, -25.70071)
+
+[node name="iceberg_33" parent="Background Area 2" index="18" instance=ExtResource("12_g3kqo")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -55.103806, 22.844542, -28.271418)
+
+[node name="iceberg_43" parent="Background Area 2" index="19" instance=ExtResource("15_8gs4q")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -57.83912, 23, -23.590721)
+
+[node name="floating_island_43" parent="Background Area 2" index="20" instance=ExtResource("13_2rr75")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -76.13397, 2, 68.5)
+
+[node name="buildings2" parent="Background Area 2" index="21" instance=ExtResource("14_dcbi0")]
+transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, -76, 4.276022, 69)

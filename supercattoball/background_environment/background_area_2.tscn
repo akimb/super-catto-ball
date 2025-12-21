@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://32e4jg7aq7wy"]
+[gd_scene load_steps=10 format=3 uid="uid://32e4jg7aq7wy"]
 
-[ext_resource type="PackedScene" uid="uid://jn6loklptgbu" path="res://levels/track1/catto_ball_track_1.glb" id="1_pmwmh"]
 [ext_resource type="PackedScene" uid="uid://cgw8onexflrkg" path="res://background_environment/floating_island_1.glb" id="2_g3i76"]
 [ext_resource type="PackedScene" uid="uid://lm2pd641e0s6" path="res://background_environment/floating_island_2.glb" id="3_cbnie"]
 [ext_resource type="PackedScene" uid="uid://ch8mth1mionqo" path="res://background_environment/floating_island_3.glb" id="4_fsak7"]
@@ -12,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cjfp6jkuab0fc" path="res://background_environment/iceberg_4.glb" id="10_f3cya"]
 
 [node name="Background Area 2" type="Node3D"]
-
-[node name="catto_ball_track_1" parent="." instance=ExtResource("1_pmwmh")]
 
 [node name="floating_island_12" parent="." instance=ExtResource("2_g3i76")]
 transform = Transform3D(0.7280121, 0, -0.68556434, 0, 1, 0, 0.68556434, 0, 0.7280121, 16.86988, -4.617422, -26.720474)

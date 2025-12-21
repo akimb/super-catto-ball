@@ -8,8 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://d3b2a54cfxyjd" path="res://sounds/button_hover_sfx.ogg" id="5_10w4p"]
 [ext_resource type="AudioStream" uid="uid://x2an7bbfpcqo" path="res://sounds/startup_sfx.ogg" id="6_sq0to"]
 [ext_resource type="AudioStream" uid="uid://d1t8ap14rsra" path="res://sounds/whoosh_sfx.ogg" id="7_60cb1"]
-[ext_resource type="AudioStream" uid="uid://c2t4duoj1fni2" path="res://sounds/fish_exclamation_sfx.ogg" id="8_60cb1"]
 [ext_resource type="AudioStream" uid="uid://bk6aa0bn8556x" path="res://sounds/extra_life.ogg" id="9_3nogx"]
+[ext_resource type="AudioStream" uid="uid://dde40uucghdpm" path="res://sounds/pickup_sfx.ogg" id="9_411ul"]
 [ext_resource type="AudioStream" uid="uid://cyq8cfqoxkudi" path="res://sounds/cat_fall_sfx.ogg" id="10_p1v07"]
 [ext_resource type="AudioStream" uid="uid://c2f7jcsw0ssyp" path="res://sounds/1.ogg" id="11_w2atv"]
 [ext_resource type="AudioStream" uid="uid://b4bw48pxvr6hr" path="res://sounds/2.ogg" id="12_fojfb"]
@@ -88,7 +88,8 @@ bus = &"SFX"
 playback_type = 1
 
 [node name="Fish!" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("8_60cb1")
+stream = ExtResource("9_411ul")
+volume_db = -5.0
 max_polyphony = 100
 bus = &"SFX"
 playback_type = 1
