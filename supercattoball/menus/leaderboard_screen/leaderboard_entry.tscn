@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://daeebrppaya0n"]
+
+[ext_resource type="Theme" uid="uid://42ad8wakayrj" path="res://ui_components/themes/player_ui.tres" id="1_awkvc"]
+[ext_resource type="Script" uid="uid://bjrncnq1iw7xl" path="res://menus/leaderboard_screen/leaderboard_entry.gd" id="2_fhj16"]
+
+[node name="Entry" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_awkvc")
+theme_override_constants/separation = 100
+script = ExtResource("2_fhj16")
+
+[node name="Rank" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_awkvc")
+theme_override_colors/font_color = Color(1, 0.7294118, 0.03529412, 1)
+theme_override_font_sizes/font_size = 20
+text = "{pos}."
+
+[node name="User" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_awkvc")
+theme_override_colors/font_color = Color(1, 0.39215687, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "{username}"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_awkvc")
+theme_override_colors/font_color = Color(0, 0.85490197, 0.30588236, 1)
+theme_override_font_sizes/font_size = 20
+text = "score: {score}"
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_awkvc")
+theme_override_colors/font_color = Color(0, 0.9529412, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "total time: {time}"
