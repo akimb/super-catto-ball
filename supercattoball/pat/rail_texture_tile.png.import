@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b45g2iw5db7eo"
 path.s3tc="res://.godot/imported/rail_texture_tile.png-2b01ef13ad92fc4f63e5fe1ed13ce3f0.s3tc.ctex"
+path.etc2="res://.godot/imported/rail_texture_tile.png-2b01ef13ad92fc4f63e5fe1ed13ce3f0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pat/rail_texture_tile.png"
-dest_files=["res://.godot/imported/rail_texture_tile.png-2b01ef13ad92fc4f63e5fe1ed13ce3f0.s3tc.ctex"]
+dest_files=["res://.godot/imported/rail_texture_tile.png-2b01ef13ad92fc4f63e5fe1ed13ce3f0.s3tc.ctex", "res://.godot/imported/rail_texture_tile.png-2b01ef13ad92fc4f63e5fe1ed13ce3f0.etc2.ctex"]
 
 [params]
 
