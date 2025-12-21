@@ -1,6 +1,6 @@
 class_name CameraTools extends Node
 
-const WIN_PARTICLES = preload('uid://bdlf3ubvvaxmr')
+const WIN_PARTICLES = preload("res://pat/win_particles.tscn")
 
 const intro_height := Vector3(0, 10.0, 0)
 const intro_offset := 3.
