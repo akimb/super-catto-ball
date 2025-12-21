@@ -211,7 +211,6 @@ grow_vertical = 2
 text = "start!"
 
 [node name="Label2" type="Label" parent="Title Screen"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -224,7 +223,9 @@ offset_right = 285.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("10_po3x5")
 text = "DOWNLOADING THE GAME IS RECOMMENDED FOR THE BEST EXPERIENCE."
 horizontal_alignment = 1
