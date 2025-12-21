@@ -5,6 +5,7 @@ extends Area3D
 @export var bob_speed := 2.0
 @export var rotation_speed := 20.0
 @onready var fish_mesh : MeshInstance3D = $fish
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 var starting_mesh_pos_y : float
 
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is CattoBall:
 		AudioBus.fish.play()
+		collision_shape_3d.disabled = true
 		rotation_speed *= 2.0
 		GameManager.total_score += score_contribution
 		GameManager.total_fish += 1
