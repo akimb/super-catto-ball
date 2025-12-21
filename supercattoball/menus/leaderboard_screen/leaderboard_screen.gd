@@ -11,13 +11,12 @@ extends Control
 
 
 var _entries_error: bool
-var _filter: String = "All"
 
 var entry_scene = preload("res://menus/leaderboard_screen/leaderboard_entry.tscn")
 const main_menu : PackedScene = preload("res://menus/main_menu/main_menu.tscn")
 
 func _ready() -> void:
-	GameManager.debug_printer()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	leaderboard_name.text = leaderboard_name.text.replace("{leaderboard}", leaderboard_internal_name)
 	username.editable = true
 	await _load_entries()
@@ -83,5 +82,6 @@ func _on_username_text_submitted(new_text: String) -> void:
 	skip_button.text = "to main menu"
 
 func _on_skip_button_pressed() -> void:
+	AudioBus.game_theme.stop()
 	GameManager.reset_all_gameplay_data()
 	get_tree().change_scene_to_packed(main_menu)
