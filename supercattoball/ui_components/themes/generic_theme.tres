@@ -1,7 +1,23 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://ts0ohvhgtgm3"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://ts0ohvhgtgm3"]
 
 [ext_resource type="FontFile" uid="uid://cr04c1ltanlft" path="res://ui_components/fonts/Super Croissant.ttf" id="1_ekjwh"]
 [ext_resource type="FontFile" uid="uid://usl8lv6i5kl5" path="res://ui_components/fonts/aaaiight.ttf" id="2_d0akn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekjwh"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.3328807, 0.33288068, 0.33288068, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekjwh"]
 
@@ -89,6 +105,7 @@ Button/colors/font_pressed_color = Color(0.95165676, 0.0007941574, 0.9606165, 1)
 Button/constants/outline_size = 5
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_ekjwh")
+Button/styles/disabled = SubResource("StyleBoxFlat_ekjwh")
 Button/styles/focus = SubResource("StyleBoxEmpty_ekjwh")
 Button/styles/hover = SubResource("StyleBoxFlat_d0akn")
 Button/styles/normal = SubResource("StyleBoxFlat_ao6s1")

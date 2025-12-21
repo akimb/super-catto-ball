@@ -194,14 +194,18 @@ script = ExtResource("4_6tnqt")
 [node name="CameraPivot" type="Node3D" parent="CameraYaw/CameraRig"]
 script = ExtResource("5_nr1fk")
 
-[node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraRig/CameraPivot"]
-physics_interpolation_mode = 2
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 0.99999994, 0, 8.742278e-08, 0, -0.99999994, 0, 0.9203577, -1.7916647)
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraYaw/CameraRig/CameraPivot"]
+transform = Transform3D(-1, 4.0367343e-08, -7.754495e-08, 0, 0.8870108, 0.4617486, 8.742278e-08, 0.4617486, -0.8870108, 0, 0, 0)
+spring_length = 2.0
 
-[node name="Pickup Location" type="Marker3D" parent="CameraYaw/CameraRig/CameraPivot/Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraRig/CameraPivot/SpringArm3D"]
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, -7.1054274e-15, 3.5527137e-15, 0.88701093, -0.46174866, -7.1054274e-15, 0.46174866, 0.88701093, -1.5663231e-07, -0.010931432, 2.0142002)
+
+[node name="Pickup Location" type="Marker3D" parent="CameraYaw/CameraRig/CameraPivot/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5061917, 2.5989714, -4.9352293)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CameraYaw/CameraRig/CameraPivot/Camera3D/Pickup Location"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CameraYaw/CameraRig/CameraPivot/SpringArm3D/Camera3D/Pickup Location"]
 visible = false
 radius = 0.1
 material = SubResource("StandardMaterial3D_aowiq")

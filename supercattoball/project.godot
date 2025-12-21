@@ -21,10 +21,15 @@ config/icon="res://icon.svg"
 
 AudioBus="*res://autoload/audio_bus.tscn"
 GameManager="*res://levels/manager/game_manager.gd"
+Talo="*res://addons/talo/talo_manager.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/talo/plugin.cfg")
 
 [global_group]
 
@@ -78,3 +83,4 @@ common/physics_interpolation=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

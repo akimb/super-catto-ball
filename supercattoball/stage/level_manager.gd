@@ -1,5 +1,7 @@
 class_name LevelManager extends Control
 
+signal get_stage_time
+
 @onready var player_ui: Control = $"Player UI"
 @onready var skybox_camera_3d: Camera3D = $SkyboxViewport/SkyboxCamera3D
 @onready var game_viewport: SubViewport = $GameViewport
@@ -32,6 +34,7 @@ var last10_sounds : Array[AudioStreamPlayer] = [
 const ready_buffer_screen : PackedScene = preload("res://menus/level_ready_screen/level_ready_buffer_screen.tscn")
 const continue_screen : PackedScene = preload("res://menus/continue_menu/continue_screen.tscn")
 const main_menu : PackedScene = preload("res://menus/main_menu/main_menu.tscn")
+const leaderboard_screen : PackedScene = preload("res://menus/leaderboard_screen/leaderboard_screen.tscn")
 
 func _ready() -> void:
 	AudioBus.game_theme.play()
@@ -95,6 +98,7 @@ func _do_level_change(level_index : int) -> void:
 		)
 		
 		GameManager.update_floor.emit(level_index)
+		get_stage_time.emit(next_level.total_time_for_stage)
 		stage_time_total = next_level.total_time_for_stage
 		stage_timer.wait_time = stage_time_total
 		GameManager.update_timer.emit(stage_time_total)
@@ -102,8 +106,7 @@ func _do_level_change(level_index : int) -> void:
 		stage_timer.start(stage_time_total)
 	
 	elif GameManager.total_continues < 0:
-		#_do_level_change(current_level_index)
-		print("TODO RIG UP CONTINUE AND LEADERBOARD ")
+		get_tree().change_scene_to_packed(leaderboard_screen)
 	
 	#catto = get_tree().get_first_node_in_group("catto_ball")
 	#catto_spawner = get_tree().get_first_node_in_group("level_group").player_spawner

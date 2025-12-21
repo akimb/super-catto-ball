@@ -1,27 +1,35 @@
 extends Area3D
 
+var stage_level_time : float 
+var curr_level_time : float = 0.0
+
+func _ready() -> void:
+	LevelManager.get_stage_time.connect(_update_stage_time)
+	GameManager.update_timer.connect(_get_current_time)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body == null or !body.is_inside_tree():
 		return
-	#await get_tree().physics_frame
+	
 	if body is CattoBall:
 		AudioBus.goal.play()
 		body.linear_velocity = Vector3.ZERO
-		# TODO 
-		# play the victory stuff
-		# update scores
 		_calculate_time_bonus()
-		# prepare the next level
+		sum_total_time()
 		GameManager.current_level += 1
-		_advance_level.call_deferred()
-		#GameManager.change_level.emit(GameManager.current_level)
 		
-		# move to next level scene
-		# unload current level
+		_advance_level.call_deferred()
+
+func _get_current_time(time : float) -> void:
+	curr_level_time = time
+
+func sum_total_time() -> void:
+	GameManager.total_time += curr_level_time
 
 func _advance_level() -> void:
 	GameManager.change_level.emit(GameManager.current_level)
 
+func _update_stage_time(time) -> void:
+	stage_level_time = time
 func _calculate_time_bonus() -> void:
 	pass

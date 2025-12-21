@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var continues: Label = $Control/Continues
 
-const main_menu : PackedScene = preload("res://menus/main_menu/main_menu.tscn")
+const leaderboard_screen : PackedScene = preload("res://menus/leaderboard_screen/leaderboard_screen.tscn")
 func _ready() -> void:
 	AudioBus.game_ready.stop()
 	AudioBus.game_continue.play()
@@ -21,5 +21,5 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	GameManager.reset_all_gameplay_data()
-	get_tree().change_scene_to_packed(main_menu)
+	get_tree().change_scene_to_packed(leaderboard_screen)
 	AudioBus.game_theme.stop()

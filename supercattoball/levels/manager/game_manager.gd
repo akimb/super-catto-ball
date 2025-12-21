@@ -17,6 +17,7 @@ extends Node
 #endregion
 
 var total_score : int = 0
+var total_time : float = 0.0
 var total_fish : int = 0
 var total_lives : int = 3
 var total_continues : int = 5
@@ -35,12 +36,8 @@ const LEVEL_MANAGER : PackedScene = preload("res://stage/level_manager.tscn")
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-#func _process(_delta: float) -> void:
-	#print("using imperial: " + str(toggle_metric_or_imperial))
-	#print("total_score: " + str(total_score))
-	#print("total_fish: " + str(total_fish))
-	#print("total_lives: " + str(total_lives))
-	#print("total_continues: " + str(total_continues))
+func _process(_delta: float) -> void:
+	debug_printer()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().root.has_node("LevelManager"):
@@ -60,6 +57,7 @@ func reset_all_gameplay_data() -> void:
 	total_lives = 3
 	current_level = 0
 	total_continues = 5
+	total_time = 0.0
 
 func reset_gameplay_for_continue() -> void:
 	total_fish = 0
@@ -67,6 +65,7 @@ func reset_gameplay_for_continue() -> void:
 	total_lives = 3
 
 func debug_printer() -> void:
+	print("total_time: " + str(total_time))
 	print("total_score: " + str(total_score))
 	print("total_fish: " + str(total_fish))
 	print("total_lives: " + str(total_lives))
