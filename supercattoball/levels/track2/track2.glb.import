@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/track2.glb-2070836427fd614882cb84af254b9a1b.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StageComponent"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
