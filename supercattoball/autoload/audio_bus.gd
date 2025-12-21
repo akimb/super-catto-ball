@@ -30,3 +30,5 @@ extends Node
 @onready var super_catto_ball: AudioStreamPlayer = $"SFX/Super Catto Ball"
 @onready var bonus: AudioStreamPlayer = $SFX/Bonus
 @onready var applause: AudioStreamPlayer = $SFX/Applause
+@onready var move: AudioStreamPlayer = $SFX/Move
+@onready var wind: AudioStreamPlayer = $SFX/Wind

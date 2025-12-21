@@ -22,16 +22,16 @@ func setup(level_manager : LevelManager):
 	match pct:
 		var x when x < .2:
 			AudioBus.bonus.play()
-			bonus_msg = ' 5000   Purrfection!'
-			GameManager.total_score += 5000
+			bonus_msg = ' 1000   Purrfection!'
+			GameManager.total_score += 1000
 		var x when x < .5:
 			AudioBus.bonus.play()
-			bonus_msg = ' 2000   Excellent'
-			GameManager.total_score += 2000
+			bonus_msg = ' 500   Excellent'
+			GameManager.total_score += 500
 		var x when x < .75:
 			AudioBus.bonus.play()
-			bonus_msg = ' 1000   Good job'
-			GameManager.total_score += 1000
+			bonus_msg = ' 200   Good job'
+			GameManager.total_score += 200
 		_:
 			bonus_msg = ' Meh-ow'
 	
