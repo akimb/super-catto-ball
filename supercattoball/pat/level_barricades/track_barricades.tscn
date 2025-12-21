@@ -171,4 +171,16 @@ transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 1.5,
 [node name="Pickups" type="Node3D" parent="." index="6"]
 
 [node name="Fish Pickup" parent="Pickups" index="0" instance=ExtResource("4_4gnq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.9311553, 7.4751177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, 12.975118)
+
+[node name="Fish Pickup4" parent="Pickups" index="1" instance=ExtResource("4_4gnq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 13.975118)
+
+[node name="Fish Pickup5" parent="Pickups" index="2" instance=ExtResource("4_4gnq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 22.975117)
+
+[node name="Fish Pickup2" parent="Pickups" index="3" instance=ExtResource("4_4gnq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 1, 21.975117)
+
+[node name="Fish Pickup3" parent="Pickups" index="4" instance=ExtResource("4_4gnq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 30.975117)
