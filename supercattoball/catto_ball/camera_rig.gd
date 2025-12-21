@@ -6,8 +6,6 @@ extends Node3D
 
 @onready var catto_mesh: Node3D = $"../../catto"
 
-var mouse_sensitivity = 0.002
-
 func _process(delta):
 	var dir := Input.get_vector("forward", "backward", "right", "left")
 	

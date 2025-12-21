@@ -69,3 +69,7 @@ func _on_credits_back_pressed() -> void:
 func _on_quit_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
+
+
+func _on_save_pressed() -> void:
+	pass # Replace with function body.

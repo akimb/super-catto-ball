@@ -1,9 +1,12 @@
 extends Control
 
+@onready var pause_screen: Control = $"Pause Screen"
 @onready var settings_screen: Control = $"Settings Screen"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	settings_screen.hide()
+	settings_screen.initialize_sliders()
 
 #func _input(_event: InputEvent) -> void:
 	#if Input.is_action_just_pressed("pause"):
@@ -14,7 +17,7 @@ func _on_resume_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	settings_screen.show()
-
+	pause_screen.hide()
 
 func _on_main_menu_pressed() -> void:
 	unpause()
@@ -27,3 +30,7 @@ func unpause() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	AudioServer.set_bus_effect_enabled(1, 0, false)
 	queue_free()
+
+func _on_settings_back_pressed() -> void:
+	settings_screen.hide()
+	pause_screen.show()

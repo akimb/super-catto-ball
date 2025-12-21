@@ -23,8 +23,9 @@ var total_continues : int = 5 # set to 4 and add 1 to the ui
 
 var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
 var current_level : int = 0
-var toggle_metric_or_imperial : bool = false
 
+var toggle_metric_or_imperial : bool = false
+var mouse_sensitivity : float = 0.002
 var sfx_db : float = 0.5
 var music_db : float = 0.5
 

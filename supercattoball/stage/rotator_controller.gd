@@ -8,7 +8,6 @@ var base_gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vecto
 var catto_ball : CattoBall
 const catto_ball_player : PackedScene = preload("res://catto_ball/catto_ball.tscn")
 
-var mouse_sensitivity = 0.001
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -31,5 +30,5 @@ func _physics_process(_delta):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		catto_ball.camera_pivot.rotate_y(-event.relative.x * mouse_sensitivity)
-		catto_ball.catto_model.rotate_y(-event.relative.x * mouse_sensitivity)
+		catto_ball.camera_pivot.rotate_y(-event.relative.x * GameManager.mouse_sensitivity)
+		catto_ball.catto_model.rotate_y(-event.relative.x * GameManager.mouse_sensitivity)
