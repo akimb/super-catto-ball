@@ -18,7 +18,8 @@ func _set_time(total_time: float) -> void:
 	time.text = time.text.replace("{time}", str("%.2f" % total_time))
 
 func set_data(entry: TaloLeaderboardEntry) -> void:
+	#print(type_string(typeof(float(entry.get_prop("total_time")))))
 	_set_pos(entry.position)
 	_set_username(entry.player_alias.identifier)
 	_set_score(entry.score)
-	_set_time(entry.total_time)
+	_set_time(float(entry.get_prop("total_time")))

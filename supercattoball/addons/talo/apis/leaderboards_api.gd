@@ -81,7 +81,7 @@ func add_entry(internal_name: String, score: float, props: Dictionary[String, Va
 		score = score,
 		props = TaloPropUtils.dictionary_to_array(props)
 	})
-
+	#print(props.values()[0])
 	match res.status:
 		200:
 			var entry := TaloLeaderboardEntry.new(res.body.entry)

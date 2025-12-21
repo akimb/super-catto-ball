@@ -28,8 +28,6 @@ func _set_entry_count():
 		info_label.text = "no entries yet!" if not _entries_error else "Failed loading leaderboard %s. Does it exist?" % leaderboard_internal_name
 	else:
 		info_label.text = "%s entries" % entries_container.get_child_count()
-		if _filter != "All":
-			info_label.text += " (%s team)" % _filter
 
 func _create_entry(entry: TaloLeaderboardEntry) -> void:
 	var entry_instance = entry_scene.instantiate()
@@ -41,8 +39,6 @@ func _build_entries() -> void:
 		child.queue_free()
 
 	var entries = Talo.leaderboards.get_cached_entries(leaderboard_internal_name)
-	if _filter != "All":
-		entries = entries.filter(func (entry: TaloLeaderboardEntry): return entry.get_prop("team", "") == _filter)
 
 	for entry in entries:
 		entry.position = entries.find(entry)
@@ -79,7 +75,7 @@ func _on_username_text_submitted(new_text: String) -> void:
 	await Talo.players.identify("username", new_text)
 	var score : int = GameManager.total_score
 	var props: Dictionary[String, Variant] = {
-		"GameManager.total_time": GameManager.total_time
+		"total_time": GameManager.total_time
 		}
 	await Talo.leaderboards.add_entry(leaderboard_internal_name, score, props)
 	_build_entries()

@@ -8,7 +8,7 @@ enum LeaderboardSortMode {
 var id: int
 var position: int
 var score: int
-var total_time: float
+#var total_time: float
 var player_alias: TaloPlayerAlias
 var leaderboard_name: String
 var leaderboard_internal_name: String
