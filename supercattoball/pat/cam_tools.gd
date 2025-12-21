@@ -43,27 +43,34 @@ static func intro_cam_setup(tree : SceneTree, level : Node3D):
 	# The look at needs to end matching the player
 	var final_look_target = Geometry3D.get_closest_point_to_segment_uncapped(mid_point, player_cam_pos,  player_cam_pos - player_cam.global_basis.z)
 	
-	var tween := tree.create_tween()
-	tween.set_parallel()
-	tween.tween_property(pivot, 'global_position', pivot_end_pos, intro_duration)
-	tween.tween_property(pivot, 'global_rotation:y', TAU, intro_duration)
+	intro_tween= tree.create_tween()
+	intro_tween.set_parallel()
+	intro_tween.tween_property(pivot, 'global_position', pivot_end_pos, intro_duration)
+	intro_tween.tween_property(pivot, 'global_rotation:y', TAU, intro_duration)
 	
-	tween.tween_property(cam, 'global_position', player_cam_pos, .5).set_delay( intro_duration - .5)
+	intro_tween.tween_property(cam, 'global_position', player_cam_pos, .5).set_delay( intro_duration - .5)
 	
 	if not cam:
 		return
 	
-	tween.tween_method(
+	intro_tween.tween_method(
 		func(val : Vector3):
 			cam.look_at(val),
 		mid_point + player_cam_height,
 		final_look_target,
 		intro_duration
 	)
-	
-	await tween.finished
+	GameManager.reset_data.connect( clear_intro_tween, CONNECT_ONE_SHOT)
+	await intro_tween.finished
+	GameManager.reset_data.disconnect( clear_intro_tween )
 	player_cam.current = true
 	pivot.queue_free()
+
+
+static var intro_tween : Tween
+static func clear_intro_tween():
+	if intro_tween and intro_tween.is_valid() and intro_tween.is_running():
+		intro_tween.stop()
 
 
 const outro_spin_duration := 0.75

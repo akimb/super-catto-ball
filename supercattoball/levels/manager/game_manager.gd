@@ -11,6 +11,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_timer
 @warning_ignore("unused_signal") signal trigger_death
 @warning_ignore("unused_signal") signal get_stage_time
+@warning_ignore("unused_signal") signal reset_data
 #endregion
 
 #region Game Settings
@@ -60,6 +61,7 @@ func reset_all_gameplay_data() -> void:
 	current_level = 0
 	total_continues = 5
 	total_time = 0.0
+	reset_data.emit()
 
 func reset_gameplay_for_continue() -> void:
 	total_fish = 0
