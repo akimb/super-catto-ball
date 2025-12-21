@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdlf3ubvvaxmr"]
+
+[ext_resource type="Texture2D" uid="uid://bd87sfuc7r4fx" path="res://particles/star_01.png" id="1_onkog"]
+
+[sub_resource type="Curve" id="Curve_jf35g"]
+_data = [Vector2(0, 0.010570884), 0.0, 5.2658567, 0, 0, Vector2(1, 0), -3.6870317, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wnfl7"]
+curve = SubResource("Curve_jf35g")
+
+[sub_resource type="Curve" id="Curve_a5kji"]
+_data = [Vector2(0, 0), 0.0, 6.4271812, 0, 0, Vector2(1, 0), -2.4378996, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ajd0n"]
+curve = SubResource("Curve_a5kji")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7b4jm"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -1.0000023
+tangential_accel_max = 0.99999774
+scale_curve = SubResource("CurveTexture_ajd0n")
+alpha_curve = SubResource("CurveTexture_wnfl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etjus"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
+albedo_texture = ExtResource("1_onkog")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_x8wxe"]
+material = SubResource("StandardMaterial3D_etjus")
+size = Vector2(0.5, 0.5)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+amount = 130
+process_material = SubResource("ParticleProcessMaterial_7b4jm")
+draw_pass_1 = SubResource("QuadMesh_x8wxe")

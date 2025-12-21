@@ -1,5 +1,7 @@
 class_name CameraTools extends Node
 
+const WIN_PARTICLES = preload('uid://bdlf3ubvvaxmr')
+
 const intro_height := Vector3(0, 10.0, 0)
 const intro_offset := 3.
 const intro_duration := 3.
@@ -59,3 +61,51 @@ static func intro_cam_setup(tree : SceneTree, level : Node3D):
 	await tween.finished
 	player_cam.current = true
 	pivot.queue_free()
+
+
+const outro_spin_duration := 0.75
+const outro_rise_duration := 1.5
+
+static func outro_cam_setup(level : Node3D):
+	#var goal :Node3D= tree.get_first_node_in_group('goal')
+	#var start :Node3D= tree.get_first_node_in_group('start')
+	var player :CattoBall= level.get_tree().get_first_node_in_group('catto_ball')
+	var player_cam :Camera3D= player.find_child('Camera3D')
+	
+	var cam := Camera3D.new()
+	var pivot := Node3D.new()
+	pivot.name = 'outro_pivot'
+	
+	level.add_child(pivot)
+	pivot.add_child(cam)
+	
+	var particles := WIN_PARTICLES.instantiate()
+	player.add_child(particles)
+	
+	pivot.global_position = player.global_position
+	
+	cam.global_transform = player_cam.global_transform
+	cam.current = true
+	
+	var tween := level.create_tween()
+	tween.tween_property( pivot, 'rotation:y', TAU, outro_spin_duration)
+
+	var initial_point = Geometry3D.get_closest_point_to_segment_uncapped(player.global_position, player_cam.global_position, player_cam.global_position + player_cam.global_basis.z)
+	
+	tween.set_parallel()
+	tween.tween_property( cam, 'position', cam.position + cam.basis.z * 2., outro_spin_duration)
+	tween.set_parallel(false)
+
+	tween.tween_method(
+		func(val):cam.look_at(val),
+		initial_point,
+		initial_point + Vector3(0, 10, 0),
+		outro_rise_duration
+	)
+	
+	tween.set_parallel()
+	tween.tween_property( player, 'global_position', player.global_position  + Vector3(0, 20, 0), outro_rise_duration).set_ease(Tween.EASE_IN)
+	
+	#tween.finished.connect( func():pivot.queue_free() )
+	return tween
+	
