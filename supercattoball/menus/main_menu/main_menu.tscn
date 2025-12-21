@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dde6piw0cky7b"]
+[gd_scene load_steps=40 format=3 uid="uid://dde6piw0cky7b"]
 
 [ext_resource type="Script" uid="uid://ce2qin51jrv7d" path="res://menus/main_menu/main_menu.gd" id="1_ml8bw"]
 [ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="2_oic2i"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://wf137nd04xqd" path="res://ui_components/icons/flag_square.png" id="15_ie4am"]
 [ext_resource type="PackedScene" uid="uid://dg7c4kbc5o0qq" path="res://stage/goalpost/goalpost.glb" id="15_il6kl"]
 [ext_resource type="Texture2D" uid="uid://caxtfljvjbbvt" path="res://ui_components/input_prompts/keyboard_arrows_right.png" id="15_osjhf"]
-[ext_resource type="PackedScene" uid="uid://bgge51qfbf83c" path="res://menus/settings_menu/settings_menu.tscn" id="16_pg7e5"]
+[ext_resource type="Script" uid="uid://cui07ctdq6w10" path="res://menus/settings_menu/settings_menu.gd" id="16_pg7e5"]
 [ext_resource type="PackedScene" uid="uid://dielis5ckcm3k" path="res://menus/main_menu/sleeping_cat.glb" id="21_ie4am"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jix8l"]
@@ -99,6 +99,73 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("15_osjhf")
 frame_3/duration = 1.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i06k8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2f7a"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.883302, 0.93268067, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(1.2513996e-06, 0.60986006, 0.7740514, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfbxb"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.97637147, 0.73737913, 3.85046e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.99140304, 0.21132195, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2dyb"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.7607843, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.4440959, 0.39231715, 0.013647956, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ef3v"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6873903, 0.5152177, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.59847295, 0.11147349, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie4am"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -148,7 +215,6 @@ scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_pg7e5")
 
 [node name="Title Screen" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -392,10 +458,233 @@ offset_right = 1094.0
 offset_bottom = 627.0
 text = "BACK"
 
-[node name="Settings Screen" parent="." instance=ExtResource("16_pg7e5")]
+[node name="Settings Screen" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_pg7e5")
+
+[node name="Speed Units" type="Panel" parent="Settings Screen"]
+layout_mode = 1
+offset_left = 62.0
+offset_top = 490.0
+offset_right = 374.0
+offset_bottom = 554.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i06k8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings Screen/Speed Units"]
+layout_mode = 0
+offset_top = -420.0
+offset_right = 307.0
+offset_bottom = -365.0
+
+[node name="Unit Conversion" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Unit Conversion"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Speed Units:"
+vertical_alignment = 1
+
+[node name="Metric2Imperial" parent="Settings Screen/Speed Units/VBoxContainer/Unit Conversion" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r2f7a")
+toggle_mode = true
+text = "Metric"
+
+[node name="Forward" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Forward"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Forward:"
+vertical_alignment = 1
+
+[node name="Button" parent="Settings Screen/Speed Units/VBoxContainer/Forward" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "W"
+
+[node name="Backward" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Backward"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Backward:"
+vertical_alignment = 1
+
+[node name="Button" parent="Settings Screen/Speed Units/VBoxContainer/Backward" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "S"
+
+[node name="Left" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Left"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Left:"
+vertical_alignment = 1
+
+[node name="Button" parent="Settings Screen/Speed Units/VBoxContainer/Left" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "A"
+
+[node name="Right" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Right"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Right:"
+vertical_alignment = 1
+
+[node name="Button" parent="Settings Screen/Speed Units/VBoxContainer/Right" instance=ExtResource("4_er5qh")]
+layout_mode = 2
+text = "D"
+
+[node name="Mouse Sensitivity" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 354
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Mouse Sensitivity"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Mouse Sensitivity:"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Settings Screen/Speed Units/VBoxContainer/Mouse Sensitivity"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFX" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "SFX:"
+vertical_alignment = 1
+
+[node name="SFX Volume Slider" type="HSlider" parent="Settings Screen/Speed Units/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Music" type="HBoxContainer" parent="Settings Screen/Speed Units/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 450
+
+[node name="Label" type="Label" parent="Settings Screen/Speed Units/VBoxContainer/Music"]
+custom_minimum_size = Vector2(194, 47)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_81su3")
+theme_override_font_sizes/font_size = 40
+text = "Music:"
+vertical_alignment = 1
+
+[node name="Music Volume Slider" type="HSlider" parent="Settings Screen/Speed Units/VBoxContainer/Music"]
+custom_minimum_size = Vector2(410, 48)
+layout_mode = 2
+theme = ExtResource("3_f7ts8")
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Settings Back" parent="Settings Screen" instance=ExtResource("4_er5qh")]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 554.0
+offset_right = 1118.0
+offset_bottom = 609.0
+text = "back"
+
+[node name="Save" parent="Settings Screen" instance=ExtResource("4_er5qh")]
+visible = false
+layout_mode = 0
+offset_left = 708.0
+offset_top = 554.0
+offset_right = 938.0
+offset_bottom = 609.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfbxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r2dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ef3v")
+text = "save preferences"
 
 [node name="Credits Screen" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -543,7 +832,9 @@ transform = Transform3D(-4.371139e-08, -0.25881904, 0.9659259, 2.6054011e-15, 0.
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Main Menu Screen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="How to Play Screen/How to Play Back" to="." method="_on_how_to_play_back_pressed"]
+[connection signal="toggled" from="Settings Screen/Speed Units/VBoxContainer/Unit Conversion/Metric2Imperial" to="Settings Screen" method="_on_metric_2_imperial_toggled"]
+[connection signal="value_changed" from="Settings Screen/Speed Units/VBoxContainer/SFX/SFX Volume Slider" to="Settings Screen" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="Settings Screen/Speed Units/VBoxContainer/Music/Music Volume Slider" to="Settings Screen" method="_on_music_volume_slider_value_changed"]
 [connection signal="pressed" from="Settings Screen/Settings Back" to="." method="_on_settings_back_pressed"]
+[connection signal="pressed" from="Settings Screen/Save" to="Settings Screen" method="_on_save_pressed"]
 [connection signal="pressed" from="Credits Screen/Credits Back" to="." method="_on_credits_back_pressed"]
-
-[editable path="Settings Screen"]

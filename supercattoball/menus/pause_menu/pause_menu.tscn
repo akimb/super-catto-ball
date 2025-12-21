@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6thunhmqskwb"]
+[gd_scene load_steps=10 format=3 uid="uid://b6thunhmqskwb"]
 
 [ext_resource type="Script" uid="uid://b5dnh1470e7df" path="res://menus/pause_menu/pause_menu.gd" id="1_4s7ec"]
 [ext_resource type="Theme" uid="uid://ts0ohvhgtgm3" path="res://ui_components/themes/generic_theme.tres" id="1_qd56w"]
 [ext_resource type="PackedScene" uid="uid://0o3c0fiuevgs" path="res://ui_components/generic_button.tscn" id="2_4s7ec"]
 [ext_resource type="Shader" uid="uid://case03onyewmm" path="res://shaders/rainbow_gradient.gdshader" id="2_l3nas"]
 [ext_resource type="Texture2D" uid="uid://y0fpm72pqy4" path="res://ui_components/icons/forward.png" id="3_l3nas"]
+[ext_resource type="PackedScene" uid="uid://bgge51qfbf83c" path="res://menus/settings_menu/settings_menu.tscn" id="6_vpjwo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3nas"]
 bg_color = Color(1, 0.7607843, 0.25882354, 1)
@@ -140,6 +141,9 @@ text = "settings!"
 [node name="Main Menu" parent="Pause Container/HBoxContainer" instance=ExtResource("2_4s7ec")]
 layout_mode = 2
 text = "exit to main menu!"
+
+[node name="Settings Screen" parent="." instance=ExtResource("6_vpjwo")]
+layout_mode = 1
 
 [connection signal="pressed" from="Pause Container/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Container/HBoxContainer/Settings" to="." method="_on_settings_pressed"]

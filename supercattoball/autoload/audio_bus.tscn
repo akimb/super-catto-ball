@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ci7dq5h0uavid"]
+[gd_scene load_steps=27 format=3 uid="uid://ci7dq5h0uavid"]
 
 [ext_resource type="Script" uid="uid://cj516ps5b7kem" path="res://autoload/audio_bus.gd" id="1_fn8mh"]
 [ext_resource type="AudioStream" uid="uid://cwbmkg727crc4" path="res://sounds/super_catto_ball_main_theme.ogg" id="2_sq0to"]
+[ext_resource type="AudioStream" uid="uid://bpyfgwm5x3ijp" path="res://sounds/main_menu_theme.ogg" id="3_fojfb"]
 [ext_resource type="AudioStream" uid="uid://p8cqw104xbvx" path="res://sounds/meow_sfx.ogg" id="3_p6asr"]
 [ext_resource type="AudioStream" uid="uid://bn8jfwaic1jhu" path="res://sounds/confirm_sfx.ogg" id="4_e33f3"]
 [ext_resource type="AudioStream" uid="uid://d3b2a54cfxyjd" path="res://sounds/button_hover_sfx.ogg" id="5_10w4p"]
@@ -10,6 +11,21 @@
 [ext_resource type="AudioStream" uid="uid://c2t4duoj1fni2" path="res://sounds/fish_exclamation_sfx.ogg" id="8_60cb1"]
 [ext_resource type="AudioStream" uid="uid://bk6aa0bn8556x" path="res://sounds/extra_life.ogg" id="9_3nogx"]
 [ext_resource type="AudioStream" uid="uid://cyq8cfqoxkudi" path="res://sounds/cat_fall_sfx.ogg" id="10_p1v07"]
+[ext_resource type="AudioStream" uid="uid://c2f7jcsw0ssyp" path="res://sounds/1.ogg" id="11_w2atv"]
+[ext_resource type="AudioStream" uid="uid://b4bw48pxvr6hr" path="res://sounds/2.ogg" id="12_fojfb"]
+[ext_resource type="AudioStream" uid="uid://d04l3shdabu6x" path="res://sounds/3.ogg" id="13_l806s"]
+[ext_resource type="AudioStream" uid="uid://c5pa8axe5ul1h" path="res://sounds/4.ogg" id="14_41hod"]
+[ext_resource type="AudioStream" uid="uid://bb83ui1dumaub" path="res://sounds/5.ogg" id="15_h5ntp"]
+[ext_resource type="AudioStream" uid="uid://byxqpl8rfo6jr" path="res://sounds/6.ogg" id="16_k00ef"]
+[ext_resource type="AudioStream" uid="uid://c7j0cw6mt3rmv" path="res://sounds/7.ogg" id="17_411ul"]
+[ext_resource type="AudioStream" uid="uid://dqnj1215igk82" path="res://sounds/8.ogg" id="18_rbq17"]
+[ext_resource type="AudioStream" uid="uid://bgtohxyqo34af" path="res://sounds/9.ogg" id="19_b1414"]
+[ext_resource type="AudioStream" uid="uid://cfvqjh784e3ma" path="res://sounds/10.ogg" id="20_xnp1n"]
+[ext_resource type="AudioStream" uid="uid://b5syprddnxh41" path="res://sounds/ready.ogg" id="21_hll45"]
+[ext_resource type="AudioStream" uid="uid://d3r4ssyvcv6j0" path="res://sounds/go.ogg" id="22_s3ffc"]
+[ext_resource type="AudioStream" uid="uid://phmbqd2pnqlo" path="res://sounds/goal.ogg" id="23_4e864"]
+[ext_resource type="AudioStream" uid="uid://vtrsbdbhbi34" path="res://sounds/continue.ogg" id="24_v8k0p"]
+[ext_resource type="AudioStream" uid="uid://t56mwikt8elu" path="res://sounds/super_catto_ball_announcement.ogg" id="25_pvadn"]
 
 [node name="AudioBus" type="Node"]
 process_mode = 3
@@ -17,8 +33,14 @@ script = ExtResource("1_fn8mh")
 
 [node name="Music" type="Node" parent="."]
 
-[node name="Main Menu Theme" type="AudioStreamPlayer" parent="Music"]
+[node name="Game Theme" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("2_sq0to")
+volume_db = -10.0
+bus = &"Music"
+playback_type = 1
+
+[node name="Main Menu Theme" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("3_fojfb")
 volume_db = -10.0
 bus = &"Music"
 playback_type = 1
@@ -74,5 +96,95 @@ playback_type = 1
 
 [node name="Howl" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("10_p1v07")
+bus = &"SFX"
+playback_type = 1
+
+[node name="1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_w2atv")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_fojfb")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("13_l806s")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="4" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_41hod")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="5" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("15_h5ntp")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="6" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("16_k00ef")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="7" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("17_411ul")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="8" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("18_rbq17")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="9" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("19_b1414")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="10" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("20_xnp1n")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Ready" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("21_hll45")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Go" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("22_s3ffc")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Goal" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("23_4e864")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Continue" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("24_v8k0p")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Super Catto Ball" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("25_pvadn")
+volume_db = -5.0
 bus = &"SFX"
 playback_type = 1

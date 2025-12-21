@@ -1,5 +1,7 @@
 extends Control
 
+@onready var settings_screen: Control = $"Settings Screen"
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
@@ -11,8 +13,7 @@ func _on_resume_pressed() -> void:
 	unpause()
 
 func _on_settings_pressed() -> void:
-	# TODO Create settings menu
-	pass # Replace with function body.
+	settings_screen.show()
 
 
 func _on_main_menu_pressed() -> void:

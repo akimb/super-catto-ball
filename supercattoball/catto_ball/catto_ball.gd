@@ -10,9 +10,3 @@ class_name CattoBall extends RigidBody3D
 
 func _physics_process(_delta: float) -> void:
 	GameManager.update_speed.emit(linear_velocity.length())
-#
-#var rotation_amount := 1.0
-#
-#func _physics_process(delta: float) -> void:
-	#if Input.is_action_pressed("left"):
-		#rotate_y(rotation_amount * delta)

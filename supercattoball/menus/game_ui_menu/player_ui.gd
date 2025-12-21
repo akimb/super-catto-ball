@@ -21,6 +21,7 @@ func _ready() -> void:
 	GameManager.update_lives.connect(_display_lives)
 	GameManager.update_scores.connect(_display_score)
 	GameManager.update_fish.connect(_display_fish)
+	GameManager.update_timer.connect(_display_time_left)
 	score_count.text = str(GameManager.total_score)
 
 func _change_distance_units() -> void:
@@ -55,3 +56,6 @@ func _display_fish() -> void:
 		AudioBus.extra_life.play()
 		GameManager.total_lives += 1
 		GameManager.update_lives.emit()
+
+func _display_time_left(time_left : float) -> void:
+	timer_countdown.text = str("%.2f" % time_left)

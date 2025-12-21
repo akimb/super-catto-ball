@@ -285,6 +285,7 @@ offset_bottom = 609.0
 text = "back"
 
 [node name="Save" parent="." instance=ExtResource("1_twvox")]
+visible = false
 layout_mode = 0
 offset_left = 708.0
 offset_top = 554.0
@@ -298,4 +299,5 @@ text = "save preferences"
 [connection signal="toggled" from="Speed Units/VBoxContainer/Unit Conversion/Metric2Imperial" to="." method="_on_metric_2_imperial_toggled"]
 [connection signal="value_changed" from="Speed Units/VBoxContainer/SFX/SFX Volume Slider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="value_changed" from="Speed Units/VBoxContainer/Music/Music Volume Slider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="pressed" from="Settings Back" to="." method="_on_settings_back_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

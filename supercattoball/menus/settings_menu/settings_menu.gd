@@ -33,3 +33,7 @@ func _on_music_volume_slider_value_changed(value: float) -> void:
 
 func _on_save_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_settings_back_pressed() -> void:
+	hide()
