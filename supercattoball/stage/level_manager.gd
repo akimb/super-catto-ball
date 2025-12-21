@@ -121,7 +121,8 @@ func _do_level_change(level_index : int) -> void:
 		
 		await invoke_buffer()
 		stage_timer.start(stage_time_total)
-	
+	elif level_index >= GameManager.level_planner.levels.size():
+		get_tree().change_scene_to_packed(leaderboard_screen)
 	elif GameManager.total_continues < 0:
 		get_tree().change_scene_to_packed(leaderboard_screen)
 	
