@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="4_j67a8"]
 
 [node name="Track 6" node_paths=PackedStringArray("player_spawner") instance=ExtResource("1_ij1do")]
+total_time_for_stage = 45.0
 player_spawner = NodePath("Catto Spawner")
 
 [node name="DeathFloor" parent="." index="1" node_paths=PackedStringArray("catto_spawner")]

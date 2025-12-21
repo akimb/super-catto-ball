@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf0gdrhycve70"
 path.s3tc="res://.godot/imported/debug_texture.png-bb59224759e98116372f563c6f793ff2.s3tc.ctex"
+path.etc2="res://.godot/imported/debug_texture.png-bb59224759e98116372f563c6f793ff2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://stage/catto_spawner/debug_texture.png"
-dest_files=["res://.godot/imported/debug_texture.png-bb59224759e98116372f563c6f793ff2.s3tc.ctex"]
+dest_files=["res://.godot/imported/debug_texture.png-bb59224759e98116372f563c6f793ff2.s3tc.ctex", "res://.godot/imported/debug_texture.png-bb59224759e98116372f563c6f793ff2.etc2.ctex"]
 
 [params]
 

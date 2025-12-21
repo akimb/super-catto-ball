@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbh3tus7t2ywr"
 path.s3tc="res://.godot/imported/track9_uv_grid.png-b2481cacda8042716247ffe0de322ee8.s3tc.ctex"
+path.etc2="res://.godot/imported/track9_uv_grid.png-b2481cacda8042716247ffe0de322ee8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/track9/track9_uv_grid.png"
-dest_files=["res://.godot/imported/track9_uv_grid.png-b2481cacda8042716247ffe0de322ee8.s3tc.ctex"]
+dest_files=["res://.godot/imported/track9_uv_grid.png-b2481cacda8042716247ffe0de322ee8.s3tc.ctex", "res://.godot/imported/track9_uv_grid.png-b2481cacda8042716247ffe0de322ee8.etc2.ctex"]
 
 [params]
 

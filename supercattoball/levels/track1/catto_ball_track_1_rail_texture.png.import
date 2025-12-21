@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://db5sf2s8vobaf"
 path.s3tc="res://.godot/imported/catto_ball_track_1_rail_texture.png-5946be40606b2338f5ddd4ef57c79fb3.s3tc.ctex"
+path.etc2="res://.godot/imported/catto_ball_track_1_rail_texture.png-5946be40606b2338f5ddd4ef57c79fb3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/track1/catto_ball_track_1_rail_texture.png"
-dest_files=["res://.godot/imported/catto_ball_track_1_rail_texture.png-5946be40606b2338f5ddd4ef57c79fb3.s3tc.ctex"]
+dest_files=["res://.godot/imported/catto_ball_track_1_rail_texture.png-5946be40606b2338f5ddd4ef57c79fb3.s3tc.ctex", "res://.godot/imported/catto_ball_track_1_rail_texture.png-5946be40606b2338f5ddd4ef57c79fb3.etc2.ctex"]
 
 [params]
 

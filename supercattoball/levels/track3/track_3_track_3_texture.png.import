@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://jii67b0hb65p"
 path.s3tc="res://.godot/imported/track_3_track_3_texture.png-823f579cd4a45ce2010a675dbd98b609.s3tc.ctex"
+path.etc2="res://.godot/imported/track_3_track_3_texture.png-823f579cd4a45ce2010a675dbd98b609.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/track3/track_3_track_3_texture.png"
-dest_files=["res://.godot/imported/track_3_track_3_texture.png-823f579cd4a45ce2010a675dbd98b609.s3tc.ctex"]
+dest_files=["res://.godot/imported/track_3_track_3_texture.png-823f579cd4a45ce2010a675dbd98b609.s3tc.ctex", "res://.godot/imported/track_3_track_3_texture.png-823f579cd4a45ce2010a675dbd98b609.etc2.ctex"]
 
 [params]
 

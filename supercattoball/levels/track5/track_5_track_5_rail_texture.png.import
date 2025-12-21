@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be38egcll5qvy"
 path.s3tc="res://.godot/imported/track_5_track_5_rail_texture.png-9edc900267b4690b73724047326270f8.s3tc.ctex"
+path.etc2="res://.godot/imported/track_5_track_5_rail_texture.png-9edc900267b4690b73724047326270f8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/track5/track_5_track_5_rail_texture.png"
-dest_files=["res://.godot/imported/track_5_track_5_rail_texture.png-9edc900267b4690b73724047326270f8.s3tc.ctex"]
+dest_files=["res://.godot/imported/track_5_track_5_rail_texture.png-9edc900267b4690b73724047326270f8.s3tc.ctex", "res://.godot/imported/track_5_track_5_rail_texture.png-9edc900267b4690b73724047326270f8.etc2.ctex"]
 
 [params]
 

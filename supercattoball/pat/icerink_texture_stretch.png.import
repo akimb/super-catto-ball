@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2a04qgm52baw"
 path.s3tc="res://.godot/imported/icerink_texture_stretch.png-7417bac340ecebd877f15a159bb0b1c1.s3tc.ctex"
+path.etc2="res://.godot/imported/icerink_texture_stretch.png-7417bac340ecebd877f15a159bb0b1c1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pat/icerink_texture_stretch.png"
-dest_files=["res://.godot/imported/icerink_texture_stretch.png-7417bac340ecebd877f15a159bb0b1c1.s3tc.ctex"]
+dest_files=["res://.godot/imported/icerink_texture_stretch.png-7417bac340ecebd877f15a159bb0b1c1.s3tc.ctex", "res://.godot/imported/icerink_texture_stretch.png-7417bac340ecebd877f15a159bb0b1c1.etc2.ctex"]
 
 [params]
 

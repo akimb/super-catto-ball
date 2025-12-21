@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://38naiy1hehfd"
 path.s3tc="res://.godot/imported/background_assets_floating_island_2_snow_texture.png-bee2f3b19a8c0ff2457a83a8ff21cb94.s3tc.ctex"
+path.etc2="res://.godot/imported/background_assets_floating_island_2_snow_texture.png-bee2f3b19a8c0ff2457a83a8ff21cb94.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://background_environment/background_assets_floating_island_2_snow_texture.png"
-dest_files=["res://.godot/imported/background_assets_floating_island_2_snow_texture.png-bee2f3b19a8c0ff2457a83a8ff21cb94.s3tc.ctex"]
+dest_files=["res://.godot/imported/background_assets_floating_island_2_snow_texture.png-bee2f3b19a8c0ff2457a83a8ff21cb94.s3tc.ctex", "res://.godot/imported/background_assets_floating_island_2_snow_texture.png-bee2f3b19a8c0ff2457a83a8ff21cb94.etc2.ctex"]
 
 [params]
 

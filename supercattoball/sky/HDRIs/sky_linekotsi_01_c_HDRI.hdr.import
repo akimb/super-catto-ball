@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs5xudij67frc"
 path.bptc="res://.godot/imported/sky_linekotsi_01_c_HDRI.hdr-4b159d6eb93ac09fe41e60a944e3ce8c.bptc.ctex"
+path.astc="res://.godot/imported/sky_linekotsi_01_c_HDRI.hdr-4b159d6eb93ac09fe41e60a944e3ce8c.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sky/HDRIs/sky_linekotsi_01_c_HDRI.hdr"
-dest_files=["res://.godot/imported/sky_linekotsi_01_c_HDRI.hdr-4b159d6eb93ac09fe41e60a944e3ce8c.bptc.ctex"]
+dest_files=["res://.godot/imported/sky_linekotsi_01_c_HDRI.hdr-4b159d6eb93ac09fe41e60a944e3ce8c.bptc.ctex", "res://.godot/imported/sky_linekotsi_01_c_HDRI.hdr-4b159d6eb93ac09fe41e60a944e3ce8c.astc.ctex"]
 
 [params]
 

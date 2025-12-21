@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xhb7q8hfsxpq"
 path.s3tc="res://.godot/imported/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg-b48ec53513e96bc91482d7c1d92bc693.s3tc.ctex"
+path.etc2="res://.godot/imported/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg-b48ec53513e96bc91482d7c1d92bc693.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://menus/main_menu/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg"
-dest_files=["res://.godot/imported/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg-b48ec53513e96bc91482d7c1d92bc693.s3tc.ctex"]
+dest_files=["res://.godot/imported/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg-b48ec53513e96bc91482d7c1d92bc693.s3tc.ctex", "res://.godot/imported/sleeping_cat_86a167ede7743b6aebfd1ea475ed0d2f.jpg-b48ec53513e96bc91482d7c1d92bc693.etc2.ctex"]
 
 [params]
 

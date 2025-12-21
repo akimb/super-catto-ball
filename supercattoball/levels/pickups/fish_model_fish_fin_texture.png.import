@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7h5rn5niadk4"
 path.s3tc="res://.godot/imported/fish_model_fish_fin_texture.png-8357e9a316cc53deaa6b606ed6bf51b4.s3tc.ctex"
+path.etc2="res://.godot/imported/fish_model_fish_fin_texture.png-8357e9a316cc53deaa6b606ed6bf51b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/pickups/fish_model_fish_fin_texture.png"
-dest_files=["res://.godot/imported/fish_model_fish_fin_texture.png-8357e9a316cc53deaa6b606ed6bf51b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/fish_model_fish_fin_texture.png-8357e9a316cc53deaa6b606ed6bf51b4.s3tc.ctex", "res://.godot/imported/fish_model_fish_fin_texture.png-8357e9a316cc53deaa6b606ed6bf51b4.etc2.ctex"]
 
 [params]
 

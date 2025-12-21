@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvaj5ws4vautq"
 path.s3tc="res://.godot/imported/catto_ball_track_1_icerink_texture.png-08dd6df5f968374fa5dae12b653696c4.s3tc.ctex"
+path.etc2="res://.godot/imported/catto_ball_track_1_icerink_texture.png-08dd6df5f968374fa5dae12b653696c4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/track1/catto_ball_track_1_icerink_texture.png"
-dest_files=["res://.godot/imported/catto_ball_track_1_icerink_texture.png-08dd6df5f968374fa5dae12b653696c4.s3tc.ctex"]
+dest_files=["res://.godot/imported/catto_ball_track_1_icerink_texture.png-08dd6df5f968374fa5dae12b653696c4.s3tc.ctex", "res://.godot/imported/catto_ball_track_1_icerink_texture.png-08dd6df5f968374fa5dae12b653696c4.etc2.ctex"]
 
 [params]
 

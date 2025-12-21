@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj7i23m4q4cjk"
 path.s3tc="res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.s3tc.ctex"
+path.etc2="res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://catto_ball/cat_model_cat_eye_iris_texture.png"
-dest_files=["res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.s3tc.ctex"]
+dest_files=["res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.s3tc.ctex", "res://.godot/imported/cat_model_cat_eye_iris_texture.png-1ed7581f7cdb4b96e2e2afbda4e1cd04.etc2.ctex"]
 
 [params]
 

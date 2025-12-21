@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca0khrfn0vdpn"
 path.s3tc="res://.godot/imported/background_assets_igloo_dome_snow_bricks.png-48b093d14336ebe3a229e5ba5f157c59.s3tc.ctex"
+path.etc2="res://.godot/imported/background_assets_igloo_dome_snow_bricks.png-48b093d14336ebe3a229e5ba5f157c59.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://background_environment/background_assets_igloo_dome_snow_bricks.png"
-dest_files=["res://.godot/imported/background_assets_igloo_dome_snow_bricks.png-48b093d14336ebe3a229e5ba5f157c59.s3tc.ctex"]
+dest_files=["res://.godot/imported/background_assets_igloo_dome_snow_bricks.png-48b093d14336ebe3a229e5ba5f157c59.s3tc.ctex", "res://.godot/imported/background_assets_igloo_dome_snow_bricks.png-48b093d14336ebe3a229e5ba5f157c59.etc2.ctex"]
 
 [params]
 

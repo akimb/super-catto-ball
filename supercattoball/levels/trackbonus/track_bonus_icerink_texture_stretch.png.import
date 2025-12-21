@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgfroovknhqy1"
 path.s3tc="res://.godot/imported/track_bonus_icerink_texture_stretch.png-1829d482736cab04f3a492c7e983b8ba.s3tc.ctex"
+path.etc2="res://.godot/imported/track_bonus_icerink_texture_stretch.png-1829d482736cab04f3a492c7e983b8ba.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://levels/trackbonus/track_bonus_icerink_texture_stretch.png"
-dest_files=["res://.godot/imported/track_bonus_icerink_texture_stretch.png-1829d482736cab04f3a492c7e983b8ba.s3tc.ctex"]
+dest_files=["res://.godot/imported/track_bonus_icerink_texture_stretch.png-1829d482736cab04f3a492c7e983b8ba.s3tc.ctex", "res://.godot/imported/track_bonus_icerink_texture_stretch.png-1829d482736cab04f3a492c7e983b8ba.etc2.ctex"]
 
 [params]
 
