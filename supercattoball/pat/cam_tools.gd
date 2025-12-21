@@ -50,6 +50,9 @@ static func intro_cam_setup(tree : SceneTree, level : Node3D):
 	
 	tween.tween_property(cam, 'global_position', player_cam_pos, .5).set_delay( intro_duration - .5)
 	
+	if not cam:
+		return
+	
 	tween.tween_method(
 		func(val : Vector3):
 			cam.look_at(val),

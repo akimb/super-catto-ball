@@ -14,10 +14,10 @@ func _physics_process(_delta: float) -> void:
 	var speed := linear_velocity.length()
 	GameManager.update_speed.emit(linear_velocity.length())
 	
-	if speed > 0.5 and !AudioBus.move.playing:
+	if speed > 1.0 and !AudioBus.move.playing:
 		AudioBus.move.play()
 		AudioBus.wind.play()
-	elif speed <= 0.5 and AudioBus.move.playing:
+	elif speed <= 1.0 and AudioBus.move.playing:
 		AudioBus.move.stop()
 		AudioBus.wind.stop()
 		
