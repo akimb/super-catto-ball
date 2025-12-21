@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://coii5prc1rul5"]
+
+[ext_resource type="Texture2D" uid="uid://2a04qgm52baw" path="res://pat/icerink_texture_stretch.png" id="1_ti21t"]
+
+[resource]
+resource_name = "icerink_material"
+cull_mode = 2
+albedo_color = Color(0.80049086, 0.8004908, 0.8004906, 1)
+albedo_texture = ExtResource("1_ti21t")
+roughness = 0.19090907
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
