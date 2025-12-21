@@ -5,8 +5,7 @@
 [ext_resource type="Script" uid="uid://yy5tvd4a4qou" path="res://pat/menu/level_win.gd" id="2_gqq4n"]
 [ext_resource type="Texture2D" uid="uid://y0fpm72pqy4" path="res://ui_components/icons/forward.png" id="4_kbwm1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbwm1"]
-bg_color = Color(0.46868885, 0.02218919, 0.5139533, 0.5019608)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbwm1"]
 
 [sub_resource type="Curve" id="Curve_twuft"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9918699, 0.010570884), -4.8503547, 0.0, 0, 0]
@@ -40,18 +39,14 @@ script = ExtResource("2_gqq4n")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -123.0
-offset_right = 224.0
-offset_bottom = 123.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 197.0
+offset_bottom = -196.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kbwm1")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kbwm1")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -66,16 +61,18 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("2_fhelv")
 bbcode_enabled = true
-text = "[font size=82][wave]G O A L ! ! ![/wave][/font]"
+text = "[font size=82][wave][color=#FF0000]G[/color] [color=#FFEB00]O[/color] [color=#27FF00]A[/color] [color=#00FFC4]L[/color] [color=#004EFF]![/color] [color=#9C00FF]![/color] [color=#FF0075]![/color][/wave][/font]"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="Time" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Time Taken:"
+theme_override_colors/font_color = Color(0.24098897, 0.7084035, 0, 1)
+text = "time taken:"
 
 [node name="TimeEmitter" type="GPUParticles2D" parent="PanelContainer/MarginContainer/VBoxContainer/Time"]
 unique_name_in_owner = true
@@ -90,7 +87,8 @@ process_material = SubResource("ParticleProcessMaterial_0gr3s")
 [node name="Bonus" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Bonus:"
+theme_override_colors/font_color = Color(0.96862745, 0.3529412, 0.6901961, 1)
+text = "time bonus:"
 
 [node name="BonusEmitter" type="GPUParticles2D" parent="PanelContainer/MarginContainer/VBoxContainer/Bonus"]
 unique_name_in_owner = true

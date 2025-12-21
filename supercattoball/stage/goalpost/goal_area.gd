@@ -13,6 +13,7 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	if body is CattoBall:
 		AudioBus.goal.play()
+		AudioBus.applause.play()
 		body.linear_velocity = Vector3.ZERO
 		_calculate_time_bonus()
 		sum_total_time()
