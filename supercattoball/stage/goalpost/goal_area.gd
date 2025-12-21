@@ -17,6 +17,7 @@ func _on_body_entered(body: Node3D) -> void:
 		_calculate_time_bonus()
 		sum_total_time()
 		GameManager.current_level += 1
+		LevelManager.show_new_level = true
 		_advance_level.call_deferred()
 
 func _get_current_time(time : float) -> void:

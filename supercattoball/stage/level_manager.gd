@@ -73,13 +73,26 @@ func _on_level_change(level_index : int) -> void:
 	GameManager.current_level = level_index
 	_do_level_change.call_deferred(level_index)
 
+
+static var show_new_level := true ## Needed since goal area also updates current_level
+
 func _do_level_change(level_index : int) -> void:
 	current_score = GameManager.total_score
 	current_fish = GameManager.total_fish
 	var playing_level : Node3D
+	
 	if game_viewport.get_child_count() > 0:
 		playing_level = game_viewport.get_child(0)
 		#game_viewport.remove_child.call_deferred(playing_level)
+		
+		if show_new_level:
+			var win_screen = load('res://pat/menu/level_win.tscn').instantiate()
+			get_tree().current_scene.add_child(win_screen)
+			await win_screen.setup(self)
+			
+			await CameraTools.outro_cam_setup(playing_level).finished
+			win_screen.queue_free()
+		
 		playing_level.queue_free()
 	
 	if level_index < GameManager.level_planner.levels.size() and GameManager.total_continues >= 0:
@@ -100,12 +113,19 @@ func _do_level_change(level_index : int) -> void:
 		stage_time_total = next_level.total_time_for_stage
 		stage_timer.wait_time = stage_time_total
 		GameManager.update_timer.emit(stage_time_total)
+		
+		if show_new_level:
+			set_process_input(false)
+			get_tree().process_frame.connect( func(): CameraTools.intro_cam_setup(get_tree(), next_level), CONNECT_ONE_SHOT)
+			await get_tree().create_timer(2.).timeout
+		
 		await invoke_buffer()
 		stage_timer.start(stage_time_total)
 	
 	elif GameManager.total_continues < 0:
 		get_tree().change_scene_to_packed(leaderboard_screen)
 	
+	show_new_level = false
 	#catto = get_tree().get_first_node_in_group("catto_ball")
 	#catto_spawner = get_tree().get_first_node_in_group("level_group").player_spawner
 
