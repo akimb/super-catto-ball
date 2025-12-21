@@ -21,6 +21,7 @@ func _ready() -> void:
 		if child is Control:
 			screens.append(child)
 	
+	AudioBus.super_catto_ball.play()
 	AudioBus.main_menu_theme.play()
 	bring_up_active_screen(title_screen)
 
@@ -45,6 +46,7 @@ func _on_play_pressed() -> void:
 
 func _on_roll_pressed() -> void:
 	GameManager.load_level_manager()
+	AudioBus.main_menu_theme.stop()
 
 func _on_how_to_play_pressed() -> void:
 	interpolate_cameras(how_to_play_marker, main_menu_screen, how_to_play_screen)
