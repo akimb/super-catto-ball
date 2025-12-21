@@ -23,7 +23,8 @@ var total_fish : int = 0
 var total_lives : int = 3
 var total_continues : int = 5
 
-var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
+#var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
+var level_planner : LevelPlanner = preload("res://levels/manager/level_planner_debug.tres")
 var current_level : int = 0
 
 var toggle_metric_or_imperial : bool = false
