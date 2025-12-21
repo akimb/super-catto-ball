@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var visual_multiplier := 1.0
+@export var visual_multiplier := 2.0
 @export var max_angle := 12.0
 @export var tilt_speed := 6.0
 

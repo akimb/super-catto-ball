@@ -1,9 +1,14 @@
 extends Node3D
 
-#@export var tilt_speed := 1.0
+#@export var follow_speed := 8.0
+#
 #func _process(delta):
-	#var dir := Input.get_axis("left","right")
+	#global_position = global_position.lerp(
+		#owner.global_position,
+		#follow_speed * delta
+	#)
 #
-	#var target_yaw := deg_to_rad(dir)
-#
-	#global_rotation.y = lerp_angle(global_rotation.y, target_yaw, tilt_speed * delta)
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		#rotate_x(event.relative.y * GameManager.mouse_sensitivity)
+		#clampf(rotation_degrees.x, -15.0, 15.0)
