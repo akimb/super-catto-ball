@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjuqnh4p5fmga"]
+[gd_scene load_steps=4 format=3 uid="uid://bjuqnh4p5fmga"]
 
+[ext_resource type="Script" uid="uid://bmnjexb853yyf" path="res://stage/goalpost/level_timer.gd" id="1_bwit1"]
 [ext_resource type="FontFile" uid="uid://bxjmy5nb3tjx8" path="res://ui_components/fonts/E1234.ttf" id="1_c6tut"]
 
 [sub_resource type="Theme" id="Theme_bwit1"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bwit1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(450, 250)
@@ -27,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Timer Display" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -8,6 +8,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_speed
 @warning_ignore("unused_signal") signal update_floor
 @warning_ignore("unused_signal") signal update_continues
+@warning_ignore("unused_signal") signal update_timer
 @warning_ignore("unused_signal") signal trigger_death
 #endregion
 
