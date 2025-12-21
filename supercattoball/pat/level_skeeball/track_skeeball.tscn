@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy06wt34nayj1"]
+[gd_scene load_steps=10 format=3 uid="uid://cy06wt34nayj1"]
 
 [ext_resource type="PackedScene" uid="uid://b6xkhfcsai6vp" path="res://stage/level_base.tscn" id="1_hwrqq"]
 [ext_resource type="PackedScene" uid="uid://bddirq0ftjydm" path="res://stage/catto_spawner/catto_spawner.tscn" id="2_3y4hu"]
 [ext_resource type="PackedScene" uid="uid://dayrqwxplac0e" path="res://stage/goalpost/goalpost.tscn" id="3_clv7c"]
 [ext_resource type="PackedScene" uid="uid://c37oxxe4dwkx5" path="res://levels/pickups/fish_pickup.tscn" id="4_mlip4"]
+[ext_resource type="PackedScene" uid="uid://cglr3it80336e" path="res://pat/level_skeeball/skeeball_mesh.glb" id="5_3y4hu"]
 
 [sub_resource type="Gradient" id="Gradient_hqvrx"]
 colors = PackedColorArray(0.53333336, 0, 0, 1, 1, 0.13333334, 1, 1)
@@ -76,6 +77,7 @@ size = Vector3(3, 1, 6)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pivot" index="5"]
 transform = Transform3D(1, 0, 0, 0, 0.25881937, 0.96592706, 0, -0.96592706, 0.25881937, 0, 12.432778, 83.829414)
+visible = false
 use_collision = true
 radius = 11.5
 height = 9.75
@@ -90,6 +92,7 @@ sides = 16
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Pivot" index="6"]
 transform = Transform3D(1, 0, 0, 0, 0.25881937, 0.96592706, 0, -0.96592706, 0.25881937, 0, 12.432782, 83.82943)
+visible = false
 use_collision = true
 radius = 7.5
 height = 9.75
@@ -104,6 +107,7 @@ sides = 16
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Pivot" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.25881937, 0.96592706, 0, -0.96592706, 0.25881937, 0, 12.432781, 83.82944)
+visible = false
 use_collision = true
 radius = 3.5
 height = 9.75
@@ -132,3 +136,7 @@ transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 0, 0
 
 [node name="Fish Pickup" parent="Pickups" index="0" instance=ExtResource("4_mlip4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.156, 9.975118)
+
+[node name="Skee" parent="." index="7" instance=ExtResource("5_3y4hu")]
+
+[editable path="Skee"]
