@@ -15,12 +15,14 @@ func _ready() -> void:
 func _on_resume_pressed() -> void:
 	unpause()
 
+## TURNED OFF SIGNAL CONNECTION FOR NOW.
 func _on_settings_pressed() -> void:
 	settings_screen.show()
 	pause_screen.hide()
 
 func _on_main_menu_pressed() -> void:
 	unpause()
+	AudioBus.game_theme.stop()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://menus/main_menu/main_menu.tscn")
 	GameManager.reset_all_gameplay_data()

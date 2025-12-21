@@ -6,10 +6,10 @@ func _on_body_entered(body: Node3D) -> void:
 		return
 	#await get_tree().physics_frame
 	if body is CattoBall:
+		AudioBus.goal.play()
 		body.linear_velocity = Vector3.ZERO
 		# TODO 
 		# play the victory stuff
-		print("GOAL!")
 		# update scores
 		_calculate_time_bonus()
 		# prepare the next level

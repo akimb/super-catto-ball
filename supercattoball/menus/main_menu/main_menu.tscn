@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dde6piw0cky7b"]
+[gd_scene load_steps=36 format=3 uid="uid://dde6piw0cky7b"]
 
 [ext_resource type="Script" uid="uid://ce2qin51jrv7d" path="res://menus/main_menu/main_menu.gd" id="1_ml8bw"]
 [ext_resource type="Shader" uid="uid://b5187nc30cpni" path="res://shaders/text_pulse.gdshader" id="2_oic2i"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://csul1pwobl3tc" path="res://particles/magic_04.png" id="5_oic2i"]
 [ext_resource type="PackedScene" uid="uid://uyijd2p8wg7q" path="res://menus/main_menu/turntable.tscn" id="7_f7ts8"]
 [ext_resource type="PackedScene" uid="uid://c2fjjhk45yuu2" path="res://ui_components/instructions.tscn" id="10_11cdn"]
+[ext_resource type="FontFile" uid="uid://caummho7q548g" path="res://ui_components/fonts/Kimberley Bl.otf" id="10_po3x5"]
 [ext_resource type="Material" uid="uid://ci23js8fnh5s6" path="res://catto_ball/ball_texture.tres" id="11_pmi7g"]
 [ext_resource type="Script" uid="uid://gh82tbsjhnsa" path="res://menus/main_menu/funny_cat_rolling.gd" id="12_11cdn"]
 [ext_resource type="Texture2D" uid="uid://o33drad5ocl" path="res://ui_components/input_prompts/keyboard_arrows_up.png" id="12_pg7e5"]
@@ -208,6 +209,26 @@ offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "start!"
+
+[node name="Label2" type="Label" parent="Title Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -11.5
+offset_right = 285.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_po3x5")
+text = "DOWNLOADING THE GAME IS RECOMMENDED FOR THE BEST EXPERIENCE."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Main Menu Screen" type="Control" parent="."]
 visible = false

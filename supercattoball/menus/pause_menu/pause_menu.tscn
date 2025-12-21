@@ -136,6 +136,7 @@ offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
+alignment = 1
 
 [node name="Resume" parent="Pause Screen/Pause Container/HBoxContainer" instance=ExtResource("2_4s7ec")]
 layout_mode = 2
@@ -143,6 +144,7 @@ text = "resume!"
 icon = ExtResource("3_l3nas")
 
 [node name="Settings" parent="Pause Screen/Pause Container/HBoxContainer" instance=ExtResource("2_4s7ec")]
+visible = false
 layout_mode = 2
 text = "settings!"
 
@@ -151,10 +153,10 @@ layout_mode = 2
 text = "exit to main menu!"
 
 [node name="Settings Screen" parent="." instance=ExtResource("6_vpjwo")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Pause Screen/Pause Container/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause Screen/Pause Container/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Pause Screen/Pause Container/HBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Settings Screen/Settings Back" to="." method="_on_settings_back_pressed"]
 

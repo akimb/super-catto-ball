@@ -32,3 +32,4 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		catto_ball.camera_pivot.rotate_y(-event.relative.x * GameManager.mouse_sensitivity)
 		catto_ball.catto_model.rotate_y(-event.relative.x * GameManager.mouse_sensitivity)
+	

@@ -10,7 +10,7 @@ func _ready() -> void:
 	debug_shape.hide()
 
 func _on_body_entered(body: CattoBall) -> void:
-	
+	AudioBus.howl.play()
 	if body:
 		GameManager.trigger_death.emit()
 		body.global_transform = catto_spawner.global_transform

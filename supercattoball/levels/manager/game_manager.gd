@@ -19,7 +19,7 @@ extends Node
 var total_score : int = 0
 var total_fish : int = 0
 var total_lives : int = 3
-var total_continues : int = 5 # set to 4 and add 1 to the ui
+var total_continues : int = 5
 
 var level_planner : LevelPlanner = preload("res://levels/manager/level_planner.tres")
 var current_level : int = 0

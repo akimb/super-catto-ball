@@ -6,6 +6,7 @@
 
 [node name="Level Base" type="Node3D" groups=["level_group"]]
 script = ExtResource("1_f6oki")
+total_time_for_stage = 30.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
