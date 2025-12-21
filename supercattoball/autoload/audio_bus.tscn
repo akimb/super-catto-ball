@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ci7dq5h0uavid"]
+[gd_scene load_steps=29 format=3 uid="uid://ci7dq5h0uavid"]
 
 [ext_resource type="Script" uid="uid://cj516ps5b7kem" path="res://autoload/audio_bus.gd" id="1_fn8mh"]
 [ext_resource type="AudioStream" uid="uid://cwbmkg727crc4" path="res://sounds/super_catto_ball_main_theme.ogg" id="2_sq0to"]
@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://phmbqd2pnqlo" path="res://sounds/goal.ogg" id="23_4e864"]
 [ext_resource type="AudioStream" uid="uid://vtrsbdbhbi34" path="res://sounds/continue.ogg" id="24_v8k0p"]
 [ext_resource type="AudioStream" uid="uid://t56mwikt8elu" path="res://sounds/super_catto_ball_announcement.ogg" id="25_pvadn"]
+[ext_resource type="AudioStream" uid="uid://bwq7ju5hpsgm3" path="res://sounds/bonus_sfx.ogg" id="27_41hod"]
+[ext_resource type="AudioStream" uid="uid://c1pn3eat1lrer" path="res://sounds/applause_sfx.ogg" id="28_h5ntp"]
 
 [node name="AudioBus" type="Node"]
 process_mode = 3
@@ -185,6 +187,18 @@ playback_type = 1
 
 [node name="Super Catto Ball" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("25_pvadn")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Bonus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("27_41hod")
+volume_db = -5.0
+bus = &"SFX"
+playback_type = 1
+
+[node name="Applause" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("28_h5ntp")
 volume_db = -5.0
 bus = &"SFX"
 playback_type = 1

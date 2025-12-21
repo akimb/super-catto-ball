@@ -28,3 +28,5 @@ extends Node
 @onready var goal: AudioStreamPlayer = $SFX/Goal
 @onready var game_continue: AudioStreamPlayer = $SFX/Continue
 @onready var super_catto_ball: AudioStreamPlayer = $"SFX/Super Catto Ball"
+@onready var bonus: AudioStreamPlayer = $SFX/Bonus
+@onready var applause: AudioStreamPlayer = $SFX/Applause
