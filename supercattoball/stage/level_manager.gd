@@ -1,5 +1,6 @@
 class_name LevelManager extends Control
 
+@onready var player_ui: Control = $"Player UI"
 @onready var skybox_camera_3d: Camera3D = $SkyboxViewport/SkyboxCamera3D
 @onready var game_viewport: SubViewport = $GameViewport
 @onready var stage_timer: Timer = $"Stage Timer"
@@ -7,6 +8,7 @@ class_name LevelManager extends Control
 var current_level_index : int = 0
 var catto : CattoBall 
 var catto_spawner : Marker3D
+var stage_time_total : float
 
 const ready_buffer_screen : PackedScene = preload("res://menus/level_ready_screen/level_ready_buffer_screen.tscn")
 const continue_screen : PackedScene = preload("res://menus/continue_menu/continue_screen.tscn")
@@ -27,9 +29,11 @@ func _physics_process(_delta: float) -> void:
 		skybox_camera_3d.global_transform = get_tree().get_first_node_in_group("catto_ball").camera_pivot.transform
 
 func _process(_delta: float) -> void:
-	GameManager.update_timer.emit(stage_timer.time_left)
+	if not stage_timer.is_stopped():
+		GameManager.update_timer.emit(stage_timer.time_left)
 
 func _on_level_change(level_index : int) -> void:
+	stage_timer.stop()
 	GameManager.current_level = level_index
 	_do_level_change.call_deferred(level_index)
 
@@ -53,9 +57,11 @@ func _do_level_change(level_index : int) -> void:
 		ProjectSettings.get_setting("physics/3d/default_gravity_vector")
 		)
 		GameManager.update_floor.emit(level_index)
-		invoke_buffer()
-		#stage_timer.wait_time = 
-		stage_timer.start(next_level.total_time_for_stage)
+		stage_time_total = next_level.total_time_for_stage
+		stage_timer.wait_time = stage_time_total
+		GameManager.update_timer.emit(stage_time_total)
+		await invoke_buffer()
+		stage_timer.start(stage_time_total)
 	
 	elif GameManager.total_continues < 0:
 		#_do_level_change(current_level_index)
@@ -68,10 +74,14 @@ func invoke_buffer() -> void:
 	var buffer_screen = ready_buffer_screen.instantiate()
 	add_child(buffer_screen)
 	await buffer_screen.buffer_finished
-	
 
 func _on_stage_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func _trigger_death_recountdown() -> void:
-	invoke_buffer()
+	AudioBus.howl.play()
+	stage_timer.stop()
+	stage_timer.wait_time = stage_time_total
+	GameManager.update_timer.emit(stage_time_total)
+	await invoke_buffer()
+	stage_timer.start(stage_time_total)
