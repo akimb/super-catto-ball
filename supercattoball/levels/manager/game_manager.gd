@@ -37,8 +37,8 @@ const LEVEL_MANAGER : PackedScene = preload("res://stage/level_manager.tscn")
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-func _process(_delta: float) -> void:
-	debug_printer()
+#func _process(_delta: float) -> void:
+	#debug_printer()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().root.has_node("LevelManager"):

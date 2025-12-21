@@ -4,6 +4,7 @@ extends Node3D
 
 const leaderboard_screen : PackedScene = preload("res://menus/leaderboard_screen/leaderboard_screen.tscn")
 func _ready() -> void:
+	GameManager.debug_printer()
 	AudioBus.game_ready.stop()
 	AudioBus.game_continue.play()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -20,6 +21,5 @@ func _on_yes_pressed() -> void:
 
 
 func _on_no_pressed() -> void:
-	GameManager.reset_all_gameplay_data()
 	get_tree().change_scene_to_packed(leaderboard_screen)
 	AudioBus.game_theme.stop()

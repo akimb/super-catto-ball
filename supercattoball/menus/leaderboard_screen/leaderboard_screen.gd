@@ -1,8 +1,5 @@
 extends Control
 
-
-
-
 @export var leaderboard_internal_name: String = ""
 @export var include_archived: bool
 
@@ -20,6 +17,7 @@ var entry_scene = preload("res://menus/leaderboard_screen/leaderboard_entry.tscn
 const main_menu : PackedScene = preload("res://menus/main_menu/main_menu.tscn")
 
 func _ready() -> void:
+	GameManager.debug_printer()
 	leaderboard_name.text = leaderboard_name.text.replace("{leaderboard}", leaderboard_internal_name)
 	username.editable = true
 	await _load_entries()
@@ -81,7 +79,7 @@ func _on_username_text_submitted(new_text: String) -> void:
 	await Talo.players.identify("username", new_text)
 	var score : int = GameManager.total_score
 	var props: Dictionary[String, Variant] = {
-		"total_time": GameManager.total_time
+		"GameManager.total_time": GameManager.total_time
 		}
 	await Talo.leaderboards.add_entry(leaderboard_internal_name, score, props)
 	_build_entries()
@@ -89,4 +87,5 @@ func _on_username_text_submitted(new_text: String) -> void:
 	skip_button.text = "to main menu"
 
 func _on_skip_button_pressed() -> void:
+	GameManager.reset_all_gameplay_data()
 	get_tree().change_scene_to_packed(main_menu)
