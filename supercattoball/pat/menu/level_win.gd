@@ -21,7 +21,7 @@ func setup(level_manager : LevelManager):
 	
 	match pct:
 		var x when x < .2:
-			bonus_msg = ' 5000   Amazing!'
+			bonus_msg = ' 5000   Purrfection!'
 			GameManager.total_score += 5000
 		var x when x < .5:
 			bonus_msg = ' 2000   Excellent'
@@ -30,7 +30,7 @@ func setup(level_manager : LevelManager):
 			bonus_msg = ' 1000   Good job'
 			GameManager.total_score += 1000
 		_:
-			bonus_msg = ' You passed'
+			bonus_msg = ' Meh-ow'
 	
 	await get_tree().create_timer(1.0).timeout
 	
