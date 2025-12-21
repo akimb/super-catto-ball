@@ -1,6 +1,5 @@
 [gd_scene load_steps=20 format=4 uid="uid://dq6l5mj81gs87"]
 
-[ext_resource type="PackedScene" uid="uid://bre80foc462nu" path="res://levels/trackbonus/track_bonus.glb" id="1_fysmg"]
 [ext_resource type="PackedScene" uid="uid://cgw8onexflrkg" path="res://background_environment/floating_island_1.glb" id="2_ul0du"]
 [ext_resource type="PackedScene" uid="uid://lm2pd641e0s6" path="res://background_environment/floating_island_2.glb" id="3_8y3tc"]
 [ext_resource type="PackedScene" uid="uid://ch8mth1mionqo" path="res://background_environment/floating_island_3.glb" id="4_vknq6"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxrn4iiwv8ung" path="res://catto_ball/cat_model.glb" id="8_hwg6o"]
 [ext_resource type="Texture2D" uid="uid://cj7i23m4q4cjk" path="res://catto_ball/cat_model_cat_eye_iris_texture.png" id="9_e0lpb"]
 [ext_resource type="Texture2D" uid="uid://b3ib1flcsiowb" path="res://catto_ball/cat_model_cat_body_texture_.png" id="10_chma0"]
+[ext_resource type="PackedScene" uid="uid://cbletdqt1eih3" path="res://background_environment/igloo.glb" id="10_fysmg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjimb"]
 resource_name = "cat_eye_pupil_material"
@@ -231,13 +231,17 @@ shadow_mesh = SubResource("ArrayMesh_8oed5")
 
 [node name="Background Area Bonus" type="Node3D"]
 
-[node name="Track Bonus Geometry" parent="." instance=ExtResource("1_fysmg")]
-
 [node name="floating_island_12" parent="." instance=ExtResource("2_ul0du")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.031433, 1.9073486e-06, 1.1548114)
 
 [node name="floating_island_22" parent="." instance=ExtResource("3_8y3tc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.83913, 2.4320154, 6.6110034)
+
+[node name="floating_island_13" parent="." instance=ExtResource("2_ul0du")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 23.654041, 1.9073486e-06, -29.129921)
+
+[node name="floating_island_24" parent="." instance=ExtResource("3_8y3tc")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 26.475395, 2.4320154, -23.104263)
 
 [node name="floating_island_23" parent="." instance=ExtResource("3_8y3tc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38180542, 0, 33.17474)
@@ -267,18 +271,27 @@ transform = Transform3D(0.6123724, 0.6123724, -0.5000001, 0.70710677, -0.7071067
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -15.825094, 10, -39.04894)
 
 [node name="cat_model" parent="." instance=ExtResource("8_hwg6o")]
-transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -14.465819, 12.202708, -35.42552)
+transform = Transform3D(1.7320508, 0, 1, 0, 2, 0, -1, 0, 1.7320508, -14.465819, 12.202708, -35.42552)
 
 [node name="cat_model3" type="Node3D" parent="."]
-transform = Transform3D(0.9865665, 0, 0.16336043, 0, 1, 0, -0.16336043, 0, 0.9865665, -15.097209, 12.202708, -35.526207)
+transform = Transform3D(1.973133, 0, 0.32672083, 0, 2, 0, -0.32672083, 0, 1.973133, -15.097209, 12.202708, -35.526207)
 
 [node name="body" type="MeshInstance3D" parent="cat_model3"]
 mesh = SubResource("ArrayMesh_xl0gx")
 skeleton = NodePath("")
 
 [node name="cat_model2" type="Node3D" parent="."]
-transform = Transform3D(0.7264068, 0, 0.68726504, 0, 1, 0, -0.68726504, 0, 0.7264068, -14.119457, 12.202708, -35.891956)
+transform = Transform3D(1.4528136, 0, 1.37453, 0, 2, 0, -1.37453, 0, 1.4528136, -14.119457, 12.202708, -35.891956)
 
 [node name="body" type="MeshInstance3D" parent="cat_model2"]
 mesh = SubResource("ArrayMesh_701dp")
 skeleton = NodePath("")
+
+[node name="buildings" parent="." instance=ExtResource("10_fysmg")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -16.503231, 12.284967, -39.831425)
+
+[node name="iceberg_14" parent="." instance=ExtResource("7_j2usb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.909122, 3.261115, 2.9499807)
+
+[node name="iceberg_15" parent="." instance=ExtResource("7_j2usb")]
+transform = Transform3D(0.68590724, 0, 0.72768897, 0, 1, 0, -0.72768897, 0, 0.68590724, 25.699568, 4.9486113, -21.133192)
