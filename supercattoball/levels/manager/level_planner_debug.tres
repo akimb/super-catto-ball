@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelPlanner" load_steps=4 format=3 uid="uid://bnqoaxuv05joo"]
+
+[ext_resource type="Script" uid="uid://c8ngm20j8orr7" path="res://levels/manager/level_scene_data.gd" id="1_hnnnr"]
+[ext_resource type="Script" uid="uid://cvedmllytv7u3" path="res://levels/manager/level_planner.gd" id="2_o3y7g"]
+
+[sub_resource type="Resource" id="Resource_130g5"]
+script = ExtResource("1_hnnnr")
+scene_path = "uid://qjlvdngd0lqm"
+metadata/_custom_type_script = "uid://c8ngm20j8orr7"
+
+[resource]
+script = ExtResource("2_o3y7g")
+levels = Array[ExtResource("1_hnnnr")]([SubResource("Resource_130g5")])
