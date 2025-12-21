@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelPlanner" load_steps=10 format=3 uid="uid://bjdm2mro5h2qi"]
+[gd_resource type="Resource" script_class="LevelPlanner" load_steps=11 format=3 uid="uid://bjdm2mro5h2qi"]
 
 [ext_resource type="Script" uid="uid://c8ngm20j8orr7" path="res://levels/manager/level_scene_data.gd" id="1_cd3cc"]
 [ext_resource type="Script" uid="uid://cvedmllytv7u3" path="res://levels/manager/level_planner.gd" id="2_apfxt"]
@@ -23,6 +23,11 @@ script = ExtResource("1_cd3cc")
 scene_path = "uid://bd7xv2auqj1dw"
 metadata/_custom_type_script = "uid://c8ngm20j8orr7"
 
+[sub_resource type="Resource" id="Resource_wbu67"]
+script = ExtResource("1_cd3cc")
+scene_path = "uid://bs0yecqcgs85v"
+metadata/_custom_type_script = "uid://c8ngm20j8orr7"
+
 [sub_resource type="Resource" id="Resource_483gr"]
 script = ExtResource("1_cd3cc")
 scene_path = "uid://37f5jq1bb45a"
@@ -40,4 +45,4 @@ metadata/_custom_type_script = "uid://c8ngm20j8orr7"
 
 [resource]
 script = ExtResource("2_apfxt")
-levels = Array[ExtResource("1_cd3cc")]([SubResource("Resource_130g5"), SubResource("Resource_cd3cc"), SubResource("Resource_sb3g6"), SubResource("Resource_apfxt"), SubResource("Resource_483gr"), SubResource("Resource_8y3u0"), SubResource("Resource_kcbvq")])
+levels = Array[ExtResource("1_cd3cc")]([SubResource("Resource_130g5"), SubResource("Resource_cd3cc"), SubResource("Resource_sb3g6"), SubResource("Resource_apfxt"), SubResource("Resource_wbu67"), SubResource("Resource_483gr"), SubResource("Resource_8y3u0"), SubResource("Resource_kcbvq")])
