@@ -10,6 +10,7 @@ extends Node
 @warning_ignore("unused_signal") signal update_continues
 @warning_ignore("unused_signal") signal update_timer
 @warning_ignore("unused_signal") signal trigger_death
+@warning_ignore("unused_signal") signal get_stage_time
 #endregion
 
 #region Game Settings

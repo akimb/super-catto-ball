@@ -1,7 +1,5 @@
 class_name LevelManager extends Control
 
-signal get_stage_time
-
 @onready var player_ui: Control = $"Player UI"
 @onready var skybox_camera_3d: Camera3D = $SkyboxViewport/SkyboxCamera3D
 @onready var game_viewport: SubViewport = $GameViewport
@@ -98,7 +96,7 @@ func _do_level_change(level_index : int) -> void:
 		)
 		
 		GameManager.update_floor.emit(level_index)
-		get_stage_time.emit(next_level.total_time_for_stage)
+		GameManager.get_stage_time.emit(next_level.total_time_for_stage)
 		stage_time_total = next_level.total_time_for_stage
 		stage_timer.wait_time = stage_time_total
 		GameManager.update_timer.emit(stage_time_total)

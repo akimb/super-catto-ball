@@ -4,7 +4,7 @@ var stage_level_time : float
 var curr_level_time : float = 0.0
 
 func _ready() -> void:
-	LevelManager.get_stage_time.connect(_update_stage_time)
+	GameManager.get_stage_time.connect(_update_stage_time)
 	GameManager.update_timer.connect(_get_current_time)
 
 func _on_body_entered(body: Node3D) -> void:
@@ -17,19 +17,19 @@ func _on_body_entered(body: Node3D) -> void:
 		_calculate_time_bonus()
 		sum_total_time()
 		GameManager.current_level += 1
-		
 		_advance_level.call_deferred()
 
 func _get_current_time(time : float) -> void:
 	curr_level_time = time
 
 func sum_total_time() -> void:
-	GameManager.total_time += curr_level_time
+	GameManager.total_time += stage_level_time - curr_level_time
 
 func _advance_level() -> void:
 	GameManager.change_level.emit(GameManager.current_level)
 
 func _update_stage_time(time) -> void:
 	stage_level_time = time
+
 func _calculate_time_bonus() -> void:
 	pass
